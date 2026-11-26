@@ -5,6 +5,15 @@ from functools import lru_cache
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 from base import *
+from escala import ppm, ancho, altura, BUTACA_ANCHO, BUTACA_ALTO_RESPALDO, PANTALLA_PX, AUTO_ANCHO, AUTO_ALTO, \
+    PERSONA_ALTO, PERSONA_HOMBROS, CAMIONETA_ANCHO, CAMIONETA_ALTO, MOSTRADOR_ALTO, CAJA_ANCHO, CAJA_ALTO, \
+    MUJER_ALTO, PATRULLA_ANCHO, BUZON_ALTO
+
+# Sala de cine: pantalla de 640x360 (16:9) centrada arriba; filas de butacas segun su distancia.
+PANTALLA_BOX = (40, 170, 40 + PANTALLA_PX, 170 + PANTALLA_PX * 9 // 16)
+FILAS_FONDO = [780, 880, 1000]   # filas de atras hacia adelante; la fila del espectador es la 1000
+FILA_ESPECTADOR = 1000
+FILA_FRENTE = 1130
 
 
 # ============================================================ fondos comunes
@@ -57,61 +66,88 @@ def bg_cinema():
     for x in range(0, W, 26):
         d.rectangle([x, 120, x + 12, 760], fill=(46, 10, 18))
     d.rectangle([0, 0, W, 120], fill=(12, 4, 8))
-    # pantalla (derecha)
-    d.rectangle([244, 254, 696, 566], fill=(10, 8, 10))
+    # pantalla: ocupa casi todo el ancho (PANTALLA_BOX), con marco
+    d.rectangle([PANTALLA_BOX[0] - 8, PANTALLA_BOX[1] - 8, PANTALLA_BOX[2] + 8, PANTALLA_BOX[3] + 8],
+                fill=(60, 40, 44))
+    d.rectangle(list(PANTALLA_BOX), fill=(10, 8, 10))
     img = img.filter(ImageFilter.GaussianBlur(2))
     d = ImageDraw.Draw(img)
     # proyector arriba a la izquierda (ventanita de cabina)
     d.rectangle([0, 96, 120, 200], fill=(8, 4, 6))
     d.rectangle([44, 128, 100, 168], fill=(30, 26, 26))
-    # butacas de terciopelo carmesi
-    rows = [(760, 46, 70), (860, 58, 86), (990, 74, 110), (1150, 96, 150)]
-    for y, wsz, hh in rows:
-        n = int(W / (wsz + 10)) + 2
-        for i in range(n):
-            x = -wsz / 2 + i * (wsz + 10) + (y % 37)
-            rrect(d, [x, y, x + wsz, y + hh], int(wsz * 0.35), (112, 14, 28))
-            rrect(d, [x + 4, y + 4, x + wsz - 4, y + hh * 0.5], int(wsz * 0.3), (150, 26, 40))
-        d.rectangle([0, y + hh * 0.75, W, y + hh + 40], fill=(26, 4, 10))
+    # butacas de terciopelo carmesi: pocas y grandes en primer plano, pequenas al fondo
+    for y in FILAS_FONDO:
+        butacas_fila(d, y, (112, 14, 28))
     return img
 
 
+def butacas_fila(d, y, col, cuerpo=(150, 26, 40)):
+    """Una fila de butacas a la altura y del suelo; el ancho sale de la escala (escala.py)."""
+    bw = int(ancho(y, BUTACA_ANCHO))
+    bh = int(altura(y, BUTACA_ALTO_RESPALDO))
+    gap = max(3, int(bw * 0.12))
+    paso = bw + gap
+    n = int(W / paso) + 2
+    off = (y * 7) % paso
+    for i in range(-1, n):
+        x = -off + i * paso
+        rrect(d, [x, y - bh, x + bw, y], max(3, int(bw * 0.3)), col)
+        rrect(d, [x + bw * 0.08, y - bh + bw * 0.08, x + bw * 0.92, y - bh * 0.45], max(2, int(bw * 0.25)), cuerpo)
+    d.rectangle([0, y - 4, W, y + 40], fill=(26, 4, 10))
+
+
 def screen_content(kind, t=0.0):
-    """Imagen que aparece en la pantalla del cine (440x300)."""
+    """Imagen que aparece en la pantalla del cine (ocupa PANTALLA_BOX)."""
+    bw, bh = PANTALLA_BOX[2] - PANTALLA_BOX[0], PANTALLA_BOX[3] - PANTALLA_BOX[1]
     if kind == "road":
         src = bg_road(0).copy()
         d = ImageDraw.Draw(src)
-        car_rear(d, src, 360, 900, 1.0, t)
+        # auto de reparto en el plano de la pantalla: su tamano sale de la misma escala de metros
+        auto_at(d, src, 360, 960, 0.0, t)
         snow_layer(src, t, n=120, seed=5, speed=200)
-        return src.resize((452, 312), Image.BILINEAR, box=(0, 420, W, 420 + W * 312 / 452))
+        return src.resize((bw, bh), Image.BILINEAR, box=(0, 420, W, 420 + W * bh / bw))
     if kind == "hospital_dark":
         src = scene17(10.0, 3.5, [1.9])
-        return src.resize((452, 312), Image.BILINEAR, box=(0, 260, W, 260 + W * 312 / 452))
-    return Image.new("RGB", (452, 312), (210, 212, 206))
+        return src.resize((bw, bh), Image.BILINEAR, box=(0, 260, W, 260 + W * bh / bw))
+    return Image.new("RGB", (bw, bh), (210, 212, 206))
 
 
-def car_rear(d, img, x, y, s, t, skid=0.0, brake=0.0):
-    """Auto pequeño de reparto visto desde atras. (x, y) = centro de la base."""
-    w, h = 300 * s, 190 * s
+def auto_at(d, img, x, y, skid=0.0, t=0.0, brake=0.0):
+    """Auto de reparto visto de atras, con medidas reales. (x, y) = centro del suelo bajo el auto.
+    El tamano sale de ppm(y): asi el auto siempre guarda proporcion con las personas del mismo plano."""
+    p = ppm(y)
+    w, h = AUTO_ANCHO * p, AUTO_ALTO * p
+    car_rear(d, img, x, y, w, h, brake)
+
+
+def car_rear(d, img, x, y, w, h, brake=0.0):
+    """Dibuja el auto de atras. w, h en pixeles (ya escalados). (x, y) = centro del suelo."""
+    u = w / AUTO_ANCHO          # px por metro en este plano
     # sombra
-    d.ellipse([x - w * 0.6, y - 18 * s, x + w * 0.6, y + 18 * s], fill=(30, 36, 44))
-    # ruedas
+    d.ellipse([x - w * 0.55, y - 0.08 * u, x + w * 0.55, y + 0.08 * u], fill=(30, 36, 44))
+    # ruedas (0,65 m de diametro, a 0,35 m del ancho exterior)
     for sx in (-1, 1):
-        d.rectangle([x + sx * w * 0.42 - 26 * s, y - 40 * s, x + sx * w * 0.42 + 26 * s, y + 4 * s], fill=(14, 14, 16))
-    body = [(x - w / 2, y - 30 * s), (x + w / 2, y - 30 * s), (x + w / 2 - 6 * s, y - h * 0.62),
-            (x + w * 0.36, y - h), (x - w * 0.36, y - h), (x - w / 2 + 6 * s, y - h * 0.62)]
+        cx = x + sx * (w * 0.5 - 0.3 * u)
+        d.rectangle([cx - 0.11 * u, y - 0.6 * u, cx + 0.11 * u, y], fill=(14, 14, 16))
+    # carroceria: de 0,25 m a 1,0 m del suelo; techo hasta AUTO_ALTO
+    top_cuerpo = y - 1.0 * u
+    body = [(x - w / 2, y - 0.25 * u), (x + w / 2, y - 0.25 * u), (x + w / 2, top_cuerpo),
+            (x + w * 0.42, y - h), (x - w * 0.42, y - h), (x - w / 2, top_cuerpo)]
     d.polygon(body, fill=(132, 138, 128))
-    d.polygon([(x - w * 0.33, y - h * 0.95), (x + w * 0.33, y - h * 0.95), (x + w * 0.42, y - h * 0.64),
-               (x - w * 0.42, y - h * 0.64)], fill=(28, 40, 52))
-    d.rectangle([x - w / 2, y - 62 * s, x + w / 2, y - 30 * s], fill=(70, 74, 72))
-    d.rectangle([x - 36 * s, y - 56 * s, x + 36 * s, y - 38 * s], fill=(220, 216, 200))  # patente
+    # vidrio trasero
+    d.polygon([(x - w * 0.36, y - h * 0.94), (x + w * 0.36, y - h * 0.94), (x + w * 0.4, y - 1.02 * u),
+               (x - w * 0.4, y - 1.02 * u)], fill=(28, 40, 52))
+    # portaequipaje y patente (0,5 m de ancho)
+    d.rectangle([x - w / 2, y - 1.0 * u, x + w / 2, y - 0.6 * u], fill=(70, 74, 72))
+    d.rectangle([x - 0.25 * u, y - 0.5 * u, x + 0.25 * u, y - 0.36 * u], fill=(220, 216, 200))
+    # calaveras a 0,7 m del suelo
     for sx in (-1, 1):
-        lx = x + sx * w * 0.4
-        d.rectangle([lx - 22 * s, y - h * 0.58, lx + 22 * s, y - h * 0.46], fill=(200, 30, 30))
-        add_glow(img, lx, y - h * 0.52, 60 * s * (1 + brake), (255, 40, 30), 0.7 + 0.5 * brake)
-    # haces de los focos hacia adelante (se ven sobre la carretera)
-    add_poly_light(img, [(x - w * 0.3, y - h * 0.4), (x + w * 0.3, y - h * 0.4), (x + 140 * s, y - 360 * s),
-                         (x - 140 * s, y - 360 * s)], (255, 220, 150), 0.28, 22)
+        lx = x + sx * w * 0.38
+        d.rectangle([lx - 0.14 * u, y - 0.82 * u, lx + 0.14 * u, y - 0.68 * u], fill=(200, 30, 30))
+        add_glow(img, lx, y - 0.75 * u, 0.5 * u * (1 + brake), (255, 40, 30), 0.7 + 0.5 * brake)
+    # haz de los focos hacia adelante
+    add_poly_light(img, [(x - w * 0.3, y - 0.5 * u), (x + w * 0.3, y - 0.5 * u),
+                         (x + 1.2 * u, y - 4.0 * u), (x - 1.2 * u, y - 4.0 * u)], (255, 220, 150), 0.22, 22)
 
 
 # ============================================================ escena 1: la sala
@@ -121,26 +157,22 @@ def cinema_frame(t, beam_on, content, turn=0.0, flicker=1.0, ct=0.0):
     scr = screen_content(content, ct)
     if not beam_on:
         scr = Image.blend(scr, Image.new("RGB", scr.size, (40, 40, 44)), 0.75)
-    img.paste(scr, (244, 254))
+    img.paste(scr, (PANTALLA_BOX[0], PANTALLA_BOX[1]))
+    x0, y0, x1, y1 = PANTALLA_BOX
     if beam_on:
         k = beam_on * flicker
-        beam = [(98, 140), (100, 158), (696, 566), (244, 566), (244, 254), (696, 254)]
-        beam = [(98, 140), (244, 254), (696, 254), (696, 566), (244, 566), (100, 158)]
-        add_poly_light(img, [(98, 138), (696, 254), (696, 566), (100, 160)], (255, 226, 160), 0.18 * k, 26)
+        haz = [(98, 138), (x0, y0), (x1, y0), (x1, y1), (x0, y1), (100, 160)]
+        add_poly_light(img, [(98, 138), (x1, y0), (x1, y1), (100, 160)], (255, 226, 160), 0.18 * k, 26)
         add_poly_light(img, [(98, 138), (470, 300), (470, 520), (100, 160)], (255, 236, 190), 0.12 * k, 14)
         add_glow(img, 100, 148, 70, (255, 230, 170), 0.9 * k)
         add_glow(img, 470, 410, 330, (90, 110, 130), 0.25 * k, sx=1.2, sy=0.9)
-        dust_in_beam(img, t, [(98, 138), (696, 254), (696, 566), (100, 160)], n=110)
-    # Espectador sentado de espaldas (fila 3)
-    for i in range(4):  # butaca de su fila delante de el
-        pass
-    spectator_seated(d, img, 380, 1020, 78, turn)
-    d.rectangle([0, 1100, W, 1180], fill=(22, 4, 8))
-    rows_y, wsz, hh = 1150, 96, 150
-    for i in range(8):
-        x = -wsz / 2 + i * (wsz + 10) + (1150 % 37)
-        rrect(d, [x, rows_y, x + wsz, rows_y + hh], int(wsz * 0.35), (100, 12, 26))
-        rrect(d, [x + 4, rows_y + 4, x + wsz - 4, rows_y + hh * 0.5], int(wsz * 0.3), (136, 22, 36))
+        dust_in_beam(img, t, [(98, 138), (x1, y0), (x1, y1), (100, 160)], n=110)
+    # Espectador sentado de espaldas, en su fila: hombros = 0,45 m, como una butaca de 0,55 m
+    s_esp = PERSONA_HOMBROS * ppm(FILA_ESPECTADOR) / 3.1   # spectator_seated dibuja hombros de 3,1 * s
+    spectator_seated(d, img, 380, FILA_ESPECTADOR - 40, s_esp, turn)
+    # primera fila, la mas cercana: butacas grandes
+    d.rectangle([0, FILA_FRENTE - 90, W, FILA_FRENTE - 60], fill=(22, 4, 8))
+    butacas_fila(d, FILA_FRENTE, (100, 12, 26), (136, 22, 36))
     return img
 
 
@@ -149,9 +181,9 @@ def scene1(t, dur, ev):
     img = cinema_frame(t, beam, "road" if beam > 0.5 else "blank", ct=t)
     z = 1.0 + 0.35 * ramp(t, ev[1], dur - 0.45)
     fx, fy = lerp(360, 470, ramp(t, ev[1], dur)), lerp(640, 470, ramp(t, ev[1], dur))
-    zz = ramp(t, dur - 0.5, dur)  # atraviesa la pantalla
+    zz = ramp(t, dur - 0.5, dur)  # atraviesa la pantalla (centro de PANTALLA_BOX)
     z = z * (1 + 3.2 * zz * zz)
-    fy = lerp(fy, 410, zz)
+    fy = lerp(fy, (PANTALLA_BOX[1] + PANTALLA_BOX[3]) / 2, zz)
     return cam(img, z, fx, fy)
 
 
@@ -270,24 +302,19 @@ def bg_hospital_lot():
         d.rectangle([x - 24, 296, x + 24, 306], fill=(20, 22, 26))
         add_glow(img, x, 312, 160, MUSTARD, 0.8)
         add_poly_light(img, [(x - 20, 306), (x + 20, 306), (x + 160, 780), (x - 160, 780)], MUSTARD, 0.16, 30)
-    # auto viejo con abolladura (de lado)
-    d = ImageDraw.Draw(img)
-    d.rounded_rectangle([380, 800, 700, 940], 30, fill=(110, 92, 70))
-    d.polygon([(430, 800), (470, 735), (620, 735), (670, 800)], fill=(96, 80, 62))
-    d.polygon([(450, 798), (482, 748), (548, 748), (548, 798)], fill=(30, 44, 56))
-    d.polygon([(560, 798), (560, 748), (612, 748), (650, 798)], fill=(30, 44, 56))
-    d.polygon([(600, 860), (640, 850), (660, 880), (620, 905), (590, 890)], fill=(80, 64, 48))  # abolladura
-    d.arc([588, 846, 664, 910], 200, 340, fill=(60, 46, 34), width=3)
-    for x in (450, 630):
-        d.ellipse([x - 40, 900, x + 40, 980], fill=(16, 16, 18))
-        d.ellipse([x - 16, 924, x + 16, 956], fill=(90, 92, 96))
-    # maletero abierto con cajas
-    d.rectangle([380, 810, 420, 900], fill=(40, 34, 28))
     return img
 
 
 def scene3(t, dur, ev):
     img = bg_hospital_lot().copy()
+    d = ImageDraw.Draw(img)
+    # auto viejo de reparto, con abolladura, apoyado en el suelo a la altura y=940 (ppm 207):
+    # 1,75 m de ancho y 1,45 m de alto, junto a una persona de 1,75 m que esta en y=1180.
+    auto_at(d, img, 520, 940)
+    u = ppm(940)
+    dent = [(520 + 0.25 * u, 940 - 0.85 * u), (520 + 0.55 * u, 940 - 0.8 * u), (520 + 0.5 * u, 940 - 0.6 * u),
+            (520 + 0.22 * u, 940 - 0.66 * u)]
+    d.polygon(dent, fill=(96, 80, 62))  # abolladura en la puerta trasera
     d = ImageDraw.Draw(img)
     # guardias y enfermeros que pasan sin mirarlo
     for i, (col, sp, y0, h) in enumerate([((40, 44, 60), 70, 720, 260), ((90, 150, 170), -60, 690, 230),
@@ -368,18 +395,25 @@ def nurse(d, x, y, s):
 
 
 def scene4(t, dur, ev):
-    img = bg_counter().copy()
+    base = bg_counter()
+    img = base.copy()
     d = ImageDraw.Draw(img)
-    nurse(d, 470, 560, 100)
+    # Mostrador: su borde superior (1,0 m) esta en y=740 -> el suelo tras el mostrador esta en y=960 (ppm 220).
+    # La enfermera de 1,7 m esta detras del mostrador: a esa profundidad mide 374 px, no mas.
+    p = ppm(960)
+    nurse(d, 470, 960, s=PERSONA_ALTO * p / 2.2)
+    # el mostrador tapa las piernas de la enfermera
+    img.paste(base.crop((0, 740, W, H)), (0, 740))
+    d = ImageDraw.Draw(img)
     # brazos de la enfermera entregando
     k = ramp(t, ev[0] - 0.6, ev[0])
     bx = lerp(430, 250, k)
     d.polygon([(400, 640), (480, 640), (bx + 70, 720), (bx + 20, 740)], fill=(70, 140, 150))
-    # caja con etiqueta roja de prioridad maxima
-    box = Image.new("RGBA", (260, 200), (0, 0, 0, 0))
+    # caja termica de 0,50 m (110 px a esta profundidad) con etiqueta roja de prioridad maxima
+    box = Image.new("RGBA", (150, 100), (0, 0, 0, 0))
     bd = ImageDraw.Draw(box)
-    thermal_box(bd, 20, 60, 220, 120)
-    img.paste(box, (int(bx - 130), 600), box)
+    thermal_box(bd, 20, 30, ancho(960, CAJA_ANCHO), altura(960, CAJA_ALTO))
+    img.paste(box, (int(bx - 75), 740 - 96), box)
     # repartidor en primer plano (izq), chaqueta a medio quitar
     person(d, 120, 2050, 1500, jacket=JACKET, hat=BEANIE, vest=False, arm=(0.02, 0.05, 0.1, 0.2))
     d.polygon([(-40, 1060), (60, 1000), (90, 1280), (-40, 1280)], fill=lerpc(JACKET, (0, 0, 0), 0.4))  # manga caida
@@ -561,17 +595,19 @@ def scene8(t, dur, ev):
     # mujer en la carretera (lejos, entra a la luz de los focos)
     wk = ramp(t, ev[1] - 0.6, ev[1] + 0.4)
     if t > ev[1] - 1.2:
-        wy = lerp(600, 640, wk)
-        creature(d, 360 + 30 * math.sin(t), wy, lerp(90, 150, wk), t, seed=2, color=lerpc((10, 14, 20), (64, 60, 66), wk))
-    # Espectador de espaldas al costado del camino, como testigo
-    person(d, 110, 1090, 360, jacket=MUSTARD_HOOD, pants=(36, 36, 44), hood=lerpc(MUSTARD_HOOD, (0, 0, 0), 0.2))
+        wy = lerp(640, 800, wk)   # esta delante del auto: entre mas cerca, mas grande (1,65 m con ppm(y))
+        creature(d, 360 + 30 * math.sin(t), wy, altura(wy, MUJER_ALTO), t, seed=2,
+                 color=lerpc((10, 14, 20), (64, 60, 66), wk))
+    # Espectador de espaldas al costado del camino, como testigo: 1,75 m a la profundidad de sus pies (y=1090)
+    person(d, 70, 1090, altura(1090), jacket=MUSTARD_HOOD, pants=(36, 36, 44),
+           hood=lerpc(MUSTARD_HOOD, (0, 0, 0), 0.2))
     # el auto avanza; patina sobre el hielo
     sk = ramp(t, ev[0], ev[0] + 0.5)
     yaw = sk * 7 * math.sin((t - ev[0]) * 6) * (1 - ramp(t, ev[1], dur)) if t > ev[0] else 0
     car = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     cd = ImageDraw.Draw(car)
     cx = 380 + sk * 50 * math.sin((t - ev[0]) * 3) if t > ev[0] else 380
-    car_rear(cd, car, cx, 1060 - 60 * (t / dur), 1.0 - 0.15 * t / dur, t, brake=sk)
+    auto_at(cd, car, cx, 1060 - 60 * (t / dur), 0.0, t, brake=sk)   # medidas reales a la profundidad del auto
     car = car.rotate(yaw, Image.BILINEAR, center=(cx, 1000))
     img.paste(car, (0, 0), car)
     add_poly_light(img, [(cx - 90, 960), (cx + 90, 960), (cx + 200, 560), (cx - 200, 560)], (255, 220, 160), 0.12, 30)
@@ -613,7 +649,7 @@ def scene10(t, dur, ev):
         pine(d, 30 + i * 62, 560, 300 + (i % 3) * 60, col=(10, 22, 26))
     d.polygon([(0, 560), (W, 560), (W, H), (0, H)], fill=(130, 140, 150))
     # auto detenido con luces de freno rojas
-    car_rear(d, img, 220, 760, 0.8, t, brake=1.0)
+    auto_at(d, img, 220, 760, 0.0, t, brake=1.0)   # auto lejano: el mismo ppm que su profundidad
     add_glow(img, 220, 700, 700, (220, 30, 20), 0.55, sx=1.2, sy=0.9)
     d = ImageDraw.Draw(img)
     # mujer tendida en la nieve
@@ -641,7 +677,7 @@ def scene10(t, dur, ev):
         a = -2.2 + f * 0.35 + 0.2 * math.sin(t * 30 + f) * (1 - g * 0.5)
         d.line([(hx, hy), (hx + 26 * math.cos(a), hy + 26 * math.sin(a))], fill=(150, 140, 140), width=6)
     # repartidor arrodillado a su lado (de espaldas, iluminado en rojo)
-    person(d, 250, 1090, 520, jacket=lerpc(JACKET, (120, 20, 20), 0.25), hat=BEANIE, vest=True, hip=0.2,
+    person(d, 250, 1090, altura(1090), jacket=lerpc(JACKET, (120, 20, 20), 0.25), hat=BEANIE, vest=True, hip=0.2,
            lean=0.22, arm=(0.05, 0.15, 0.12, 0.2 - 0.1 * g))
     add_glow(img, 300, 900, 300, (200, 20, 20), 0.25)
     snow_layer(img, t, n=200, seed=101, speed=120)
@@ -771,7 +807,7 @@ def scene12(t, dur, ev):
         sp = 160 + 40 * i
         x = 280 + (i * 90 + sp * t * (1 if i % 2 else -1)) % 520
         y = 820 + (i % 3) * 70
-        h = 150 + (i % 3) * 50
+        h = altura(y)   # persona de 1,75 m a la profundidad de sus pies
         col = (52, 60, 80) if i % 2 == 0 else (90, 70, 60)
         person(d, x, y, h, jacket=col, walk=math.sin(t * 12 + i), lean=0.12 * (1 if i % 2 else -1))
         if i % 2 == 0:
@@ -810,9 +846,11 @@ def scene13(t, dur, ev):
         add_glow(img, 365, 640, 200, MUSTARD, 0.9)
         add_glow(img, 365, 640, 40, (255, 230, 160), 1.0)
         d = ImageDraw.Draw(img)
-        person(d, 380, 1060, 300, jacket=JACKET, hat=BEANIE, vest=True, walk=math.sin(t * 6) * 0.6,
+        p13 = ppm(1060)
+        person(d, 380, 1060, altura(1060), jacket=JACKET, hat=BEANIE, vest=True, walk=math.sin(t * 6) * 0.6,
                arm=(0, 0, 0.06, 0.12))
-        thermal_box(d, 410, 870, 70, 46, label=False)
+        # caja de 0,50 x 0,30 m a la altura del pecho (1,1 m), en la mano derecha
+        thermal_box(d, 400, 1060 - 1.1 * p13, ancho(1060, CAJA_ANCHO), altura(1060, CAJA_ALTO), label=False)
         snow_layer(img, t, n=260, seed=131, speed=160)
         return cam(img, 1.05 + 0.05 * t, 360, 760)
     lt = t - ev[0]
@@ -941,21 +979,30 @@ def tactical(d, x, y, h, t, i):
     d.line([(x - h * 0.08, y - h * 0.6), (x + h * 0.12, y - h * 0.28)], fill=(10, 10, 12), width=max(3, int(h * 0.03)))
 
 
+def camioneta_at(d, img, x, y, k=1.0):
+    """Camioneta negra vista de frente, con medidas reales (1,95 m de ancho, 1,9 m de alto) a la profundidad y."""
+    p = ppm(y)
+    w, h = CAMIONETA_ANCHO * p, CAMIONETA_ALTO * p
+    d.rounded_rectangle([x - w / 2, y - h, x + w / 2, y - 0.25 * p], int(0.15 * p), fill=(10, 10, 12))
+    d.rectangle([x - w * 0.4, y - h * 0.92, x + w * 0.4, y - h * 0.62], fill=(30, 40, 52))  # parabrisas
+    for sx in (-1, 1):  # ruedas de 0,8 m de diametro
+        cx = x + sx * w * 0.38
+        d.ellipse([cx - 0.4 * p, y - 0.8 * p, cx + 0.4 * p, y], fill=(4, 4, 6))
+    add_glow(img, x + w * 0.4, y - h * 0.55, 0.25 * p, (230, 230, 255), 0.6 * k)
+
+
 def scene15(t, dur, ev):
     img = bg_corp().copy()
     d = ImageDraw.Draw(img)
     # camionetas negras que llegan
     k = ramp(t, ev[0], ev[0] + 0.8)
-    for j, (x0, y) in enumerate(((-300, 1010), (W + 300, 1080))):
-        x = lerp(x0, 200 if j == 0 else 520, k)
-        d.rounded_rectangle([x - 150, y - 110, x + 150, y], 18, fill=(10, 10, 12))
-        d.rectangle([x - 110, y - 100, x + 110, y - 60], fill=(30, 40, 52))
-        for sx in (-0.7, 0.7):
-            d.ellipse([x + sx * 150 - 28, y - 20, x + sx * 150 + 28, y + 30], fill=(4, 4, 6))
-        add_glow(img, x + (140 if j == 0 else -140), y - 40, 90, (230, 230, 255), 0.6 * k)
-    # hombres tacticos instalando barreras
+    for j, (x0, y) in enumerate(((-300, 985), (W + 300, 1010))):
+        x = lerp(x0, 170 if j == 0 else 560, k)
+        camioneta_at(d, img, x, y, k)
+    # hombres tacticos instalando barreras: 1,75 m con ppm de sus pies (y=1120 y 1140)
     for i in range(4):
-        tactical(d, 120 + i * 160, 1200 + (i % 2) * 30, 300, t, i)
+        yy = 1120 + (i % 2) * 20
+        tactical(d, 120 + i * 160, yy, altura(yy), t, i)
     # barrera con cinta de cuarentena
     c = ramp(t, ev[1], ev[1] + 0.5)
     d.rectangle([20, 1150, 30, 1260], fill=(40, 40, 40))
@@ -968,7 +1015,7 @@ def scene15(t, dur, ev):
         d.text((360, 1215), "CUARENTENA", font=font(FONT_BOLD, 20), fill=(240, 200, 30), anchor="mm")
     # el Espectador observa de espaldas desde una esquina
     d.rectangle([0, 700, 80, 1280], fill=(16, 18, 24))
-    person(d, 110, 1330, 520, jacket=MUSTARD_HOOD, pants=(36, 36, 44), hood=lerpc(MUSTARD_HOOD, (0, 0, 0), 0.2))
+    person(d, 110, 1330, altura(1330), jacket=MUSTARD_HOOD, pants=(36, 36, 44), hood=lerpc(MUSTARD_HOOD, (0, 0, 0), 0.2))
     snow_layer(img, t, n=200, seed=151, speed=150)
     # entra desde el hexagono (zoom out)
     zin = 1 - ramp(t, 0, 0.6)
