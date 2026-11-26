@@ -1,9 +1,17 @@
-import json, numpy as np, soundfile as sf, sys
-from kokoro_onnx import Kokoro
-S='/tmp/claude-0/-home-user-metodos/f6e0a16b-596d-57fc-bc23-6a586aa69e8d/scratchpad/'
-k=Kokoro(S+'kokoro-q8.onnx',S+'voices.npz')
-VOICE=sys.argv[1] if len(sys.argv)>1 else 'am_michael'
-SPEED=float(sys.argv[2]) if len(sys.argv)>2 else 1.0
+import json, os, sys
+import numpy as np, soundfile as sf
+from piper import PiperVoice, SynthesisConfig
+
+# REGLA: la narración se hace SOLO con una voz neural nativa de español latino neutro (espeak es-419).
+# Nunca usar voces entrenadas en otro idioma (p. ej. Kokoro en inglés) ni voces de España.
+MODEL = os.environ.get("VOICE_MODEL", os.path.expanduser("~/piper/es_MX-claude-high.onnx"))
+cfg = json.load(open(MODEL + ".json"))
+assert cfg["espeak"]["voice"] == "es-419", "La voz debe ser nativa de español latino (es-419)"
+v = PiperVoice.load(MODEL)
+LENGTH = float(sys.argv[1]) if len(sys.argv) > 1 else 0.82
+SR = v.config.sample_rate
+# Pronunciación de títulos en inglés como la diría un hablante latino
+FIX = {"The Discovery": "De Discóveri"}
 P=["Imagina que un científico demuestra que existe una vida después de la muerte… y que ese científico es tu padre.",
 "Pero en vez de traer paz, la noticia trae algo terrible: millones de personas deciden quitarse la vida para llegar antes al otro lado.",
 "En las calles, pantallas gigantes llevan la cuenta.",
@@ -21,14 +29,14 @@ P=["Imagina que un científico demuestra que existe una vida después de la muer
 "Y justo cuando la pantalla de la máquina, que parecía muerta, empieza a mostrar algo…",
 "Se trata de The Discovery.",
 "Si fueras tú, ¿querrías saber qué hay del otro lado… aunque eso cambie cómo vives esta vida?"]
-def ph(t):
-    if 'The Discovery' in t:
-        return k.tokenizer.phonemize('Se trata de','es-419')+' ðə dɪskˈʌvəɹi.'
-    p=k.tokenizer.phonemize(t,'es-419')
-    return p.replace('fˈeri','fˈeri')
-SR=24000
+def synth(t):
+    for k, r in FIX.items():
+        t = t.replace(k, r)
+    ch = list(v.synthesize(t, SynthesisConfig(length_scale=LENGTH)))
+    return np.concatenate([c.audio_float_array for c in ch])
+
 def compress(a,maxs=0.30,th=0.015):
-    w=480; keep=[]; run=[]
+    w=int(SR*0.02); keep=[]; run=[]
     for i in range(0,len(a),w):
         c=a[i:i+w]
         if np.abs(c).max()<th: run.append(c)
@@ -38,11 +46,11 @@ def compress(a,maxs=0.30,th=0.015):
     return np.concatenate(keep)
 def trim(a,th=0.01):
     idx=np.where(np.abs(a)>th)[0]
-    return a[max(idx[0]-240,0):idx[-1]+480]
+    return a[max(idx[0]-int(SR*0.01),0):idx[-1]+int(SR*0.02)]
 segs=[];t=0.0;out=[]
 GAP=0.18
 for i,p in enumerate(P):
-    a,sr=k.create(ph(p),voice=VOICE,speed=SPEED,is_phonemes=True)
+    a=synth(p)
     a=compress(trim(a))
     if i>0:
         g=0.15 if i in (15,) else GAP
