@@ -1,11 +1,18 @@
-"""Genera la voz guia (TTS Piper) frase por frase y guarda los tiempos reales."""
-import json, subprocess, sys, wave, numpy as np, pathlib
+"""Genera la voz guia con Kokoro (voz em_alex, masculina) frase por frase y guarda los tiempos reales.
+Uso: python3 voz.py [velocidad]
+Requiere los archivos de hexgrad/Kokoro-82M (kokoro-v1_0.pth, config.json, voices/em_alex.pt) en /tmp/kokoro."""
+import json, sys, wave, pathlib
+import numpy as np
+from kokoro import KModel, KPipeline
+
 HERE = pathlib.Path(__file__).parent
-VOICE = sys.argv[1]           # ruta al modelo .onnx
 OUT = HERE / "build"; OUT.mkdir(exist_ok=True)
-SR = 22050
-LS = float(sys.argv[2]) if len(sys.argv) > 2 else 0.85
-GAP, ELLIPSIS = 0.22, 0.20
+MODEL_DIR = pathlib.Path("/tmp/kokoro")
+VOICE = str(MODEL_DIR / "voices" / "em_alex.pt")
+SPEED = float(sys.argv[1]) if len(sys.argv) > 1 else 1.0
+SR = 24000
+GAP, ELLIPSIS = 0.16, 0.18  # pausas controladas por nosotros (maximo 0,4 s en todo el video)
+THR = 0.01
 
 FRASES = [
  "Imagina que tu trabajo es llevar paquetes médicos urgentes… y esta noche te toca el peor viaje de tu vida.",
@@ -18,19 +25,33 @@ FRASES = [
  "Lo que no sabes es que ese paquete importa mucho más de lo que crees… y que detrás del virus está la empresa más poderosa de la ciudad, con hombres armados en las calles.",
  "Tú, que solo querías terminar tu turno, ahora cuentas tus balas una por una y aprendes a disparar para seguir vivo.",
  "Y justo cuando el hospital por fin aparece a lo lejos…",
- "Se trata de Résident Ívil: Noche cero. Si fueras tú, ¿terminarías la entrega o darías la vuelta para volver con ella?",
+ "Se trata de Resident Evil: Noche cero. Si fueras tú, ¿terminarías la entrega o darías la vuelta para volver con ella?",
 ]
 
+model = KModel(config=str(MODEL_DIR / "config.json"), model=str(MODEL_DIR / "kokoro-v1_0.pth")).eval()
+pipe = KPipeline(lang_code="e", model=model)
+
+
 def tts(text):
-    p = OUT / "_seg.wav"
-    subprocess.run([sys.executable, "-m", "piper", "-m", VOICE, "-f", str(p),
-                    "--length-scale", str(LS), "--sentence-silence", "0.15"],
-                   input=text.encode(), check=True, capture_output=True)
-    with wave.open(str(p)) as w:
-        a = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
-    thr = 0.01
-    idx = np.where(np.abs(a) > thr)[0]
-    return a[max(idx[0] - 200, 0): idx[-1] + 400]
+    """Sintetiza un fragmento y recorta sus silencios de borde (la pausa la ponemos nosotros)."""
+    chunks = [a for _, _, a in pipe(text, voice=VOICE, speed=SPEED)]
+    a = np.concatenate(chunks).astype(np.float32)
+    idx = np.where(np.abs(a) > THR)[0]
+    a = a[max(idx[0] - 120, 0): idx[-1] + 240]
+    # pausas internas de Kokoro: si pasan de 0,3 s, se acortan a 0,3 s (maximo 0,4 s en todo el video)
+    loud = np.abs(a) > THR
+    out, run, i = [], 0, 0
+    while i < len(a):
+        j = i
+        while j < len(a) and loud[j] == loud[i]:
+            j += 1
+        seg = a[i:j]
+        if not loud[i] and (j - i) > 0.3 * SR:
+            seg = a[i:i + int(0.3 * SR)]
+        out.append(seg)
+        i = j
+    return np.concatenate(out)
+
 
 audio, tiempos, t = [], [], 0.0
 for i, f in enumerate(FRASES):
@@ -44,10 +65,13 @@ for i, f in enumerate(FRASES):
     tiempos.append([round(ini, 3), round(t, 3)])
     if i < len(FRASES) - 1:
         audio.append(np.zeros(int(GAP * SR), np.float32)); t += GAP
+
 a = np.concatenate(audio)
 a = a / np.abs(a).max() * 0.9
 with wave.open(str(OUT / "voz.wav"), "wb") as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
     w.writeframes((a * 32767).astype(np.int16).tobytes())
 json.dump(tiempos, open(OUT / "tiempos_voz.json", "w"), indent=1)
-print("total", round(t, 2)); [print(i + 1, x) for i, x in enumerate(tiempos)]
+print("total", round(t, 2))
+for i, x in enumerate(tiempos):
+    print(i + 1, x)
