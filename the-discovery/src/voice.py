@@ -1,15 +1,17 @@
-import json, os, sys
+import os, sys, json
 import numpy as np, soundfile as sf
-from piper import PiperVoice, SynthesisConfig
+from kokoro_onnx import Kokoro
 
-# REGLA: la narración se hace SOLO con una voz neural nativa de español latino neutro (espeak es-419).
-# Nunca usar voces entrenadas en otro idioma (p. ej. Kokoro en inglés) ni voces de España.
-MODEL = os.environ.get("VOICE_MODEL", os.path.expanduser("~/piper/es_MX-claude-high.onnx"))
-cfg = json.load(open(MODEL + ".json"))
-assert cfg["espeak"]["voice"] == "es-419", "La voz debe ser nativa de español latino (es-419)"
-v = PiperVoice.load(MODEL)
-LENGTH = float(sys.argv[1]) if len(sys.argv) > 1 else 0.82
-SR = v.config.sample_rate
+# REGLA: voz por defecto del proyecto = Kokoro "em_alex" (voz masculina de español de Kokoro),
+# SIEMPRE con fonemas de español latino neutro (espeak es-419, con seseo). Nunca voces inglesas
+# ni pronunciación de España (θ).
+KDIR = os.path.expanduser("~/kokoro")
+VOICE = os.environ.get("VOICE", "em_alex")
+LANG = "es-419"
+assert VOICE.startswith("em_") or VOICE.startswith("ef_"), "Solo voces de español de Kokoro (em_/ef_)"
+k = Kokoro(os.path.join(KDIR, "kokoro-q8.onnx"), os.path.join(KDIR, "voices_es.npz"))
+SPEED = float(sys.argv[1]) if len(sys.argv) > 1 else 1.05
+SR = 24000
 # Pronunciación de títulos en inglés como la diría un hablante latino
 FIX = {"The Discovery": "De Discóveri"}
 P=["Imagina que un científico demuestra que existe una vida después de la muerte… y que ese científico es tu padre.",
@@ -30,10 +32,12 @@ P=["Imagina que un científico demuestra que existe una vida después de la muer
 "Se trata de The Discovery.",
 "Si fueras tú, ¿querrías saber qué hay del otro lado… aunque eso cambie cómo vives esta vida?"]
 def synth(t):
-    for k, r in FIX.items():
-        t = t.replace(k, r)
-    ch = list(v.synthesize(t, SynthesisConfig(length_scale=LENGTH)))
-    return np.concatenate([c.audio_float_array for c in ch])
+    for a, r in FIX.items():
+        t = t.replace(a, r)
+    ph = k.tokenizer.phonemize(t, LANG)
+    assert "θ" not in ph, "Pronunciación de España detectada"
+    a, _ = k.create(ph, voice=VOICE, speed=SPEED, is_phonemes=True)
+    return a
 
 def compress(a,maxs=0.30,th=0.015):
     w=int(SR*0.02); keep=[]; run=[]
