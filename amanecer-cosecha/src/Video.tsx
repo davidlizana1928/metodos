@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Sequence, Track, useVideoConfig} from 'remotion';
+import {Audio} from '@remotion/media';
+import {AbsoluteFill, Sequence, staticFile, Track, useVideoConfig} from 'remotion';
 import {C} from './lib/base';
 import {CandleScene, CinemaFinal, CinemaOff, CinemaPush, CinemaTurn, EyeProfile, PlazaScreen, SmokeUrn} from './scenes/Intro';
 import {ArenaLights, Fireworks, GoldenVision, MapIcons, MapMarch, MapPulses, MeadowScene, MineExit, MiningTown, VisionShatters} from './scenes/World';
@@ -193,6 +194,82 @@ export const AmanecerCosecha: React.FC = () => {
 				<Sequence name="Título" from={76 * fps} durationInFrames={9 * fps}>
 					<TitleCard dur={9 * fps} />
 				</Sequence>
+			</Track>
+
+			{/* Voz generada con Kokoro (voz "em_alex", español). Mueve "from" para ajustar cada frase. */}
+			<Track name="Voz">
+				<Audio
+					name="Voz 1: Imagina que el día de tu cumpleaños, el…"
+					src={staticFile('voz/voz-00.wav')}
+					from={0.2 * fps}
+					durationInFrames={188}
+				/>
+				<Audio
+					name="Voz 2: Cada año, la capital obliga a cada regió…"
+					src={staticFile('voz/voz-01.wav')}
+					from={9.2 * fps}
+					durationInFrames={190}
+				/>
+				<Audio
+					name="Voz 3: Tú vives en una región minera y pobre…"
+					src={staticFile('voz/voz-02.wav')}
+					from={16.2 * fps}
+					durationInFrames={73}
+				/>
+				<Audio
+					name="Voz 4: Tu novia sueña con acabar con esos juego…"
+					src={staticFile('voz/voz-03.wav')}
+					from={20.2 * fps}
+					durationInFrames={161}
+				/>
+				<Audio
+					name="Voz 5: Pero este año los juegos cumplen cincuen…"
+					src={staticFile('voz/voz-04.wav')}
+					from={28.2 * fps}
+					durationInFrames={156}
+				/>
+				<Audio
+					name="Voz 6: Y lo peor es que tu nombre no sale sorte…"
+					src={staticFile('voz/voz-05.wav')}
+					from={34.2 * fps}
+					durationInFrames={181}
+				/>
+				<Audio
+					name="Voz 7: Y como castigo, te eligen a ti…"
+					src={staticFile('voz/voz-06.wav')}
+					from={43.2 * fps}
+					durationInFrames={62}
+				/>
+				<Audio
+					name="Voz 8: En la capital, frente a las cámaras, te…"
+					src={staticFile('voz/voz-07.wav')}
+					from={46.2 * fps}
+					durationInFrames={104}
+				/>
+				<Audio
+					name="Voz 9: Lo que no sabes es que desde ese momento…"
+					src={staticFile('voz/voz-08.wav')}
+					from={51.2 * fps}
+					durationInFrames={106}
+				/>
+				<Audio
+					name="Voz 10: Entonces decides que no vas a pelear sol…"
+					src={staticFile('voz/voz-09.wav')}
+					from={57.2 * fps}
+					durationInFrames={233}
+				/>
+				<Audio
+					name="Voz 11: Y justo cuando entras a la arena con otr…"
+					src={staticFile('voz/voz-10.wav')}
+					from={67.2 * fps}
+					durationInFrames={199}
+				/>
+				<Audio
+					name="Voz 12: Se trata de Los Juegos del Hambre: Amane…"
+					src={staticFile('voz/voz-11.wav')}
+					from={76.2 * fps}
+					durationInFrames={176}
+				/>
 			</Track>
 		</AbsoluteFill>
 	);
