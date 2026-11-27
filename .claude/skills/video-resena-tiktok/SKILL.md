@@ -85,9 +85,9 @@ Explica al usuario, en simple, cada paso que haces.
    - Renderizar 2 o 3 fotogramas por escena: `npx remotion still <Id> hoja/fNN.png --frame=NN --scale=0.4`.
    - Unirlos con `ffmpeg ... -filter_complex hstack=N` y mirar la hoja.
    - Corregir caras tapadas, objetos fuera de cuadro, escala, textos ilegibles y reglas de imagen.
-6. **Render completo**: es lento por el 3D (unos 15 a 25 min por minuto de video en la nube). Correrlo **en segundo plano**:
+6. **Render completo**: es lento por el 3D (unos 15 a 25 min por minuto de video en la nube). Correrlo **en segundo plano** y siempre con `--concurrency=1`: con varias pestañas a la vez el 3D sale corrupto, repetido en mosaico.
    ```
-   npx remotion render <Id> out/<slug>-video.mp4 --muted
+   npx remotion render <Id> out/<slug>-video.mp4 --muted --concurrency=1
    cd public/<slug>
    ffmpeg -i ../../out/<slug>-video.mp4 -i voice.wav -i music.wav -filter_complex "[1:a]aresample=44100,aformat=channel_layouts=stereo,apad=pad_dur=2,asplit=2[vo][sc];[2:a]aformat=channel_layouts=stereo,volume=0.22[m];[m][sc]sidechaincompress=threshold=0.05:ratio=4:attack=20:release=300[md];[vo][md]amix=inputs=2:duration=longest:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]" -map 0:v -map "[a]" -c:v libx264 -preset medium -crf 21 -maxrate 9M -bufsize 18M -pix_fmt yuv420p -c:a aac -b:a 192k -ar 44100 -shortest -movflags +faststart ../../out/<slug>-tiktok.mp4
    ```

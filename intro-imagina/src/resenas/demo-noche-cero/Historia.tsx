@@ -23,9 +23,9 @@ const Camara: React.FC = () => {
   // a) vista aérea de la ciudad  b) baja hacia la carretera  c) detrás de la camioneta
   // d) se abre al costado con la ciudad cerca  e) sube al cerrar
   camera.position.set(
-    interpolate(t, KF, [0, 1, 2, 2.6, -4.6, -5.5, -3], curva),
+    interpolate(t, KF, [0, 1, 2, 2.6, -2.8, -4, -3], curva),
     interpolate(t, KF, [42, 26, 4.2, 3.2, 2.4, 6, 16], curva),
-    z + interpolate(t, KF, [46, 36, 10, 7.5, 2.5, 8, 22], curva),
+    z + interpolate(t, KF, [46, 36, 10, 7.5, 6.5, 10, 22], curva),
   );
   camera.lookAt(0, interpolate(t, KF, [0, 0, 1.6, 1.6, 2, 3, 3], curva), z - interpolate(t, KF, [80, 60, 22, 20, 34, 40, 50], curva));
   camera.updateMatrixWorld();
