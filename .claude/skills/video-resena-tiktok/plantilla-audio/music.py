@@ -2,7 +2,7 @@
 import numpy as np, soundfile as sf, json
 
 SR = 44100
-seg = json.load(open("segments.json"))
+seg = json.load(open("public/segments.json"))
 D = seg[-1]["end"] + 1.0
 T2, T3, T4 = seg[4]["start"], seg[8]["start"], seg[13]["start"]  # encargo, brote, título
 n = int(D * SR)
@@ -89,5 +89,5 @@ dis *= 0.6 + 0.4 * np.sin(2 * np.pi * 5 * t)
 y = pad + pulse + perc + dis
 y *= np.minimum(1, t / 0.5) * np.minimum(1, (D - t) / 2.0)
 y = y / np.abs(y).max() * 0.9
-sf.write("music.wav", y.astype(np.float32), SR)
+sf.write("public/music.wav", y.astype(np.float32), SR)
 print(round(D, 3), T2, T3, T4)

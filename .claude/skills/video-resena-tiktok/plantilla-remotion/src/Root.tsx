@@ -1,26 +1,26 @@
-import { Composition, Folder } from "remotion";
-import { calcularResena } from "./resena/Resena";
-import { DemoNocheCero } from "./resenas/ejemplo-noche-cero/Video";
+import { CalculateMetadataFunction, Composition, staticFile } from "remotion";
+import { GUION } from "./guion";
+import { calcularTimeline, type Palabra } from "./timeline";
+import { theme } from "./theme";
+import { Video, type VideoProps } from "./Video";
 
-// Una <Composition> por reseña. Copiar el bloque y cambiar id, componente, carpeta y títulos.
-export const RemotionRoot: React.FC = () => {
-  return (
-    <Folder name="Resenas">
-      <Composition
-        id="EjemploNocheCero"
-        component={DemoNocheCero}
-        durationInFrames={500}
-        fps={30}
-        width={1080}
-        height={1920}
-        calculateMetadata={calcularResena}
-        defaultProps={{
-          carpeta: "ejemplo-noche-cero",
-          tituloChile: "Resident Evil: Noche Cero",
-          subtitulo: "Resident Evil, 2026",
-          segmentos: [],
-        }}
-      />
-    </Folder>
-  );
+// Lee public/words.json, detecta si hay música y fija la duración (voz + 1 s)
+const calcular: CalculateMetadataFunction<VideoProps> = async ({ props }) => {
+  const palabras: Palabra[] = await (await fetch(staticFile("words.json"))).json();
+  const musica = await fetch(staticFile("music.wav"), { method: "HEAD" }).then((r) => r.ok).catch(() => false);
+  const { total } = calcularTimeline(palabras, GUION, theme.fps);
+  return { durationInFrames: total, props: { ...props, palabras, hayMusica: musica } };
 };
+
+export const RemotionRoot: React.FC = () => (
+  <Composition
+    id="Video"
+    component={Video}
+    durationInFrames={1800}
+    fps={30}
+    width={1080}
+    height={1920}
+    calculateMetadata={calcular}
+    defaultProps={{ palabras: [], hayMusica: false }}
+  />
+);

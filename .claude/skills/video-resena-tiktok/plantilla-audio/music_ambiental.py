@@ -1,5 +1,5 @@
 import numpy as np, soundfile as sf, json
-SR=44100; seg=json.load(open('segments.json'))
+SR=44100; seg=json.load(open('public/segments.json'))
 D=seg[-1]['end']+1.0
 n=int(D*SR); t=np.arange(n)/SR
 beat=0.6; bar=2.4
@@ -36,5 +36,5 @@ for b in np.arange(0,D,beat/2):
 y=pad+kick+tick
 y*=np.minimum(1,t/0.3)*np.minimum(1,(D-t)/2.5)
 y=y/np.abs(y).max()*0.9
-sf.write('music.wav',y.astype(np.float32),SR)
+sf.write('public/music.wav',y.astype(np.float32),SR)
 print(D)

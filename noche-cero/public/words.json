@@ -1,0 +1,1745 @@
+[
+ {
+  "word": "Imagina",
+  "start": 0.0,
+  "end": 0.358,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "que",
+  "start": 0.39,
+  "end": 0.579,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "la",
+  "start": 0.596,
+  "end": 0.743,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "ciudad",
+  "start": 0.756,
+  "end": 1.072,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "a",
+  "start": 1.1,
+  "end": 1.205,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "la",
+  "start": 1.214,
+  "end": 1.362,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "que",
+  "start": 1.375,
+  "end": 1.564,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "viajas",
+  "start": 1.581,
+  "end": 1.897,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "se",
+  "start": 1.925,
+  "end": 2.072,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "llena",
+  "start": 2.085,
+  "end": 2.359,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "de",
+  "start": 2.383,
+  "end": 2.53,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "monstruos",
+  "start": 2.543,
+  "end": 2.986,
+  "bold": true,
+  "seg": 1
+ },
+ {
+  "word": "esta",
+  "start": 3.024,
+  "end": 3.256,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "noche…",
+  "start": 3.276,
+  "end": 3.656,
+  "bold": false,
+  "seg": 1
+ },
+ {
+  "word": "y",
+  "start": 3.839,
+  "end": 3.954,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "tú",
+  "start": 3.963,
+  "end": 4.124,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "no",
+  "start": 4.138,
+  "end": 4.299,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "eres",
+  "start": 4.313,
+  "end": 4.565,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "un",
+  "start": 4.587,
+  "end": 4.747,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "héroe:",
+  "start": 4.761,
+  "end": 5.174,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "eres",
+  "start": 5.21,
+  "end": 5.462,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "el",
+  "start": 5.484,
+  "end": 5.645,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "repartidor",
+  "start": 5.659,
+  "end": 6.186,
+  "bold": true,
+  "seg": 2
+ },
+ {
+  "word": "que",
+  "start": 6.232,
+  "end": 6.439,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "debe",
+  "start": 6.457,
+  "end": 6.709,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "cruzarla.",
+  "start": 6.731,
+  "end": 7.281,
+  "bold": false,
+  "seg": 2
+ },
+ {
+  "word": "Llevas",
+  "start": 7.509,
+  "end": 7.851,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "órganos",
+  "start": 7.881,
+  "end": 8.269,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "y",
+  "start": 8.302,
+  "end": 8.416,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "material",
+  "start": 8.426,
+  "end": 8.86,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "médico",
+  "start": 8.897,
+  "end": 9.239,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "entre",
+  "start": 9.269,
+  "end": 9.566,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "hospitales.",
+  "start": 9.591,
+  "end": 10.23,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "No",
+  "start": 10.285,
+  "end": 10.445,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "eres",
+  "start": 10.459,
+  "end": 10.71,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "soldado",
+  "start": 10.732,
+  "end": 11.119,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "ni",
+  "start": 11.153,
+  "end": 11.313,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "policía,",
+  "start": 11.327,
+  "end": 11.828,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "y",
+  "start": 11.872,
+  "end": 11.986,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "nunca",
+  "start": 11.996,
+  "end": 12.292,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "has",
+  "start": 12.318,
+  "end": 12.523,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "disparado",
+  "start": 12.541,
+  "end": 13.02,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "un",
+  "start": 13.062,
+  "end": 13.221,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "arma",
+  "start": 13.235,
+  "end": 13.486,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "de",
+  "start": 13.508,
+  "end": 13.668,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "verdad.",
+  "start": 13.681,
+  "end": 14.138,
+  "bold": false,
+  "seg": 3
+ },
+ {
+  "word": "Tu",
+  "start": 14.357,
+  "end": 14.504,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "novia",
+  "start": 14.517,
+  "end": 14.79,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "está",
+  "start": 14.814,
+  "end": 15.045,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "embarazada,",
+  "start": 15.065,
+  "end": 15.653,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "y",
+  "start": 15.704,
+  "end": 15.809,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "cada",
+  "start": 15.819,
+  "end": 16.05,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "vez",
+  "start": 16.07,
+  "end": 16.259,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "que",
+  "start": 16.275,
+  "end": 16.464,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "te",
+  "start": 16.481,
+  "end": 16.628,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "llama",
+  "start": 16.641,
+  "end": 16.914,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "para",
+  "start": 16.937,
+  "end": 17.168,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "hablarlo,",
+  "start": 17.189,
+  "end": 17.693,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "esquivas",
+  "start": 17.736,
+  "end": 18.136,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "el",
+  "start": 18.17,
+  "end": 18.317,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "tema.",
+  "start": 18.33,
+  "end": 18.666,
+  "bold": false,
+  "seg": 4
+ },
+ {
+  "word": "Pero",
+  "start": 18.875,
+  "end": 19.118,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "esta",
+  "start": 19.139,
+  "end": 19.382,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "noche,",
+  "start": 19.403,
+  "end": 19.801,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "con",
+  "start": 19.835,
+  "end": 20.034,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "tu",
+  "start": 20.051,
+  "end": 20.206,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "turno",
+  "start": 20.219,
+  "end": 20.506,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "ya",
+  "start": 20.531,
+  "end": 20.686,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "terminado,",
+  "start": 20.699,
+  "end": 21.273,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "te",
+  "start": 21.323,
+  "end": 21.477,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "ofrecen",
+  "start": 21.491,
+  "end": 21.866,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "un",
+  "start": 21.899,
+  "end": 22.053,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "último",
+  "start": 22.067,
+  "end": 22.398,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "encargo",
+  "start": 22.427,
+  "end": 22.802,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "que",
+  "start": 22.835,
+  "end": 23.033,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "paga",
+  "start": 23.051,
+  "end": 23.293,
+  "bold": false,
+  "seg": 5
+ },
+ {
+  "word": "el",
+  "start": 23.314,
+  "end": 23.469,
+  "bold": true,
+  "seg": 5
+ },
+ {
+  "word": "doble:",
+  "start": 23.482,
+  "end": 23.88,
+  "bold": true,
+  "seg": 5
+ },
+ {
+  "word": "llevar",
+  "start": 24.094,
+  "end": 24.413,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "un",
+  "start": 24.44,
+  "end": 24.589,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "paquete",
+  "start": 24.602,
+  "end": 24.963,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "al",
+  "start": 24.994,
+  "end": 25.143,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "hospital",
+  "start": 25.156,
+  "end": 25.559,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "de",
+  "start": 25.594,
+  "end": 25.743,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "una",
+  "start": 25.755,
+  "end": 25.946,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "ciudad",
+  "start": 25.963,
+  "end": 26.281,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "en",
+  "start": 26.309,
+  "end": 26.458,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "las",
+  "start": 26.471,
+  "end": 26.662,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "montañas.",
+  "start": 26.678,
+  "end": 27.188,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "En",
+  "start": 27.232,
+  "end": 27.381,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "plena",
+  "start": 27.393,
+  "end": 27.669,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "tormenta",
+  "start": 27.693,
+  "end": 28.097,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "de",
+  "start": 28.132,
+  "end": 28.28,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "nieve.",
+  "start": 28.293,
+  "end": 28.675,
+  "bold": false,
+  "seg": 6
+ },
+ {
+  "word": "Y",
+  "start": 28.889,
+  "end": 28.994,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "lo",
+  "start": 29.003,
+  "end": 29.15,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "peor",
+  "start": 29.163,
+  "end": 29.395,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "es",
+  "start": 29.415,
+  "end": 29.562,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "que,",
+  "start": 29.575,
+  "end": 29.87,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "en",
+  "start": 29.895,
+  "end": 30.043,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "la",
+  "start": 30.056,
+  "end": 30.203,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "carretera",
+  "start": 30.216,
+  "end": 30.658,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "helada,",
+  "start": 30.696,
+  "end": 31.117,
+  "bold": true,
+  "seg": 7
+ },
+ {
+  "word": "una",
+  "start": 31.154,
+  "end": 31.343,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "mujer",
+  "start": 31.36,
+  "end": 31.634,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "aparece",
+  "start": 31.657,
+  "end": 32.015,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "frente",
+  "start": 32.046,
+  "end": 32.362,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "a",
+  "start": 32.39,
+  "end": 32.495,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "tu",
+  "start": 32.504,
+  "end": 32.651,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "auto",
+  "start": 32.664,
+  "end": 32.896,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "y",
+  "start": 32.916,
+  "end": 33.021,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "no",
+  "start": 33.03,
+  "end": 33.178,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "alcanzas",
+  "start": 33.19,
+  "end": 33.59,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "a",
+  "start": 33.625,
+  "end": 33.73,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "frenar.",
+  "start": 33.74,
+  "end": 34.161,
+  "bold": false,
+  "seg": 7
+ },
+ {
+  "word": "Un",
+  "start": 34.377,
+  "end": 34.537,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "policía",
+  "start": 34.551,
+  "end": 34.939,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "se",
+  "start": 34.973,
+  "end": 35.133,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "ofrece",
+  "start": 35.147,
+  "end": 35.49,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "a",
+  "start": 35.519,
+  "end": 35.634,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "llevarlos",
+  "start": 35.643,
+  "end": 36.123,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "a",
+  "start": 36.165,
+  "end": 36.279,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "ambos",
+  "start": 36.289,
+  "end": 36.586,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "al",
+  "start": 36.612,
+  "end": 36.772,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "hospital…",
+  "start": 36.785,
+  "end": 37.334,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "pero",
+  "start": 37.381,
+  "end": 37.633,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "algo",
+  "start": 37.654,
+  "end": 37.906,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "sale",
+  "start": 37.927,
+  "end": 38.179,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "terriblemente",
+  "start": 38.201,
+  "end": 38.863,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "mal.",
+  "start": 38.921,
+  "end": 39.24,
+  "bold": false,
+  "seg": 8
+ },
+ {
+  "word": "Lo",
+  "start": 39.448,
+  "end": 39.612,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "que",
+  "start": 39.626,
+  "end": 39.837,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "no",
+  "start": 39.855,
+  "end": 40.019,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "sabes",
+  "start": 40.034,
+  "end": 40.338,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "es",
+  "start": 40.365,
+  "end": 40.528,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "que",
+  "start": 40.543,
+  "end": 40.753,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "un",
+  "start": 40.772,
+  "end": 40.936,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "virus",
+  "start": 40.95,
+  "end": 41.254,
+  "bold": true,
+  "seg": 9
+ },
+ {
+  "word": "escapó",
+  "start": 41.281,
+  "end": 41.632,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "del",
+  "start": 41.663,
+  "end": 41.874,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "laboratorio",
+  "start": 41.892,
+  "end": 42.477,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "de",
+  "start": 42.528,
+  "end": 42.692,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "una",
+  "start": 42.706,
+  "end": 42.917,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "poderosa",
+  "start": 42.936,
+  "end": 43.381,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "empresa",
+  "start": 43.419,
+  "end": 43.817,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "y",
+  "start": 43.852,
+  "end": 43.969,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "transforma",
+  "start": 43.979,
+  "end": 44.518,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "a",
+  "start": 44.565,
+  "end": 44.682,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "la",
+  "start": 44.692,
+  "end": 44.856,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "gente",
+  "start": 44.87,
+  "end": 45.175,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "de",
+  "start": 45.201,
+  "end": 45.365,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "la",
+  "start": 45.379,
+  "end": 45.543,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "zona",
+  "start": 45.558,
+  "end": 45.815,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "en",
+  "start": 45.838,
+  "end": 46.002,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "criaturas.",
+  "start": 46.016,
+  "end": 46.625,
+  "bold": false,
+  "seg": 9
+ },
+ {
+  "word": "Un",
+  "start": 46.858,
+  "end": 47.008,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "perro",
+  "start": 47.021,
+  "end": 47.301,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "deforme",
+  "start": 47.326,
+  "end": 47.691,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "te",
+  "start": 47.723,
+  "end": 47.874,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "persigue",
+  "start": 47.887,
+  "end": 48.296,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "hasta",
+  "start": 48.332,
+  "end": 48.611,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "una",
+  "start": 48.636,
+  "end": 48.829,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "granja",
+  "start": 48.846,
+  "end": 49.169,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "aislada…",
+  "start": 49.197,
+  "end": 49.671,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "y",
+  "start": 49.712,
+  "end": 49.82,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "el",
+  "start": 49.829,
+  "end": 49.98,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "dueño",
+  "start": 49.993,
+  "end": 50.272,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "también",
+  "start": 50.297,
+  "end": 50.663,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "está",
+  "start": 50.695,
+  "end": 50.931,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "infectado.",
+  "start": 50.952,
+  "end": 51.512,
+  "bold": false,
+  "seg": 10
+ },
+ {
+  "word": "Llegaste",
+  "start": 51.74,
+  "end": 52.182,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "para",
+  "start": 52.22,
+  "end": 52.476,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "hacer",
+  "start": 52.498,
+  "end": 52.801,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "una",
+  "start": 52.827,
+  "end": 53.036,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "entrega",
+  "start": 53.055,
+  "end": 53.45,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "y",
+  "start": 53.484,
+  "end": 53.601,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "volver",
+  "start": 53.611,
+  "end": 53.959,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "a",
+  "start": 53.99,
+  "end": 54.106,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "casa,",
+  "start": 54.116,
+  "end": 54.488,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "y",
+  "start": 54.521,
+  "end": 54.637,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "terminas",
+  "start": 54.647,
+  "end": 55.089,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "consiguiendo",
+  "start": 55.127,
+  "end": 55.755,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "armas",
+  "start": 55.81,
+  "end": 56.112,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "y",
+  "start": 56.138,
+  "end": 56.255,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "aprendiendo",
+  "start": 56.265,
+  "end": 56.846,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "a",
+  "start": 56.897,
+  "end": 57.013,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "disparar",
+  "start": 57.023,
+  "end": 57.465,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "sobre",
+  "start": 57.503,
+  "end": 57.806,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "la",
+  "start": 57.832,
+  "end": 57.995,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "marcha,",
+  "start": 58.009,
+  "end": 58.474,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "solo",
+  "start": 58.514,
+  "end": 58.77,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "para",
+  "start": 58.792,
+  "end": 59.048,
+  "bold": false,
+  "seg": 11
+ },
+ {
+  "word": "seguir",
+  "start": 59.07,
+  "end": 59.419,
+  "bold": true,
+  "seg": 11
+ },
+ {
+  "word": "vivo.",
+  "start": 59.45,
+  "end": 59.822,
+  "bold": true,
+  "seg": 11
+ },
+ {
+  "word": "Y",
+  "start": 60.034,
+  "end": 60.141,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "justo",
+  "start": 60.151,
+  "end": 60.429,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "cuando",
+  "start": 60.454,
+  "end": 60.776,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "crees",
+  "start": 60.804,
+  "end": 61.082,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "que",
+  "start": 61.107,
+  "end": 61.3,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "lo",
+  "start": 61.317,
+  "end": 61.467,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "peor",
+  "start": 61.48,
+  "end": 61.716,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "pasó,",
+  "start": 61.736,
+  "end": 62.08,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "algo",
+  "start": 62.109,
+  "end": 62.345,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "te",
+  "start": 62.366,
+  "end": 62.516,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "muerde",
+  "start": 62.529,
+  "end": 62.851,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "el",
+  "start": 62.879,
+  "end": 63.029,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "brazo…",
+  "start": 63.042,
+  "end": 63.428,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "y",
+  "start": 63.462,
+  "end": 63.569,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "tu",
+  "start": 63.578,
+  "end": 63.729,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "cuerpo",
+  "start": 63.742,
+  "end": 64.063,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "empieza",
+  "start": 64.091,
+  "end": 64.456,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "a",
+  "start": 64.488,
+  "end": 64.595,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "cambiar.",
+  "start": 64.604,
+  "end": 65.076,
+  "bold": false,
+  "seg": 12
+ },
+ {
+  "word": "Entonces",
+  "start": 65.297,
+  "end": 65.738,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "aparecen",
+  "start": 65.776,
+  "end": 66.216,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "dos",
+  "start": 66.254,
+  "end": 66.463,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "empleados",
+  "start": 66.481,
+  "end": 66.967,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "de",
+  "start": 67.01,
+  "end": 67.172,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "la",
+  "start": 67.186,
+  "end": 67.348,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "empresa",
+  "start": 67.362,
+  "end": 67.756,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "que",
+  "start": 67.79,
+  "end": 67.999,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "provocó",
+  "start": 68.017,
+  "end": 68.411,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "todo",
+  "start": 68.445,
+  "end": 68.7,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "esto.",
+  "start": 68.722,
+  "end": 69.093,
+  "bold": false,
+  "seg": 13
+ },
+ {
+  "word": "Se",
+  "start": 69.275,
+  "end": 69.437,
+  "bold": false,
+  "seg": 14
+ },
+ {
+  "word": "trata",
+  "start": 69.451,
+  "end": 69.752,
+  "bold": false,
+  "seg": 14
+ },
+ {
+  "word": "de",
+  "start": 69.778,
+  "end": 69.94,
+  "bold": false,
+  "seg": 14
+ },
+ {
+  "word": "Resident",
+  "start": 69.954,
+  "end": 70.393,
+  "bold": true,
+  "seg": 14
+ },
+ {
+  "word": "Evil:",
+  "start": 70.432,
+  "end": 70.802,
+  "bold": true,
+  "seg": 14
+ },
+ {
+  "word": "Noche",
+  "start": 70.834,
+  "end": 71.135,
+  "bold": true,
+  "seg": 14
+ },
+ {
+  "word": "Cero…",
+  "start": 71.161,
+  "end": 71.531,
+  "bold": true,
+  "seg": 14
+ },
+ {
+  "word": "Si",
+  "start": 71.743,
+  "end": 71.897,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "fueras",
+  "start": 71.91,
+  "end": 72.24,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "tú,",
+  "start": 72.269,
+  "end": 72.532,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "¿seguirías",
+  "start": 72.555,
+  "end": 73.017,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "adelante",
+  "start": 73.057,
+  "end": 73.475,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "para",
+  "start": 73.511,
+  "end": 73.753,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "entregar",
+  "start": 73.774,
+  "end": 74.191,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "el",
+  "start": 74.228,
+  "end": 74.381,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "paquete…",
+  "start": 74.395,
+  "end": 74.878,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "o",
+  "start": 74.92,
+  "end": 75.03,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "lo",
+  "start": 75.04,
+  "end": 75.194,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "dejarías",
+  "start": 75.207,
+  "end": 75.624,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "todo",
+  "start": 75.661,
+  "end": 75.903,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "para",
+  "start": 75.924,
+  "end": 76.165,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "volver",
+  "start": 76.186,
+  "end": 76.516,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "con",
+  "start": 76.545,
+  "end": 76.742,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "tu",
+  "start": 76.76,
+  "end": 76.913,
+  "bold": false,
+  "seg": 15
+ },
+ {
+  "word": "novia?",
+  "start": 76.927,
+  "end": 77.322,
+  "bold": false,
+  "seg": 15
+ }
+]
