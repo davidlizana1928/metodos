@@ -45,8 +45,11 @@ Plantilla:
   - **Personajes expresivos**: ojos y cejas cambian con la emoción (enojo, alivio, sorpresa).
   - **Subtítulos palabra a palabra**, blancos y pequeños, arriba del centro; la palabra clave grande en amarillo («el resultado»).
   - Look: saturación 0,45 a 0,53; luminosidad 120 a 154; contraste 42 a 65 (un fotograma de 34). Paleta cálida pergamino + rojo y oro saturados.
-- Pasa al estilo como:
-  - ESTILO §6.1 «Cómo explicar» (v0.5).
+- **Corrección del usuario (v0.6):** del lado visual solo le gusta **la viveza de los colores de las animaciones**. No se adoptan su dibujo, sus transiciones, su contador ni sus subtítulos. Sin subtítulos continuos: solo palabras de énfasis.
+- Pasa al estilo como (vigente):
+  - ESTILO §6.1 «Cómo explicar».
+  - ESTILO §7.1 punto 8: colores vivos (rango de saturación ya cubre 0,45 a 0,53).
+- Propuesta original v0.5 (retirada en v0.6):
   - ESTILO §5: cambio visual cada 1,5 a 2,5 s; barrido con desenfoque; contadores; profundidad de campo.
   - ESTILO §4: subtítulos palabra a palabra **propuestos** (pendiente de tu aprobación).
   - Se toma la técnica, no el dibujo: el acabado sigue siendo el híbrido aprobado.

@@ -29,14 +29,14 @@ El contenedor es efímero. Al empezar:
 
 ## 2. Herramienta por tarea
 
-- **HyperFrames** (por defecto): composición, textos animados, transiciones, subtítulos, mezcla de audio, `check`, `snapshot`, `render`. Antes de escribir composiciones, cargar la skill `hyperframes` y `references/types/vertical.md`. Antes de crear un efecto con nombre, buscar en `hyperframes-registry`.
+- **HyperFrames** (por defecto): composición, textos animados y palabras de énfasis, transiciones, mezcla de audio, `check`, `snapshot`, `render`. Antes de escribir composiciones, cargar la skill `hyperframes` y `references/types/vertical.md`. Antes de crear un efecto con nombre, buscar en `hyperframes-registry`.
 - **Remotion**: piezas reutilizables en React (plantillas de tarjetas, contadores, gráficos) o cuando el usuario lo pida.
 - **ffmpeg**: medir voz y silencios, recortar, normalizar, unir.
 - **media-use**: música, efectos, tratamientos de color sobre imágenes.
 - **Voz (Alex)**: `python3 -I "videos tiktok/motor/voz.py" guion.txt <carpeta>` genera `voz.wav` con Kokoro `em_alex` y `tiempos.json` con el inicio y fin exactos de cada frase. Es la voz por defecto del canal; la voz del usuario solo si él la entrega.
 - **Validador**: `python3 -I "videos tiktok/motor/validar.py" <video.mp4 | carpeta_png>` mide look, quietud y duración contra `ESTILO.md`.
 - **Transcripción** (solo para voces que no generamos): `npx hyperframes transcribe voz.mp3 --model small --language es`. En este entorno la descarga del modelo whisper está bloqueada por la red; con la voz Alex no hace falta porque `tiempos.json` ya trae los tiempos.
-- **stop-slop**: todo texto que escribas (pantalla, subtítulos, descripción, comentario fijado, diálogos) pasa por sus reglas antes de mostrarse.
+- **stop-slop**: todo texto que escribas (pantalla, descripción, comentario fijado, diálogos) pasa por sus reglas antes de mostrarse.
 
 ## 3. Lenguaje visual: 2D, 3D y 2.5D
 
@@ -62,16 +62,9 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 - Una escena pesada en 3D se perfila una vez con `snapshot` antes del render completo.
 - La paleta y las tipografías se leen de `ESTILO.md`; las luces 3D usan esos mismos colores (clave cálida mostaza, contorno frío verde azulado).
 
-### 3.3 Componentes del registro para el estilo
+### 3.3 Componentes del registro
 
-Antes de dibujar estos efectos a mano, instalarlos con `npx hyperframes add <nombre>` en el proyecto y adaptarlos a la paleta de `ESTILO.md`:
-
-- `whip-pan-cut`: barrido con desenfoque de movimiento entre lugares.
-- `number-wheel` o `count-up`: contador que avanza (se monta sobre un objeto del mundo: cartel, reloj, calendario).
-- `caption-pill-karaoke`: base para los subtítulos palabra a palabra (solo si el usuario los aprueba; `ESTILO.md` §4).
-- `headline-slam`: entrada con impacto para el banner de palabra clave.
-- `soft-blur-in` / `focus-blur-resolve`: profundidad de campo y cambios de foco.
-- Para mapas y vistas desde arriba: dibujarlos en SVG con el acabado del estilo (los mapas del registro son de datos reales, no de ficción).
+Antes de dibujar un efecto a mano, buscarlo con `npx hyperframes catalog <palabras>`, instalarlo con `npx hyperframes add <nombre>` y adaptarlo a la paleta de `ESTILO.md`. Útil para el estilo actual: `headline-slam` (entrada del banner de palabra clave). No usar subtítulos continuos: el usuario los rechazó (`ESTILO.md` §4).
 
 ### 3.4 Biblioteca de la marca
 
@@ -103,9 +96,9 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
    [n] m:ss-m:ss | «frase exacta»
        IMAGEN LITERAL: lo que la frase nombra, visible en ese momento
        ESCALA: personaje / mapa desde arriba / plano general / detalle
-       ANIMACIÓN: movimiento de cámara + algo del lugar (2 cosas como mínimo); cambio cada 1,5-2,5 s
-       TEXTO: banner, contador o sello (si aporta)
-       TRANSICIÓN: continua / barrido con desenfoque / a través de un objeto
+       ANIMACIÓN: movimiento de cámara + algo del lugar (2 cosas como mínimo); cambio cada 2-3 s
+       TEXTO: palabra de énfasis (banner, sello o número) solo si aporta, sincronizada con la palabra exacta de tiempos.json
+       TRANSICIÓN: continua / a través de un objeto (pantalla, ventana, puerta)
    ```
    Una frase sin imagen literal se reescribe (avisando) o se resuelve con un cambio de escala.
 3. Una escena por subcomposición; paleta y tipografías como variables CSS tomadas de `ESTILO.md`. Reutilizar la biblioteca antes de dibujar algo nuevo.
