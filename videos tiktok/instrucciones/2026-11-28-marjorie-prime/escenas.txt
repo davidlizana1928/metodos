@@ -1,0 +1,116 @@
+LISTA DE ESCENAS · Marjorie Prime (2017)
+Tiempos estimados con la voz Alex (3,1 palabras/s, pausas incluidas). Mandan los tiempos reales de tiempos.json.
+
+[1] 0:00-0:05 | «Imagina que tu esposo, muerto hace quince años, está sentado frente a ti… joven, conversando contigo.»
+    ESCENA: Sala y pantalla
+    IMAGEN LITERAL: Sala de cine; el Espectador de espaldas en la 2.ª fila; en la pantalla, la anciana frente al hombre joven en un living con ventanal al mar
+    ESCALA: plano general → entra a la pantalla
+    ANIMACIÓN: avance de cámara por el pasillo + polvo en el haz
+    TEXTO: —
+    TRANSICIÓN: la cámara atraviesa la pantalla
+
+[2] 0:05-0:08 | «Pero ese hombre es un holograma. Vives en un futuro cercano.»
+    ESCENA: El holograma
+    IMAGEN LITERAL: El hombre parpadea con halo celeste y deja ver el sillón a través de su pecho; emisor circular en la mesa
+    ESCALA: plano medio → detalle del emisor
+    ANIMACIÓN: bajada de cámara + parpadeo del halo
+    TEXTO: banner HOLOGRAMA (en «holograma»)
+    TRANSICIÓN: sigue el cono de luz hacia el ventanal
+
+[3] 0:08-0:16 | «Tienes más de ochenta años y fuiste violinista. Vives frente al mar con tu hija y su esposo. Y tu memoria se está borrando.»
+    ESCENA: La casa frente al mar
+    IMAGEN LITERAL: Casa de madera y vidrio sobre la arena; violín en vitrina; hija y yerno tras el mesón; fotos que se borran a blanco
+    ESCALA: plano general → interior → detalle
+    ANIMACIÓN: entrada por el ventanal + olas + fotos que se desvanecen
+    TEXTO: —
+    TRANSICIÓN: una foto en blanco se vuelve la luz de la tablet
+
+[4] 0:16-0:23 | «Por eso, tu familia contrata un servicio nuevo. Son hologramas de personas muertas. Aprenden todo lo que la familia les cuenta.»
+    ESCENA: El servicio
+    IMAGEN LITERAL: Hija y yerno con tablet; catálogo de siluetas holográficas; una silueta se llena de color con la voz del yerno
+    ESCALA: plano medio → detalle de la mesa
+    ANIMACIÓN: ondas de luz + la silueta se completa
+    TEXTO: —
+    TRANSICIÓN: la silueta crece hasta tamaño real
+
+[5] 0:23-0:27 | «Tú eliges a tu esposo… pero joven. Y lo peor es que funciona.»
+    ESCENA: La elección
+    IMAGEN LITERAL: La anciana sostiene la foto del esposo mayor; frente a ella, el holograma joven
+    ESCALA: plano medio de ambos
+    ANIMACIÓN: él se sienta + luz de tarde que avanza
+    TEXTO: —
+    TRANSICIÓN: el marco de la foto calza con el marco del ventanal
+
+[6] 0:27-0:32 | «Le cuentas tu vida, y él te la repite con la cara de tu esposo.»
+    ESCENA: Le cuentas tu vida
+    IMAGEN LITERAL: Por sobre el hombro de ella: recuerdos reflejados en el ventanal (violinista en escenario, boda)
+    ESCALA: sobre el hombro
+    ANIMACIÓN: gestos + reflejos que aparecen y se avivan
+    TEXTO: —
+    TRANSICIÓN: deslizamiento por el reflejo hacia la cocina
+
+[7] 0:32-0:39 | «Tu hija no lo soporta. Ver a su padre joven contigo la perturba. Por eso, se niega a hablarle al holograma.»
+    ESCENA: La hija
+    IMAGEN LITERAL: La hija mira desde la cocina; el holograma la saluda; ella se va por el pasillo; el Espectador de pie, de espaldas
+    ESCALA: plano medio → pasillo
+    ANIMACIÓN: giro del holograma + la hija camina
+    TEXTO: —
+    TRANSICIÓN: sigue a la hija hasta la terraza de noche
+
+[8] 0:39-0:44 | «Lo que no sabes es que tu yerno sí le habla. Y le revela un secreto familiar…»
+    ESCENA: El yerno y el holograma
+    IMAGEN LITERAL: Terraza de noche; el yerno con una taza habla en voz baja al holograma; la anciana duerme tras la ventana
+    ESCALA: plano medio
+    ANIMACIÓN: inclinación del yerno + halo que respira
+    TEXTO: —
+    TRANSICIÓN: entra por la ventana al living en penumbra
+
+[9] 0:44-0:49 | «una tragedia que en esa casa nadie menciona… y que tú nunca debes volver a escuchar.»
+    ESCENA: Lo que nadie menciona
+    IMAGEN LITERAL: Repisa alta con un solo marco boca abajo; la anciana dormida; el yerno apaga la lámpara
+    ESCALA: detalle → plano general
+    ANIMACIÓN: paneo + la lámpara se apaga
+    TEXTO: sello SECRETO sobre el marco
+    TRANSICIÓN: el halo se abre hasta la luz del día
+
+[10] 0:49-0:52 | «Él llegó para hacerte compañía… y termina reescribiendo tu pasado.»
+    ESCENA: Compañía
+    IMAGEN LITERAL: Ella y el holograma en la terraza frente al mar; en el ventanal aparece una calle de noche
+    ESCALA: plano general
+    ANIMACIÓN: la cámara los rodea + olas
+    TEXTO: —
+    TRANSICIÓN: acercamiento al reflejo
+
+[11] 0:52-0:57 | «Le pides que cambie detalles. Quieres que te cuente tus recuerdos más bonitos.»
+    ESCENA: Detalles nuevos
+    IMAGEN LITERAL: En el reflejo, la pareja joven bajo la lluvia; ella señala; la lluvia se va y el abrigo pasa de gris a crema
+    ESCALA: detalle del reflejo
+    ANIMACIÓN: lluvia que se detiene + colores que se calientan
+    TEXTO: —
+    TRANSICIÓN: la cámara entra al recuerdo
+
+[12] 0:57-1:04 | «Incluso cambias la película que viste con él la noche en que te pidió matrimonio. Y cada versión nueva se vuelve tu recuerdo.»
+    ESCENA: La noche de la propuesta
+    IMAGEN LITERAL: Cine antiguo con marquesina de bombillas; él se arrodilla con un anillo; los carteles cambian de color
+    ESCALA: plano general → plano medio
+    ANIMACIÓN: bombillas que titilan + carteles que se reimprimen
+    TEXTO: sello EDITADO sobre la marquesina
+    TRANSICIÓN: retrocede al reflejo y sale al living de noche
+
+[13] 1:04-1:11 | «Y justo cuando todo parece en calma… tu memoria, que se está borrando, te devuelve el recuerdo que tu familia esconde.»
+    ESCENA: El recuerdo que vuelve
+    IMAGEN LITERAL: Living de noche; la anciana camina hacia el marco boca abajo; hija y yerno levantan la vista; el Espectador en el umbral
+    ESCALA: plano general → detalle de la mano
+    ANIMACIÓN: ella avanza + reacción simultánea; corte antes de tocar
+    TEXTO: —
+    TRANSICIÓN: retroceso rápido: el ventanal se vuelve la pantalla
+
+[14] 1:11-1:17 | «Se trata de Marjorie Prime… Si fueras tú, ¿recordarías tu vida como fue… o como te habría gustado que fuera?»
+    ESCENA: Regreso a la sala
+    IMAGEN LITERAL: Sala; en la pantalla queda la anciana frente al marco; el Espectador de espaldas
+    ESCALA: plano general
+    ANIMACIÓN: avance lento + polvo (nada quieto más de 3 s)
+    TEXTO: tarjeta del título MARJORIE PRIME / 2017 (en «Se trata de»)
+    TRANSICIÓN: fin
+
+Total estimado: 1:17

@@ -1,0 +1,161 @@
+GUION VISUAL
+Marjorie Prime (2017) / Duración aproximada 1:15 / 14 escenas clave
+
+NOTAS DE PRODUCCIÓN
+- Tiempos aproximados, calculados con 3,4 palabras por segundo y 0,3 s por cada pausa. Manda la grabación real.
+- Montaje con la voz primero: grabar la voz completa en una sola toma, ponerla como una sola pista continua y ajustar cada escena a su frase. Si una escena dura más que su frase, se recorta la escena.
+- Ritmo: cada sub-momento cambia en un tiempo fuerte de la música (unos 75 BPM: un cambio cada 3 tiempos, unos 2,4 s). Los acentos de montaje de los contratiempos se deciden en el editor.
+- Estilo: el de la imagen ancla del canal. Pintura digital estilizada con acabado de caricatura semirrealista, luz tenue con polvo en el aire, bruma verde azulada con acentos mostaza y carmesí. Dentro de la historia, la casa mezcla luz cálida de lámpara con luz fría del mar.
+- El Espectador: hombre adulto de unos 28 años, estilizado, pelo oscuro corto con los costados rebajados, barba ligera, chaqueta con capucha color mostaza anaranjado. Siempre de espaldas o de perfil. Aparece en la sala (escenas 1 y 14) y como testigo en las escenas 7 y 13.
+- La sala: cine vacío con butacas de terciopelo carmesí, 4 a 5 butacas grandes por fila en primer plano y menos hacia el fondo, proyector arriba a la izquierda, pantalla a la derecha ocupando casi todo el ancho del cuadro.
+- Reglas de imagen: solo personas adultas con proporciones claramente adultas; ningún rostro real ni parecido con actores; ningún personaje, logo ni símbolo reconocible de la película; sin armas; sin texto legible generado por la IA (todo texto se agrega en el editor); sin primeros planos de ojos; nada del desenlace.
+
+DESCRIPTORES DE PERSONAJES
+- La mujer mayor (protagonista): mujer de más de 80 años, delgada y algo encorvada, pelo blanco largo recogido en un moño bajo, chal de lana gris perla sobre un vestido azul petróleo, pequeño broche plateado redondo, bastón de madera clara. Sin parecido con la actriz.
+- El holograma del esposo: hombre adulto de unos 40 años, pelo castaño claro ondulado y algo largo, afeitado, rostro redondeado, suéter azul marino de cuello redondo sobre camisa blanca, pantalón gris. Su contorno tiene un halo celeste tenue y, por momentos, deja ver el fondo a través del cuerpo. Sin parecido con el actor.
+- La hija: mujer adulta de unos 60 años, pelo gris corto con flequillo recto, anteojos de marco negro grueso, chaqueta de lino verde oliva. Sin parecido con la actriz.
+- El yerno: hombre adulto de unos 60 años, cabeza rapada, barba canosa corta, camisa de franela burdeos y chaleco acolchado gris. Sin parecido con el actor.
+- La pareja del recuerdo (escenas 11 y 12): la protagonista a los 35 años aprox. (pelo castaño en moño, abrigo crema) y su esposo real, con la misma apariencia del holograma pero sin halo ni brillo.
+
+NOTAS DE SENSIBILIDAD
+- La película contiene una tragedia familiar vinculada a un suicidio. Nunca se menciona ni se muestra: ni el hecho, ni lugares, ni objetos relacionados.
+- No incluir niños, fotos de niños ni mascotas en ninguna escena. La tragedia solo se representa con un marco de foto puesto boca abajo (escenas 9 y 13), sin mostrar qué foto es.
+
+VOZ: "Imagina que tu esposo, muerto hace quince años, está sentado frente a ti… joven, conversando contigo."
+
+ESCENA 1 | 0:00-0:05 | La sala y la pantalla
+a) Plano general de la sala vacía. El Espectador de espaldas en la segunda fila. En la pantalla ya se ve un living con ventanal al mar: la mujer mayor en un sillón y, frente a ella, el hombre joven sentado, conversando.
+b) La cámara avanza por el pasillo por sobre el hombro del Espectador. El haz del proyector cruza la bruma.
+c) La pantalla llena el cuadro y la cámara la atraviesa, entrando al living.
+DETALLES QUE INFORMAN: dentro de la pantalla, olas grises tras el ventanal; el hombre joven contrasta con la edad de la mujer.
+ESCALA: los hombros del Espectador sentado miden unas 0,8 veces el ancho de su butaca; la pantalla ocupa casi todo el ancho de la sala; en la pantalla, ambos personajes sentados quedan a la altura del respaldo de sus sillones.
+TRANSICIÓN: la cámara atraviesa la superficie de la pantalla.
+
+VOZ: "Pero no es él: es un holograma. Es un futuro cercano."
+
+ESCENA 2 | 0:05-0:08 | El holograma
+a) Plano medio del hombre sentado: su contorno parpadea con el halo celeste y, por un instante, se ve el respaldo del sillón a través de su pecho.
+b) La cámara baja hasta un emisor circular sobre la mesa de centro, que proyecta un cono de luz tenue hacia él. En la pared, una pantalla plana integrada muestra solo manchas de color, sin texto.
+DETALLES QUE INFORMAN: emisor de luz, pantallas integradas en los muebles, mezcla de luz cálida de lámpara y luz fría tecnológica.
+ESCALA: el hombre sentado tiene la cabeza a 1,3 m del suelo; el emisor mide 25 cm de diámetro (tamaño de un plato) sobre una mesa de centro de 0,45 m de alto.
+TEXTO EN PANTALLA: banner HOLOGRAMA (aprox. 0:05, hasta 0:07).
+TRANSICIÓN: la cámara sigue el cono de luz hacia el ventanal y sale por él al exterior.
+
+VOZ: "Tienes más de ochenta años, fuiste violinista y vives en una casa frente al mar con tu hija y su esposo. Y tu memoria se está borrando."
+
+ESCENA 3 | 0:08-0:16 | La casa frente al mar
+a) Exterior: casa moderna de madera y vidrio sobre la arena, mar gris verdoso, día nublado. La mujer mayor camina con su bastón por la terraza.
+b) La cámara entra por el ventanal: en el living, un violín dentro de una vitrina de vidrio y un atril vacío al lado.
+c) Al fondo, en la cocina abierta, la hija y el yerno preparan té detrás del mesón y miran hacia ella.
+d) La mujer se detiene frente a una pared de fotos enmarcadas de adultos; las fotos pierden nitidez y se desvanecen lentamente hacia el blanco.
+DETALLES QUE INFORMAN: el violín guardado indica su pasado de música; la pared de fotos que se borra muestra la memoria que se pierde.
+ESCALA: la mujer mide 1,55 m (encorvada); la vitrina mide 1,2 m de alto y le llega al pecho; el mesón mide 1,0 m: la hija (1,65 m) y el yerno (1,75 m) se ven de la cintura hacia arriba; la puerta de la terraza mide 2,0 m.
+TRANSICIÓN: la cámara se acerca a una foto que se volvió blanca; ese blanco se convierte en la luz de la tablet de la escena 4.
+
+VOZ: "Por eso, ellos contratan un servicio nuevo: hologramas de personas muertas que aprenden todo lo que la familia les cuenta."
+
+ESCENA 4 | 0:16-0:22 | El servicio
+a) La hija y el yerno, sentados a la mesa del comedor con una tablet translúcida. Sobre la mesa se proyectan pequeñas siluetas holográficas de personas adultas, de cuerpo entero y sin rasgos, como un catálogo.
+b) El yerno habla hacia el emisor; finas ondas de luz salen de su voz hacia una silueta de hombre todavía vacía, que se va llenando de color.
+c) La hija mira de lejos, con los brazos cruzados.
+DETALLES QUE INFORMAN: la figura se completa a medida que escucha: aprende de lo que le cuentan.
+ESCALA: las siluetas miden 20 cm sobre una mesa de 0,75 m; la tablet mide 30 cm de ancho; ambos sentados quedan con los hombros a 1,3 m del suelo.
+TRANSICIÓN: la silueta pequeña crece con un avance de cámara y se convierte en el hombre de tamaño real en el living.
+
+VOZ: "Tú eliges a tu esposo… pero joven. Y lo peor es que funciona."
+
+ESCENA 5 | 0:22-0:26 | La elección
+a) La mujer mayor, sentada en su sillón, sostiene un marco con la foto de su esposo ya mayor. Frente a ella aparece el holograma joven, de pie.
+b) Ella lo mira largo rato; él se sienta frente a ella y la luz de la tarde entra por el ventanal.
+DETALLES QUE INFORMAN: la foto del esposo mayor contra el holograma joven deja clara la diferencia de edad elegida.
+ESCALA: el holograma de pie mide 1,80 m; la cabeza de la mujer sentada queda a 1,15 m; el marco mide 20 cm.
+TRANSICIÓN: el borde del marco coincide con el marco del ventanal de la escena siguiente.
+
+VOZ: "Le cuentas tu vida, y él te la repite con la cara de tu esposo."
+
+ESCENA 6 | 0:26-0:31 | Le cuentas tu vida
+a) Plano por sobre el hombro de la mujer: ella habla y gesticula; en el vidrio del ventanal se reflejan, translúcidos, momentos de su vida (una violinista adulta en un escenario, una boda de adultos).
+b) Ahora habla el holograma y los mismos reflejos vuelven a aparecer, más nítidos y luminosos.
+DETALLES QUE INFORMAN: el reflejo funciona como pantalla de recuerdos dentro de la casa.
+ESCALA: ambos sentados a la misma altura; los reflejos ocupan el ventanal de 2,2 m de alto sin superar su marco.
+TRANSICIÓN: la cámara se desliza por el reflejo del ventanal hacia la cocina.
+
+VOZ: "Tu hija no lo soporta: ver a su padre joven contigo la perturba, y se niega a hablarle al holograma."
+
+ESCENA 7 | 0:31-0:36 | La hija
+a) Desde la cocina, la hija observa por la puerta a su madre conversando con el hombre joven.
+b) El holograma gira la cabeza hacia ella y levanta la mano para saludarla; ella aparta la vista y se va por el pasillo.
+c) En el pasillo, el Espectador de espaldas mira cómo ella pasa a su lado, sin intervenir.
+DETALLES QUE INFORMAN: el saludo sin respuesta muestra el rechazo.
+ESCALA: la hija mide 1,65 m y la puerta 2,0 m; el Espectador de pie mide 1,75 m, 10 cm más que ella.
+TRANSICIÓN: la cámara sigue a la hija hasta la puerta de la terraza y sale a la noche.
+
+VOZ: "Lo que no sabes es que tu yerno sí le habla, y le revela un secreto familiar:"
+
+ESCENA 8 | 0:36-0:41 | El yerno y el holograma
+a) Noche en la terraza. El yerno, sentado con una taza; el holograma de pie a su lado, iluminado solo por su halo.
+b) El yerno mira hacia la ventana, donde la mujer duerme en su sillón, y se inclina hacia el holograma para hablarle en voz baja.
+DETALLES QUE INFORMAN: la mujer dormida al fondo deja claro que ella no debe oír.
+ESCALA: el yerno sentado tiene la cabeza a 1,3 m; el holograma de pie mide 1,80 m; la ventana mide 1,5 m de alto.
+TRANSICIÓN: la cámara entra por la ventana al living en penumbra.
+
+VOZ: "una tragedia que en esa casa nadie menciona… y que tú nunca debes volver a escuchar."
+
+ESCENA 9 | 0:41-0:46 | Lo que nadie menciona
+a) Living en penumbra: en una repisa alta, entre varios marcos de pie, uno solo está boca abajo.
+b) La cámara pasa junto a la mujer dormida en el sillón; el holograma, en el umbral, la observa.
+c) El yerno, en la puerta, apaga la lámpara.
+DETALLES QUE INFORMAN: el único marco boca abajo representa lo que la familia esconde, sin mostrar qué es.
+ESCALA: la repisa está a 1,6 m del suelo; el marco mide 20 cm; la lámpara de pie mide 1,5 m.
+TEXTO EN PANTALLA: sello SECRETO sobre el marco boca abajo (aprox. 0:42, hasta 0:44).
+TRANSICIÓN: la lámpara se apaga; en la oscuridad solo brilla el halo del holograma, que se abre hasta convertirse en la luz del día.
+
+VOZ: "Él llegó para hacerte compañía… y termina reescribiendo tu pasado."
+
+ESCENA 10 | 0:46-0:50 | Compañía
+a) Día. La mujer y el holograma sentados lado a lado en la terraza, frente al mar.
+b) La cámara los rodea; en el vidrio del ventanal, detrás de ellos, aparece reflejado un recuerdo: una calle de ciudad de noche.
+DETALLES QUE INFORMAN: él la acompaña al mismo ritmo; el recuerdo se ve detrás de ambos.
+ESCALA: ambos sentados en sillas de terraza con el respaldo a la altura de los hombros; el ventanal mide 2,2 m.
+TRANSICIÓN: la cámara se acerca al reflejo del ventanal.
+
+VOZ: "Le pides que cambie detalles, que la próxima vez te cuente tus recuerdos más bonitos."
+
+ESCENA 11 | 0:50-0:54 | Detalles nuevos
+a) En el reflejo, una pareja adulta joven camina bajo la lluvia por una calle de noche. La mujer mayor señala el reflejo con el dedo.
+b) El recuerdo cambia: la lluvia desaparece, el cielo se despeja, las luces se vuelven cálidas y el abrigo de la joven pasa de gris a crema.
+DETALLES QUE INFORMAN: el mismo recuerdo, corregido delante de nosotros.
+ESCALA: la pareja del reflejo mantiene proporciones reales (ella 1,65 m, él 1,80 m) respecto de los postes de luz de 4 m.
+TRANSICIÓN: la cámara entra en el reflejo y queda dentro del recuerdo.
+
+VOZ: "Incluso cambias la película que viste con él la noche en que te pidió matrimonio. Y cada versión nueva se vuelve tu recuerdo."
+
+ESCENA 12 | 0:54-1:01 | La noche de la propuesta
+a) Calle de ciudad de noche: la pareja joven sale de un cine antiguo; la marquesina tiene bombillas encendidas y carteles de colores lisos, sin texto ni imágenes reconocibles.
+b) Él se arrodilla en la vereda con un anillo; ella se lleva las manos a la boca.
+c) Mientras se abrazan, los carteles de la marquesina cambian de color y de forma, como si se reimprimieran.
+DETALLES QUE INFORMAN: el cine conecta con la sala del Espectador; el cambio de carteles muestra que el recuerdo se reescribe.
+ESCALA: la marquesina está a 4 m de altura; la puerta del cine mide 2,5 m; la pareja mide 1,65 y 1,80 m; él arrodillado queda a la altura del pecho de ella.
+TEXTO EN PANTALLA: sello EDITADO sobre la marquesina (aprox. 0:57, hasta 0:59).
+TRANSICIÓN: la cámara retrocede, el recuerdo vuelve a quedar dentro del reflejo del ventanal y salimos al living de noche.
+
+VOZ: "Y justo cuando todo parece en calma… tu memoria, que se está borrando, trae de vuelta el recuerdo que tu familia esconde."
+
+ESCENA 13 | 1:01-1:08 | El recuerdo que vuelve
+a) Living de noche, en calma: la hija y el yerno leen en el sofá; el holograma de pie junto al ventanal.
+b) La mujer mayor se levanta con su bastón y camina hacia la repisa alta, con la vista fija en el marco boca abajo.
+c) Extiende la mano hacia el marco; la hija y el yerno levantan la vista al mismo tiempo; el Espectador, de espaldas en el umbral, observa. Corte antes de que lo toque.
+DETALLES QUE INFORMAN: todos reaccionan al mismo tiempo: saben qué hay en ese marco.
+ESCALA: la repisa a 1,6 m queda sobre la cabeza de la mujer (1,55 m), que debe estirar el brazo; el sofá mide 0,85 m de alto; el Espectador de pie mide 1,75 m.
+TRANSICIÓN: la cámara retrocede rápido a través del ventanal, que se convierte en la pantalla del cine.
+
+VOZ: "Se trata de Marjorie Prime… Si fueras tú, ¿recordarías tu vida como fue… o como te habría gustado que fuera?"
+
+ESCENA 14 | 1:08-1:15 | Regreso a la sala
+a) La cámara sale de la pantalla a la sala de cine; en la pantalla queda la imagen quieta del living con la mujer frente al marco.
+b) El Espectador de espaldas en su butaca; entra la tarjeta del título.
+c) Plano general quieto: el haz del proyector con polvo y bruma verde azulada; 1 s de silencio al final, después de la pregunta.
+DETALLES QUE INFORMAN: la imagen congelada deja la decisión abierta.
+ESCALA: los hombros del Espectador sentado miden unas 0,8 veces el ancho de su butaca; la pantalla ocupa casi todo el ancho de la sala.
+TEXTO EN PANTALLA: tarjeta del título MARJORIE PRIME / 2017 (aprox. 1:08, hasta el final).
+TRANSICIÓN: fin del video.
