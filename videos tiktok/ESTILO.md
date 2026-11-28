@@ -1,4 +1,4 @@
-# Estilo de la casa · versión 0.7
+# Estilo de la casa · versión 0.8
 
 Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Manda sobre cualquier valor por defecto de HyperFrames o Remotion.
 
@@ -72,10 +72,12 @@ La estructura de §1 y §6 no cambia. Dentro de ella, la historia se explica as�
 
 - **Tipo de video:** ilustrativo. Diseño gráfico 2D o 3D animado en código, no grabación.
 - **Modos disponibles:** 2D vectorial (SVG), 3D (Three.js), 2.5D (capas con parallax), personajes con rig.
-- **Acabado híbrido (elegido por el usuario):**
-  - **Personajes y sala en 2D con volumen** (el Espectador tal como en la propuesta v1).
-  - **Lo que muestra la pantalla, en pintura digital** con colores muy vivos (pincelada suave + saturación ×1,3).
-  - Propuesta v2 en `motor/propuesta-acabado/propuesta-acabado-v2-hibrido.jpg`.
+- **Acabado mixto (elegido por el usuario, 28-11-2026):**
+  - **Fondos en pintura digital realista**, generados en local (`motor/fondos.py`, SD-Turbo): cuadrados de 768 px recortados a 9:16, sin personas ni texto, con color reforzado (saturación ×1,5 a ×2,4) hasta entrar en el rango de §7.1.
+  - **Personajes, muebles donde se sientan y objetos de la trama en 2D con volumen** (`svgkit`).
+  - **Integración:** sombra de contacto, luz de ventana sobre la escena y un velo de color por ambiente (noche azul, cine violeta, comedor cálido).
+  - **La sala de cine de la marca sigue en código** (inicio y cierre).
+  - Descartado: el filtro de pintura sobre todo el cuadro (se veía como un cuadro y perdía realismo).
 - **Dirección:** mucho más realista que ref01 y con **colores vívidos**.
 - **Luz en 3D:** clave cálida mostaza, contorno frío verde azulado, ambiente oscuro.
 
@@ -106,7 +108,7 @@ Toda escena cumple estos puntos. Lo que no los cumple se rehace antes de mostrar
 Ningún fotograma llega al usuario sin pasar dos filtros:
 
 1. **Medición** con `motor/validar.py`: look de cada segundo, tramos quietos de más de 3 s y duración.
-2. **Registro de errores** (no se repiten): cada error que el usuario marca o que Claude encuentra se agrega a §7.1 como regla. Errores ya corregidos: texto sobre el Espectador; Espectador más grande que su butaca; nuca sin pelo que parecía una cara; Espectador encima de la butaca; etiqueta de prueba dentro del fotograma; haz del proyector con borde sobre la pantalla; banner tapando la cabeza de un personaje (Marjorie Prime, 8 s); franja negra fuera del dibujo al hacer zoom (usar `svgOrigin:"540 960"` en las cámaras); personajes diminutos en la pantalla del cine (encuadrar la pantalla en la zona de los personajes); sello que no queda sobre su objeto (el sello va dentro del SVG de la escena); piernas finas y rígidas como zancos (piernas con rodilla en `svgkit.persona`); personas sentadas sin silla; un movimiento GSAP sobre un elemento con `transform` en su atributo borra su posición (animar siempre un `<g>` interior); `mix-blend-mode` dentro del filtro de pintura hace desaparecer el elemento; el Espectador dentro de la película en la pantalla final.
+2. **Registro de errores** (no se repiten): cada error que el usuario marca o que Claude encuentra se agrega a §7.1 como regla. Errores ya corregidos: texto sobre el Espectador; Espectador más grande que su butaca; nuca sin pelo que parecía una cara; Espectador encima de la butaca; etiqueta de prueba dentro del fotograma; haz del proyector con borde sobre la pantalla; banner tapando la cabeza de un personaje (Marjorie Prime, 8 s); franja negra fuera del dibujo al hacer zoom (usar `svgOrigin:"540 960"` en las cámaras); personajes diminutos en la pantalla del cine (encuadrar la pantalla en la zona de los personajes); sello que no queda sobre su objeto (el sello va dentro del SVG de la escena); piernas finas y rígidas como zancos (piernas con rodilla en `svgkit.persona`); personas sentadas sin silla; fondos generados en formato alto con arquitectura duplicada (generar en cuadrado); letras inventadas por la IA en carteles (taparlas con elementos en código); prompts de más de 77 tokens pierden «sin personas» (va al principio); un movimiento GSAP sobre un elemento con `transform` en su atributo borra su posición (animar siempre un `<g>` interior); `mix-blend-mode` dentro del filtro de pintura hace desaparecer el elemento; el Espectador dentro de la película en la pantalla final.
 3. **Revisión visual** de Claude: hoja de contacto completa + acercamiento a cada sujeto, punto por punto de §7.1. Lo que falla se rehace antes de mostrarlo.
 
 ## 8. Gustos extraídos de referencias
@@ -124,3 +126,4 @@ Ningún fotograma llega al usuario sin pasar dos filtros:
 - v0.5 (28-11-2026): ref02. Cómo explicar (§6.1); cambio visual cada 1,5-2,5 s; barrido con desenfoque, profundidad de campo y personajes expresivos (§5); contador en el mundo y subtítulos palabra a palabra propuestos (§4).
 - v0.6 (28-11-2026): de ref02 solo se toma la viveza del color (y la forma de explicar). Se retiran barrido, profundidad de campo, personajes expresivos, contador y ritmo de 1,5-2,5 s. Sin subtítulos continuos: solo palabras de énfasis.
 - v0.7 (28-11-2026): Marjorie Prime. Palabras de énfasis exactas y sincronizadas (sin sellos); texto, color y estructura desde el guion; cierre siempre en la sala; personajes con más masa; reglas 15-17; excepción de contraste para la sala.
+- v0.8 (28-11-2026): acabado mixto (fondos pintados realistas + personajes 2D con volumen); integración por luz, sombra y velo; aprendizajes de generación de fondos en el registro de errores.
