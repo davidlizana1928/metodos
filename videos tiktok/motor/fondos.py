@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# DESCARTADO (28-11-2026): el usuario eligió 2D con volumen en código. No usar salvo pedido expreso.
 """Genera fondos en pintura digital (SD-Turbo, local, sin GPU) y, si se pide, capas recortadas.
 
 Uso:
