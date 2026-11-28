@@ -165,7 +165,7 @@ def terraza_noche():
     s += mesa(d, 330, 1720, 190, 310, "#5a3a22") + silla(d, 250, 1720, 250, "#4a2a16")
     s += f'<g id="yerno8">{persona(d, 250, 1720, 680, pose="sentada", brazo="adelante", encorvada=10, extra=taza, **YERNO)}</g>'
     s += f'<g id="holo8">{persona(d, 720, 1720, 760, mira="izq", holograma=F["halo"], **ESPOSO)}</g>'
-    s += velo("#2a3a8a", .25)
+    s += velo("#3050c0", .18)
     return s
 
 
@@ -181,7 +181,7 @@ def escena_living_noche(dormida=True):
         s += sillon(d, 300, 1780, 300, "#6a2a3a")
         s += persona(d, 300, 1780, 640, pose="sentada", brazo="regazo", ojos="cerrados", encorvada=-6, **ANCIANA)
     s += f'<g id="holoN">{persona(d, 930, 1620, 640, mira="izq", holograma=F["halo"], **ESPOSO)}</g>'
-    s += velo("#1a2a6a", .2)
+    s += velo("#2a40b0", .18)
     return s
 
 
@@ -298,12 +298,15 @@ def build():
     # 1 · la sala; en la pantalla, el living con el holograma (frases 1-2)
     ini, fin = 0.0, f(3)[0]
     plano("p01", ini, fin, sala_cine(d, escena_living_dia().replace('id="', 'id="p1'), polvo_id="polvo1"),
-          {"scale": 1}, {"scale": 1.05}, pintura=False, cam_dur=fin - 1.3,
+          {"scale": 1}, {"scale": 1.1}, pintura=False, cam_dur=fin - 1.3,
           extra_html='<div class="gancho-wrap"><div class="gancho" id="gancho">Imagina que tu esposo, muerto hace <em>15 años</em>, está frente a ti…</div></div>')
     tw('tl.fromTo("#gancho",{opacity:0,y:30},{opacity:1,y:0,duration:.3,ease:"power3.out"},0);')
     tw(f'tl.to("#gancho",{{opacity:0,duration:.25}},{fin-1.7:.3f});')
-    tw(f'tl.fromTo("#cp01",{{svgOrigin:"540 960",scale:1.05,y:0}},{{scale:2.6,y:520,duration:1.3,ease:"power2.in",immediateRender:false}},{fin-1.3:.3f});')
-    tw(f'tl.fromTo("#polvo1",{{x:0}},{{x:-30,duration:{fin:.3f},ease:"none"}},0);')
+    tw(f'tl.fromTo("#cp01",{{svgOrigin:"540 960",scale:1.1,y:0}},{{scale:2.6,y:520,duration:1.3,ease:"power2.in",immediateRender:false}},{fin-1.3:.3f});')
+    tw(f'tl.fromTo("#polvo1",{{x:0,y:0}},{{x:-90,y:40,duration:{fin:.3f},ease:"none"}},0);')
+    tw(f'tl.fromTo("#p1holo",{{opacity:.95}},{{opacity:.5,duration:.2,repeat:{int(fin/.2)-1},yoyo:true,ease:"steps(2)"}},0);')
+    tw(f'tl.fromTo("#p1conoLuz",{{opacity:.3}},{{opacity:1,duration:.5,repeat:{int(fin/.5)-1},yoyo:true,ease:"sine.inOut"}},0);')
+    tw(f'tl.fromTo("#p1bgLD",{{x:0}},{{x:40,duration:{fin:.3f},ease:"none"}},0);')
 
     # 2 · el holograma (frases 3-4)
     ini, fin = f(3)[0], f(5)[0]
@@ -420,8 +423,11 @@ def build():
     plano("p14", ini, fin, sala_cine(d, pant, polvo_id="polvo14"), {"scale": 2.6, "y": 520}, {"scale": 1.0, "y": 0},
           pintura=False, ease="power2.out", cam_dur=1.3,
           extra_html='<div class="tarjeta-wrap"><div class="tarjeta" id="tarjeta" style="opacity:0"><div class="titulo">MARJORIE PRIME</div><div class="sub">2017</div></div></div>')
-    tw(f'tl.fromTo("#cp14",{{svgOrigin:"540 960",scale:1.0,y:0}},{{scale:1.06,duration:{fin-ini-1.3:.3f},ease:"none",immediateRender:false}},{ini+1.3:.3f});')  # …y sigue avanzando lento
-    tw(f'tl.fromTo("#polvo14",{{x:0,y:0}},{{x:-40,y:10,duration:{fin-ini:.3f},ease:"none"}},{ini:.3f});')
+    tw(f'tl.fromTo("#cp14",{{svgOrigin:"540 960",scale:1.0,y:0}},{{scale:1.12,y:-40,duration:{fin-ini-1.3:.3f},ease:"none",immediateRender:false}},{ini+1.3:.3f});')  # …y sigue avanzando lento
+    tw(f'tl.fromTo("#p14r13holoN",{{opacity:.95}},{{opacity:.45,duration:.25,repeat:{int((fin-ini)/.25)-1},yoyo:true,ease:"steps(2)"}},{ini:.3f});')
+    tw(f'tl.fromTo("#p14alcanza13",{{y:1720}},{{y:1712,duration:.6,repeat:{int((fin-ini)/.6)-1},yoyo:true,ease:"sine.inOut"}},{ini:.3f});')
+    tw(f'tl.fromTo("#p14r13bgLN",{{x:0}},{{x:-50,duration:{fin-ini:.3f},ease:"none"}},{ini:.3f});')
+    tw(f'tl.fromTo("#polvo14",{{x:0,y:0}},{{x:-110,y:50,duration:{fin-ini:.3f},ease:"none"}},{ini:.3f});')
     tw(f'tl.fromTo("#tarjeta",{{opacity:0}},{{opacity:1,duration:.4,ease:"power1.out"}},{t_se:.3f});')
 
     audio = f'<audio id="voz" src="assets/audio/voz.mp3" data-start="0" data-duration="{TOTAL}" data-track-index="9"></audio>'
