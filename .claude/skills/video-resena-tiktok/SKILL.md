@@ -26,6 +26,8 @@ El contenedor es efímero. Al empezar:
 2. Comandos: `npx hyperframes …` desde la carpeta del proyecto. Para Remotion: `npx remotion render <entrada> <id> <salida> --browser-executable=/opt/pw-browsers/chromium`.
 3. No enviar telemetría ni notas de uso a HeyGen (`hyperframes telemetry disable`). Funciones de pago de HeyGen (avatar, voz, `--engine heygen`) solo si el usuario lo pide y entrega su clave.
 4. La primera vez que se genera voz, Kokoro descarga su modelo (≈340 MB) en `~/.cache/hyperframes/tts`; tarda unos segundos más.
+5. **Red y HeyGen:** el entorno `metodos` permite los hosts de HeyGen. Todo comando de HyperFrames que llame a HeyGen va con `NODE_USE_ENV_PROXY=1` (si no, Node no usa el proxy y falla con «could not reach»). Inicio de sesión: `NODE_USE_ENV_PROXY=1 npx hyperframes auth login --device` y pasar al usuario la URL y el código.
+6. **Imágenes de HeyGen = HyperFrames Pro (pago).** El plan gratis no genera imágenes. Sin Pro, la opción estándar es dibujar en código (decisión del usuario, 28-11-2026).
 
 ## 2. Herramienta por tarea
 
@@ -67,6 +69,9 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 Antes de dibujar un efecto a mano, buscarlo con `npx hyperframes catalog <palabras>`, instalarlo con `npx hyperframes add <nombre>` y adaptarlo a la paleta de `ESTILO.md`. Útil para el estilo actual: `headline-slam` (entrada del banner de palabra clave). No usar subtítulos continuos: el usuario los rechazó (`ESTILO.md` §4).
 
 ### 3.4 Biblioteca de la marca
+
+**Código reutilizable:** `motor/biblioteca/svgkit.py` (personas con volumen y poses de pie, sentada y arrodillada; holograma con halo; sillón, lámpara, planta; sala de cine con el Espectador; sellos dentro del SVG; filtros `pintura`, `grano`, `halo`). Cada video tiene un `build.py` que genera `index.html` desde `escenas.json` y `tiempos.json` (ejemplo: `motor/proyectos/marjorie-prime/build.py`). Las cámaras se animan con `svgOrigin:"540 960"`.
+
 
 Los elementos que se repiten viven en `videos tiktok/motor/biblioteca/` y se reutilizan en vez de redibujarse:
 

@@ -100,7 +100,7 @@ Toda escena cumple estos puntos. Lo que no los cumple se rehace antes de mostrar
 Ningún fotograma llega al usuario sin pasar dos filtros:
 
 1. **Medición** con `motor/validar.py`: look de cada segundo, tramos quietos de más de 3 s y duración.
-2. **Registro de errores** (no se repiten): cada error que el usuario marca o que Claude encuentra se agrega a §7.1 como regla. Errores ya corregidos: texto sobre el Espectador; Espectador más grande que su butaca; nuca sin pelo que parecía una cara; Espectador encima de la butaca; etiqueta de prueba dentro del fotograma; haz del proyector con borde sobre la pantalla.
+2. **Registro de errores** (no se repiten): cada error que el usuario marca o que Claude encuentra se agrega a §7.1 como regla. Errores ya corregidos: texto sobre el Espectador; Espectador más grande que su butaca; nuca sin pelo que parecía una cara; Espectador encima de la butaca; etiqueta de prueba dentro del fotograma; haz del proyector con borde sobre la pantalla; banner tapando la cabeza de un personaje (Marjorie Prime, 8 s); franja negra fuera del dibujo al hacer zoom (usar `svgOrigin:"540 960"` en las cámaras); personajes diminutos en la pantalla del cine (encuadrar la pantalla en la zona de los personajes); sello que no queda sobre su objeto (el sello va dentro del SVG de la escena); piernas finas y rígidas como zancos (piernas con rodilla en `svgkit.persona`).
 3. **Revisión visual** de Claude: hoja de contacto completa + acercamiento a cada sujeto, punto por punto de §7.1. Lo que falla se rehace antes de mostrarlo.
 
 ## 8. Gustos extraídos de referencias
