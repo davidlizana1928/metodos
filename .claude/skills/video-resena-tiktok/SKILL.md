@@ -83,7 +83,7 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 ### 4.3 Fotogramas para aprobar (obligatorio antes del render final)
 
 1. `npx hyperframes snapshot --at <segundos clave>`: gancho (0,5 s), cada texto de apoyo, un cambio de escena, «Se trata de» y el último fotograma.
-2. Mirar la hoja de contacto antes de enviarla. Corregir lo obvio sin preguntar.
+2. Mirar la hoja de contacto antes de enviarla y pasar cada escena por `ESTILO.md` §7.1 (nivel de diseño mínimo). Una escena que falla un punto se rehace sin preguntar. Medir el look con `npx hyperframes measure look` y comparar con el rango de §7.1.
 3. Copiar la hoja a `instrucciones/<video>/revision-vN.jpg` y enviarla al usuario.
 4. Preguntar solo por: **texto, color, estructura, ritmo, tipografía**. Una lista numerada, una línea por punto.
 5. Repetir hasta que el usuario apruebe. Cada corrección que sea un gusto general (no exclusivo de este video) se lleva a `ESTILO.md`.
@@ -100,12 +100,14 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 Cuando el usuario sube un video a `referencias/` y dice qué le gusta:
 
 0. Si el video llega por el chat, copiarlo a `referencias/` con un nombre corto y la fecha. Si el usuario no lo adjuntó, avisarle en la primera línea.
-1. Medir solo ese factor: `npx hyperframes measure <video>` (cortes, movimiento, cajas de texto, look), ffprobe, y fotogramas con `snapshot` o `ffmpeg -vf fps=1/2,tile`.
+1. Medir con números: `npx hyperframes measure cuts` (cortes duros y planos), `measure look` (luz, contraste, saturación), `silencedetect` de ffmpeg (pausas de la voz) y una hoja de fotogramas (`ffmpeg -vf "fps=1/3,scale=240:-1,tile=5x5"`), más el inicio y los últimos 8 s por separado. Si viene en varias partes, unirlas antes con `concat`.
+   - Transcripción de la voz: `npx hyperframes transcribe <video> --model small --language es`. Si falla por red (descarga del modelo bloqueada), seguir sin ella y avisar al usuario.
 2. Si el usuario no dijo qué le gusta, preguntarlo antes de analizar. No copiar todo el video.
 3. Clasificar el gusto: 2D, 3D, 2.5D, tipografía, color, ritmo, transición, sonido o narración.
 4. Convertir el gusto en una regla medible (cifra, color hex, px, segundos). Nada de adjetivos sueltos.
 5. Anotar en `referencias/GUSTOS.md` y llevar la regla a `ESTILO.md` subiendo la versión y registrando el cambio en su historial.
-6. Nunca reproducir logos, personajes, música ni material protegido de la referencia; se toma la técnica, no el contenido.
+6. Registrar también lo que **no** le gusta, como regla de lo que hay que superar (ejemplo: ref01 «diseño muy básico» → `ESTILO.md` §7.1).
+7. Nunca reproducir logos, personajes, música ni material protegido de la referencia; se toma la técnica, no el contenido.
 
 ## 6. Mantener el estilo
 
