@@ -1,8 +1,8 @@
-# Estilo de la casa · versión 0
+# Estilo de la casa · versión 0.1
 
 Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Manda sobre cualquier valor por defecto de HyperFrames o Remotion.
 
-## 1. Firma (no cambia sin tu aprobación)
+## 1. Firma (aprobada · no cambia sin tu aprobación)
 
 - **Apertura:** «Imagina que…» desde el segundo 0, texto en pantalla ya visible en el primer fotograma.
 - **Cierre:** «Se trata de [Título en Chile]…» + tarjeta del título + pregunta espejo «Si fueras tú, ¿…?».
@@ -40,10 +40,19 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - Segunda persona, presente, frases cortas. Español latinoamericano neutro.
 - Todo texto pasa por **stop-slop**: sin muletillas, sin «no es X, es Y», sin rayas, sin frases de póster.
 
-## 7. Gustos extraídos de referencias
+## 7. Lenguaje visual
+
+- **Tipo de video:** ilustrativo. Diseño gráfico 2D o 3D animado en código, no grabación.
+- **Modos disponibles:** 2D vectorial (SVG), 3D (Three.js), 2.5D (capas con parallax), personajes con rig.
+- **Preferencia por modo:** _pendiente. Se define con las referencias._
+- **Acabado:** _pendiente (plano, semiplano, bajo poligonaje, textura de pintura, grano…)._
+- **Luz en 3D:** clave cálida mostaza, contorno frío verde azulado, ambiente oscuro.
+
+## 8. Gustos extraídos de referencias
 
 _Vacío. Se llena con cada video que subas a `referencias/` (ver `referencias/GUSTOS.md`)._
 
-## 8. Historial de cambios
+## 9. Historial de cambios
 
 - v0 (28-11-2026): estilo base tomado de la skill «resenas-cine-tiktok». Plantilla de prueba en `motor/plantilla/`.
+- v0.1 (28-11-2026): **aprobados** texto, color, tipografía y posición de la plantilla v0. Se agrega el lenguaje visual ilustrativo 2D/3D (§7).
