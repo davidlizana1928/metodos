@@ -144,7 +144,7 @@ Explica al usuario, en simple, cada paso que haces.
    ffmpeg -i out/video.mp4 -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:v copy -c:a aac -b:a 192k -ar 44100 -movflags +faststart out/<slug>-tiktok.mp4
    ```
    La segunda línea (normalizar a −14 LUFS) es obligatoria si hay música. Si solo hay voz, igual se recomienda.
-   Si el proyecto incluye escenas 3D (`@remotion/three`), agregar `--concurrency=1`, porque con varias pestañas el 3D sale corrupto.
+   `remotion.config.ts` fija una sola pestaña (`Config.setConcurrency(1)`). **No subirlo**: con varias pestañas, el navegador de la nube corrompe fotogramas (mosaicos repetidos, tarjetas vacías). Tampoco usar `backdrop-filter` ni `transform-style: preserve-3d`, que dejan fantasmas en el render.
 7. **Control final**:
    - Duración de 61 s o más.
    - Sonoridad cercana a −14 LUFS (`ffmpeg -af ebur128`).

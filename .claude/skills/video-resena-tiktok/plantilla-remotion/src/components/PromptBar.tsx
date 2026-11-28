@@ -40,7 +40,6 @@ export const PromptBar: React.FC<{
         background: theme.card.bg,
         border: theme.card.border,
         boxShadow: theme.card.shadow,
-        backdropFilter: "blur(18px)",
         boxSizing: "border-box",
       }}
     >

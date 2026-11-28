@@ -11,7 +11,7 @@ export const GlassCard: React.FC<{
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }> = ({ rotateX = 0, rotateY = 0, width, height, radius = theme.card.radius, padding = 0, style, children }) => (
-  <div style={{ perspective: 1600, ...style }}>
+  <div style={style}>
     <div
       style={{
         width,
@@ -22,10 +22,8 @@ export const GlassCard: React.FC<{
         border: theme.card.border,
         borderRadius: radius,
         boxShadow: theme.card.shadow,
-        backdropFilter: "blur(18px)",
         overflow: "hidden",
-        transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-        transformStyle: "preserve-3d",
+        transform: `perspective(1600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
         position: "relative",
       }}
     >

@@ -14,7 +14,7 @@ const BlurOut: React.FC<{ dur: number; children: React.ReactNode }> = ({ dur, ch
   const r = [dur - 0.4 * fps, dur];
   const o = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
   return (
-    <AbsoluteFill style={{ filter: `blur(${interpolate(frame, r, [0, 20], o)}px)`, opacity: interpolate(frame, r, [1, 0.2], o) }}>
+    <AbsoluteFill style={{ filter: frame >= r[0] ? `blur(${interpolate(frame, r, [0, 20], o)}px)` : undefined, opacity: interpolate(frame, r, [1, 0.2], o) }}>
       {children}
     </AbsoluteFill>
   );

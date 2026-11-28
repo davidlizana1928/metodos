@@ -12,3 +12,7 @@ const CHROMIUM = "/opt/pw-browsers/chromium";
 if (fs.existsSync(CHROMIUM)) {
   Config.setBrowserExecutable(CHROMIUM);
 }
+
+// Una sola pestaña: con varias a la vez, el navegador de la nube corrompe
+// fotogramas (mosaicos, tarjetas vacías). Es igual de rápido.
+Config.setConcurrency(1);

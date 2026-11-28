@@ -14,11 +14,12 @@ export const FocusIn: React.FC<{
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   };
   const r = [delay, delay + duracion];
+  const blur = interpolate(frame, r, [20, 0], opts);
   return (
     <div
       style={{
         ...style,
-        filter: `blur(${interpolate(frame, r, [20, 0], opts)}px)`,
+        filter: blur > 0.05 ? `blur(${blur}px)` : undefined,
         scale: interpolate(frame, r, [0.92, 1], opts),
         opacity: interpolate(frame, r, [0, 1], opts),
       }}
