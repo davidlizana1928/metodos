@@ -178,7 +178,7 @@ def persona(d, x, y, alto, pose="pie", mira="der", piel="#d9a47e", pelo="corto_o
         s.append(f'<ellipse cx="{0.1*u:.1f}" cy="0" rx="{(1.6 if pose=="sentada" else 0.9)*u:.1f}" ry="{0.16*u:.1f}" fill="#000" opacity=".35"/>')
     pv = d.vol(piernas, "h", .14)
     tv = d.vol(torso, "h", .16)
-    W = 0.46 * u  # grosor de pierna
+    W = 0.56 * u  # grosor de pierna
 
     def pierna(pts, color, pie_dx=0.28):
         (hx, hy), (kx, ky), (ax, ay) = pts
@@ -211,13 +211,13 @@ def persona(d, x, y, alto, pose="pie", mira="der", piel="#d9a47e", pelo="corto_o
     t = []
     top = base_torso - 2.85 * u
     if falda and pose == "pie":
-        s.append(f'<path d="M{-0.42*u:.1f} {base_torso-0.2*u:.1f} L{0.4*u:.1f} {base_torso-0.2*u:.1f} L{0.6*u:.1f} {-1.2*u:.1f} Q{0.0:.1f} {-1.05*u:.1f} {-0.6*u:.1f} {-1.2*u:.1f} Z" fill="{d.vol(falda, "h", .14)}"/>')
+        s.append(f'<path d="M{-0.54*u:.1f} {base_torso-0.2*u:.1f} L{0.5*u:.1f} {base_torso-0.2*u:.1f} L{0.72*u:.1f} {-1.2*u:.1f} Q{0.0:.1f} {-1.05*u:.1f} {-0.72*u:.1f} {-1.2*u:.1f} Z" fill="{d.vol(falda, "h", .14)}"/>')
     elif falda and pose == "sentada":
         s.append(f'<path d="M{-0.45*u:.1f} {base_torso-0.4*u:.1f} L{1.35*u:.1f} {base_torso-0.35*u:.1f} L{1.5*u:.1f} {base_torso+0.7*u:.1f} L{1.0*u:.1f} {base_torso+0.75*u:.1f} L{-0.4*u:.1f} {base_torso+0.3*u:.1f} Z" fill="{d.vol(falda, "h", .14)}"/>')
-    t.append(f'<path d="M{-0.46*u:.1f} {top+0.1*u:.1f} Q{-0.1*u:.1f} {top-0.12*u:.1f} {0.34*u:.1f} {top+0.05*u:.1f} Q{0.58*u:.1f} {top+0.6*u:.1f} {0.48*u:.1f} {top+1.3*u:.1f} L{0.42*u:.1f} {base_torso+0.1*u:.1f} L{-0.48*u:.1f} {base_torso+0.1*u:.1f} Q{-0.62*u:.1f} {top+1.2*u:.1f} {-0.46*u:.1f} {top+0.1*u:.1f} Z" fill="{tv}"/>')
+    t.append(f'<path d="M{-0.56*u:.1f} {top+0.1*u:.1f} Q{-0.1*u:.1f} {top-0.14*u:.1f} {0.42*u:.1f} {top+0.05*u:.1f} Q{0.7*u:.1f} {top+0.6*u:.1f} {0.58*u:.1f} {top+1.3*u:.1f} L{0.5*u:.1f} {base_torso+0.1*u:.1f} L{-0.56*u:.1f} {base_torso+0.1*u:.1f} Q{-0.72*u:.1f} {top+1.2*u:.1f} {-0.46*u:.1f} {top+0.1*u:.1f} Z" fill="{tv}"/>')
     t.append(f'<path d="M{-0.05*u:.1f} {top+0.3*u:.1f} L{-0.02*u:.1f} {base_torso-0.1*u:.1f}" stroke="{tono(torso,-.2)}" stroke-width="{0.03*u:.1f}" opacity=".5"/>')
     if chal:
-        t.append(f'<path d="M{-0.55*u:.1f} {top+0.05*u:.1f} Q{0.0:.1f} {top-0.25*u:.1f} {0.45*u:.1f} {top+0.1*u:.1f} L{0.5*u:.1f} {top+1.1*u:.1f} Q{0.0:.1f} {top+1.5*u:.1f} {-0.6*u:.1f} {top+1.2*u:.1f} Z" fill="{d.vol(chal, "h", .14)}"/>')
+        t.append(f'<path d="M{-0.66*u:.1f} {top+0.05*u:.1f} Q{0.0:.1f} {top-0.27*u:.1f} {0.55*u:.1f} {top+0.1*u:.1f} L{0.62*u:.1f} {top+1.1*u:.1f} Q{0.0:.1f} {top+1.55*u:.1f} {-0.72*u:.1f} {top+1.2*u:.1f} Z" fill="{d.vol(chal, "h", .14)}"/>')
         for k in range(4):
             t.append(f'<path d="M{(-0.45+k*0.25)*u:.1f} {top+1.2*u:.1f} l0 {0.18*u:.1f}" stroke="{tono(chal,-.1)}" stroke-width="{0.03*u:.1f}"/>')
     # brazo
@@ -233,9 +233,9 @@ def persona(d, x, y, alto, pose="pie", mira="der", piel="#d9a47e", pelo="corto_o
     else:  # bastón
         ex, ey, mx, my = 0.25 * u, top + 1.4 * u, 0.6 * u, top + 2.2 * u
     manga = tono(chal or torso, -.06)
-    t.append(f'<path d="M{hx:.1f} {hy:.1f} L{ex:.1f} {ey:.1f} L{mx:.1f} {my:.1f}" stroke="{manga}" stroke-width="{0.3*u:.1f}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
+    t.append(f'<path d="M{hx:.1f} {hy:.1f} L{ex:.1f} {ey:.1f} L{mx:.1f} {my:.1f}" stroke="{manga}" stroke-width="{0.38*u:.1f}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
     t.append(f'<path d="M{hx-0.05*u:.1f} {hy:.1f} L{ex-0.05*u:.1f} {ey:.1f}" stroke="{tono(manga,.12)}" stroke-width="{0.06*u:.1f}" fill="none" stroke-linecap="round" opacity=".7"/>')
-    t.append(f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="{0.14*u:.1f}" fill="{d.vol(piel, "h", .1)}"/>')
+    t.append(f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="{0.16*u:.1f}" fill="{d.vol(piel, "h", .1)}"/>')
     if bastón:
         t.append(f'<path d="M{mx+0.05*u:.1f} {my:.1f} L{mx+0.35*u:.1f} {-0.05*u:.1f}" stroke="#d7b27a" stroke-width="{0.09*u:.1f}" stroke-linecap="round"/>')
         t.append(f'<path d="M{mx-0.08*u:.1f} {my-0.06*u:.1f} q{0.1*u:.1f} {-0.12*u:.1f} {0.16*u:.1f} {0.05*u:.1f}" stroke="#c49a5e" stroke-width="{0.09*u:.1f}" fill="none" stroke-linecap="round"/>')
@@ -366,3 +366,61 @@ def sello_svg(gid, x, y, texto, ancho, color="#ff4a4a", tam=70):
     return (f'<g id="{gid}" opacity="0" transform="translate({x} {y}) rotate(-8)">'
             f'<rect x="{-ancho/2}" y="{-tam*0.75}" width="{ancho}" height="{tam*1.25}" fill="#140000" fill-opacity=".3" stroke="{color}" stroke-width="8"/>'
             f'<text x="0" y="{tam*0.32}" text-anchor="middle" font-family="Archivo Black" font-size="{tam}" fill="{color}">{texto}</text></g>')
+
+
+def espectador_pie(d, x, y, alto):
+    """El Espectador de pie, de espaldas (pies en x,y). Mismos colores que en la sala."""
+    u = alto / 8.0
+    sud = d.lineal("sud", [(0, "#ffc844", 1), (.35, "#e0a526", 1), (1, "#8a5a0c", 1)])
+    jean = d.vol("#2a3550", "h", .12)
+    pelo = d.radial("pelo", [(0, "#3a2a22", 1), (.6, "#1a110d", 1), (1, "#0b0706", 1)], cy=".3", r=".7")
+    return (f'<g transform="translate({x:.1f} {y:.1f})">'
+            f'<ellipse cx="0" cy="0" rx="{1.0*u:.1f}" ry="{0.15*u:.1f}" fill="#000" opacity=".35"/>'
+            f'<path d="M{-0.55*u:.1f} {-3.9*u:.1f} L{-0.05*u:.1f} {-3.9*u:.1f} L{-0.12*u:.1f} {-0.15*u:.1f} L{-0.5*u:.1f} {-0.15*u:.1f} Z" fill="{jean}"/>'
+            f'<path d="M{0.05*u:.1f} {-3.9*u:.1f} L{0.55*u:.1f} {-3.9*u:.1f} L{0.5*u:.1f} {-0.15*u:.1f} L{0.12*u:.1f} {-0.15*u:.1f} Z" fill="{jean}"/>'
+            f'<ellipse cx="{-0.32*u:.1f}" cy="{-0.1*u:.1f}" rx="{0.26*u:.1f}" ry="{0.12*u:.1f}" fill="#1a1410"/><ellipse cx="{0.32*u:.1f}" cy="{-0.1*u:.1f}" rx="{0.26*u:.1f}" ry="{0.12*u:.1f}" fill="#1a1410"/>'
+            f'<path d="M{-0.95*u:.1f} {-6.4*u:.1f} Q{0.0:.1f} {-6.9*u:.1f} {0.95*u:.1f} {-6.4*u:.1f} L{0.85*u:.1f} {-3.7*u:.1f} L{-0.85*u:.1f} {-3.7*u:.1f} Z" fill="{sud}"/>'
+            f'<path d="M{-0.95*u:.1f} {-6.4*u:.1f} L{-1.1*u:.1f} {-4.2*u:.1f} M{0.95*u:.1f} {-6.4*u:.1f} L{1.1*u:.1f} {-4.2*u:.1f}" stroke="#c48a14" stroke-width="{0.34*u:.1f}" stroke-linecap="round"/>'
+            f'<path d="M{-0.5*u:.1f} {-6.65*u:.1f} C{-0.55*u:.1f} {-7.1*u:.1f} {0.55*u:.1f} {-7.1*u:.1f} {0.5*u:.1f} {-6.65*u:.1f} C{0.35*u:.1f} {-6.35*u:.1f} {-0.35*u:.1f} {-6.35*u:.1f} {-0.5*u:.1f} {-6.65*u:.1f}Z" fill="#c98e1c"/>'
+            f'<path d="M0 {-6.3*u:.1f} V{-3.8*u:.1f}" stroke="#8a5a0c" stroke-width="{0.04*u:.1f}" opacity=".6"/>'
+            f'<rect x="{-0.18*u:.1f}" y="{-7.1*u:.1f}" width="{0.36*u:.1f}" height="{0.4*u:.1f}" fill="#7a4c36"/>'
+            f'<ellipse cx="0" cy="{-7.55*u:.1f}" rx="{0.42*u:.1f}" ry="{0.52*u:.1f}" fill="#6a4232"/>'
+            f'<path d="M{-0.42*u:.1f} {-7.5*u:.1f} C{-0.46*u:.1f} {-8.2*u:.1f} {0.46*u:.1f} {-8.2*u:.1f} {0.42*u:.1f} {-7.5*u:.1f} C{0.36*u:.1f} {-7.2*u:.1f} {-0.36*u:.1f} {-7.2*u:.1f} {-0.42*u:.1f} {-7.5*u:.1f}Z" fill="{pelo}"/>'
+            f'<ellipse cx="{-0.43*u:.1f}" cy="{-7.55*u:.1f}" rx="{0.07*u:.1f}" ry="{0.13*u:.1f}" fill="#8a5a44"/><ellipse cx="{0.43*u:.1f}" cy="{-7.55*u:.1f}" rx="{0.07*u:.1f}" ry="{0.13*u:.1f}" fill="#6a4030"/>'
+            f'</g>')
+
+
+def sofa(d, x, y, ancho, color="#3a5a8a"):
+    """Sofá de frente (x,y = centro de la base)."""
+    a = ancho
+    cv = d.vol(color, "v", .14)
+    return (f'<g transform="translate({x:.1f} {y:.1f})"><ellipse cx="0" cy="0" rx="{0.55*a:.1f}" ry="{0.04*a:.1f}" fill="#000" opacity=".35"/>'
+            f'<rect x="{-0.5*a:.1f}" y="{-0.42*a:.1f}" width="{a:.1f}" height="{0.24*a:.1f}" rx="{0.05*a:.1f}" fill="{d.vol(tono(color,-.08),"v",.1)}"/>'
+            f'<rect x="{-0.47*a:.1f}" y="{-0.22*a:.1f}" width="{0.94*a:.1f}" height="{0.12*a:.1f}" rx="{0.03*a:.1f}" fill="{cv}"/>'
+            f'<rect x="{-0.56*a:.1f}" y="{-0.3*a:.1f}" width="{0.1*a:.1f}" height="{0.24*a:.1f}" rx="{0.04*a:.1f}" fill="{cv}"/>'
+            f'<rect x="{0.46*a:.1f}" y="{-0.3*a:.1f}" width="{0.1*a:.1f}" height="{0.24*a:.1f}" rx="{0.04*a:.1f}" fill="{cv}"/>'
+            f'<path d="M{-0.45*a:.1f} {-0.06*a:.1f} V0 M{0.45*a:.1f} {-0.06*a:.1f} V0" stroke="#2a1a10" stroke-width="{0.02*a:.1f}"/></g>')
+
+
+def mesa(d, x, y, ancho, alto, color="#7a4424"):
+    return (f'<g transform="translate({x:.1f} {y:.1f})"><ellipse cx="0" cy="0" rx="{0.55*ancho:.1f}" ry="{0.05*ancho:.1f}" fill="#000" opacity=".3"/>'
+            f'<rect x="{-0.5*ancho:.1f}" y="{-alto:.1f}" width="{ancho:.1f}" height="{0.07*alto+6:.1f}" rx="4" fill="{d.vol(color,"v",.15)}"/>'
+            f'<path d="M{-0.42*ancho:.1f} {-alto:.1f} V0 M{0.42*ancho:.1f} {-alto:.1f} V0" stroke="{tono(color,-.15)}" stroke-width="{0.03*ancho:.1f}"/></g>')
+
+
+def lluvia(gid, seed=3, n=120, x0=0, y0=0, w=1080, h=1920, color="#cfe6ff"):
+    r = mulberry32(seed)
+    return f'<g id="{gid}" stroke="{color}" stroke-width="3" opacity=".7">' + "".join(
+        f'<path d="M{x0 + r() * w:.0f} {y0 + r() * h:.0f} l-10 46"/>' for _ in range(n)) + '</g>'
+
+
+def silla(d, x, y, ancho, color="#6a3a1e", mira="der"):
+    """Silla de perfil (x,y = base bajo el asiento). Dibujar antes de la persona sentada."""
+    a = ancho
+    flip = " scale(-1 1)" if mira == "izq" else ""
+    cv = d.vol(color, "v", .15)
+    return (f'<g transform="translate({x:.1f} {y:.1f}){flip}"><ellipse cx="{0.25*a:.1f}" cy="0" rx="{0.6*a:.1f}" ry="{0.05*a:.1f}" fill="#000" opacity=".3"/>'
+            f'<rect x="{-0.3*a:.1f}" y="{-1.5*a:.1f}" width="{0.1*a:.1f}" height="{1.5*a:.1f}" fill="{cv}"/>'
+            f'<rect x="{-0.32*a:.1f}" y="{-0.66*a:.1f}" width="{0.95*a:.1f}" height="{0.1*a:.1f}" rx="{0.03*a:.1f}" fill="{cv}"/>'
+            f'<rect x="{0.53*a:.1f}" y="{-0.6*a:.1f}" width="{0.08*a:.1f}" height="{0.6*a:.1f}" fill="{tono(color,-.1)}"/>'
+            f'<rect x="{-0.3*a:.1f}" y="{-1.45*a:.1f}" width="{0.1*a:.1f}" height="{0.5*a:.1f}" fill="{tono(color,.1)}"/></g>')

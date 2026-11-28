@@ -115,13 +115,14 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 
 1. `npx hyperframes snapshot --at <segundos clave>`: gancho (0,5 s), cada texto de apoyo, un cambio de escena, «Se trata de» y el último fotograma.
 2. **Validación por fotograma** (`ESTILO.md` §7.2), en este orden:
-   - `validar.py` sobre la carpeta de PNG: look de cada fotograma dentro de rango.
+   - `validar.py` sobre la carpeta de PNG (con `--sala INI-FIN` para los tramos de la sala): look de cada fotograma dentro de rango.
+   - Para inspeccionar un elemento que no aparece: abrir `index.html` con Playwright sirviendo GSAP desde `motor/node_modules/hyperframes/dist/vendor/npm/gsap@*/dist/gsap.min.js`, hacer `seek` y leer su `getBoundingClientRect` y opacidad.
    - Mirar la hoja completa y hacer un acercamiento (`ffmpeg -vf crop=…`) a cada persona y objeto protagonista. Revisar los puntos de §7.1 uno por uno: forma humana, escala, de espaldas se ve pelo, el texto no tapa sujetos, luz con dirección, 3 planos, atmósfera.
    - Lo que falla se rehace y se vuelve a validar. Al usuario solo llegan fotogramas que pasaron.
    - Revisar también el **registro de errores** de `ESTILO.md` §7.2: ninguno de esos errores puede reaparecer.
    - Cuando el usuario marca un error nuevo (por ejemplo, con una captura anotada), corregirlo en todos los fotogramas donde aparezca, agregarlo a §7.1 como regla y al registro de §7.2.
 3. Copiar la hoja a `instrucciones/<video>/revision-vN.jpg` y enviarla al usuario.
-4. Preguntar solo por: **texto, color, estructura, ritmo, tipografía**. Una lista numerada, una línea por punto.
+4. **No preguntar por texto, color ni estructura:** Claude los define desde el guion (decisión del usuario). Enviar la hoja con lo que se ve en cada tiempo y preguntar solo si aprueba o qué corrige. Si hay dudas de ritmo, enviar también un borrador en video (`instrucciones/<video>/borrador-vN.mp4`).
 5. Repetir hasta que el usuario apruebe. Cada corrección que sea un gusto general (no exclusivo de este video) se lleva a `ESTILO.md`.
 
 ### 4.4 Exportar

@@ -9,10 +9,13 @@ Revisa:
   - Look por fotograma (1 por segundo): saturación media, luminosidad y contraste dentro de rango.
   - Quietud: ningún tramo de más de 3 s sin cambio visible (solo video).
   - Duración: 61 s mínimo, objetivo 70 a 90 s (solo video).
+Opción --sala INI-FIN[,INI-FIN]: tramos (en segundos) que muestran la sala de cine de la marca;
+ahí el contraste mínimo es CONTRASTE_SALA (la sala es oscura por diseño, ESTILO.md §7.1 punto 8).
 Sale con código 1 si algo falla. La revisión visual de §7.1 (forma humana, escala,
 textos que tapan sujetos) la hace Claude mirando la hoja de contacto: este script no la reemplaza.
 """
 import colorsys
+import re
 import pathlib
 import subprocess
 import sys
@@ -23,6 +26,7 @@ from PIL import Image, ImageChops, ImageStat
 # Rangos de ESTILO.md §7.1 (actualizar aquí si cambia el estilo)
 SAT_MIN, SAT_MAX = 0.40, 0.75
 CONTRASTE_MIN = 40.0
+CONTRASTE_SALA = 30.0
 LUMA_MIN, LUMA_MAX = 45.0, 170.0
 QUIETO_MAX_S = 3.0
 UMBRAL_CAMBIO = 2.0  # diferencia media de píxeles (0-255) por cuadro a 6 fps; bajo esto la imagen se percibe quieta (ref01: 0,5-1,6 en el cierre)
@@ -54,6 +58,14 @@ def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     ruta = pathlib.Path(sys.argv[1])
+    salas = []
+    if "--sala" in sys.argv:
+        for tramo in sys.argv[sys.argv.index("--sala") + 1].split(","):
+            a, b = tramo.split("-")
+            salas.append((float(a), float(b)))
+
+    def en_sala(seg):
+        return seg is not None and any(a <= seg <= b for a, b in salas)
     fallas = []
     with tempfile.TemporaryDirectory() as tmp:
         tmp = pathlib.Path(tmp)
@@ -73,7 +85,12 @@ def main():
             malo = []
             if not SAT_MIN <= sat <= SAT_MAX:
                 malo.append(f"saturación {sat:.2f}")
-            if con < CONTRASTE_MIN:
+            if es_video:
+                seg = float(i)
+            else:
+                m = re.search(r"at-([0-9.]+)s", c.name)
+                seg = float(m.group(1)) if m else None
+            if con < (CONTRASTE_SALA if en_sala(seg) else CONTRASTE_MIN):
                 malo.append(f"contraste {con:.0f}")
             if not LUMA_MIN <= luma <= LUMA_MAX:
                 malo.append(f"luminosidad {luma:.0f}")
