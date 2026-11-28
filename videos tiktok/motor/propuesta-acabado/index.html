@@ -30,20 +30,12 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="2" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="3" data-width="1080" data-height="1920">
 
-      <!-- Variante A: 2D con volumen -->
-      <div id="varA" class="clip lienzo" data-start="0" data-duration="1" data-track-index="0">
+      <!-- Acabado híbrido: sala y Espectador en 2D con volumen; pantalla en pintura digital vívida -->
+      <div id="varA" class="clip lienzo" data-start="0" data-duration="3" data-track-index="0">
         <div id="escA" class="lienzo"></div>
         <div class="gancho-wrap"><div class="gancho">Imagina que tienes <em>48 horas</em> para salir de la ciudad…</div></div>
-        <div class="etiqueta">A · 2D CON VOLUMEN</div>
-      </div>
-
-      <!-- Variante B: pintura digital -->
-      <div id="varB" class="clip lienzo" data-start="1" data-duration="1" data-track-index="0">
-        <div id="escB" class="lienzo"></div>
-        <div class="gancho-wrap"><div class="gancho">Imagina que tienes <em>48 horas</em> para salir de la ciudad…</div></div>
-        <div class="etiqueta">B · PINTURA DIGITAL</div>
       </div>
     </div>
 
@@ -103,7 +95,7 @@
             <feColorMatrix in="tx" type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .22" result="lz"/>
             <feComposite in="lz" in2="b" operator="in" result="lzIn"/>
             <feBlend in="b" in2="lzIn" mode="overlay" result="pin"/>
-            <feColorMatrix in="pin" type="saturate" values="1.15"/>
+            <feColorMatrix in="pin" type="saturate" values="1.3"/>
           </filter>
         </defs>
 
@@ -121,10 +113,16 @@
           </g>
           <ellipse cx="540" cy="620" rx="760" ry="620" fill="url(#derrame)"/>
 
+          <!-- Haz del proyector con polvo (detrás de la pantalla: solo se ve en el aire) -->
+          <path d="M128 82 L1000 252 L1000 880 L80 880 L80 252 Z" fill="url(#haz)" opacity=".4"/>
+          <circle cx="140" cy="90" r="26" fill="#fff6dc" filter="url(#brillo)"/>
+          <circle cx="140" cy="90" r="9" fill="#fff"/>
+          <g id="polvo" fill="#fff3d6"></g>
+
           <!-- Pantalla: la ciudad al atardecer -->
           <g>
             <rect x="74" y="250" width="932" height="640" rx="6" fill="#050304"/>
-            <svg x="86" y="262" width="908" height="616" viewBox="0 0 908 616" preserveAspectRatio="none">
+            <g filter="url(#pintura)"><svg x="86" y="262" width="908" height="616" viewBox="0 0 908 616" preserveAspectRatio="none">
               <rect width="908" height="616" fill="url(#cielo)"/>
               <circle cx="610" cy="370" r="170" fill="url(#sol)"/>
               <g fill="#ffb26b" opacity=".35"><ellipse cx="260" cy="190" rx="200" ry="22"/><ellipse cx="700" cy="140" rx="160" ry="16"/></g>
@@ -141,15 +139,11 @@
               <!-- sirenas -->
               <circle cx="200" cy="520" r="60" fill="#3d7bff" opacity=".35" filter="url(#brillo)"/>
               <circle cx="260" cy="520" r="60" fill="#ff2d4a" opacity=".35" filter="url(#brillo)"/>
-            </svg>
+            </svg></g>
             <rect x="74" y="250" width="932" height="640" rx="6" fill="none" stroke="#000" stroke-opacity=".6" stroke-width="12"/>
           </g>
 
-          <!-- Haz del proyector con polvo -->
-          <path d="M140 70 L1000 250 L1000 520 L140 110 Z" fill="url(#haz)" opacity=".55"/>
-          <circle cx="140" cy="90" r="26" fill="#fff6dc" filter="url(#brillo)"/>
-          <circle cx="140" cy="90" r="9" fill="#fff"/>
-          <g id="polvo" fill="#fff3d6"></g>
+
 
           <!-- Piso -->
           <path d="M0 1150 H1080 V1920 H0Z" fill="#0d0609"/>
@@ -159,7 +153,7 @@
           <g id="filas"></g>
 
           <!-- El Espectador, de espaldas (fila media) -->
-          <g id="espectador" transform="translate(815 1262) scale(.64)">
+          <g id="espectador" transform="translate(815 1287) scale(.56)">
             <!-- sombra en la butaca -->
             <ellipse cx="0" cy="150" rx="150" ry="40" fill="#000" opacity=".45" filter="url(#suave)"/>
             <!-- hombros y espalda -->
@@ -217,9 +211,10 @@
         // polvo en el haz
         const p = svg.querySelector("#polvo" + suf);
         for (let i = 0; i < 90; i++) {
-          const t = r(), x = 140 + t * 860, yTop = 70 + t * 180, yBot = 110 + t * 410;
+          const t = r(), a = [128 + t * 872, 82 + t * 170], b = [128 - t * 48, 82 + t * 170];
+          const u = r(), x = a[0] + (b[0] - a[0]) * u, y = a[1] + (b[1] - a[1]) * u;
           const e = document.createElementNS(NS, "circle");
-          e.setAttribute("cx", x.toFixed(1)); e.setAttribute("cy", (yTop + r() * (yBot - yTop)).toFixed(1));
+          e.setAttribute("cx", x.toFixed(1)); e.setAttribute("cy", y.toFixed(1));
           e.setAttribute("r", (0.8 + r() * 2.2).toFixed(1)); e.setAttribute("opacity", (0.25 + r() * 0.6).toFixed(2));
           p.appendChild(e);
         }
@@ -246,15 +241,12 @@
             filas.appendChild(filas.children[filas.children.length - 3].cloneNode(true)); // respaldo de su butaca (4.ª de la fila)
           }
         });
-        if (pintura) svg.querySelector(".arte").setAttribute("filter", "url(#pinturaB)");
         destino.appendChild(svg);
       }
       montar(document.getElementById("escA"), false);
-      montar(document.getElementById("escB"), true);
 
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#escA", { scale: 1.0 }, { scale: 1.02, duration: 1, ease: "none" }, 0);
-      tl.fromTo("#escB", { scale: 1.0 }, { scale: 1.02, duration: 1, ease: "none" }, 1);
+      tl.fromTo("#escA", { scale: 1.0 }, { scale: 1.04, duration: 3, ease: "none" }, 0);
       window.__timelines["main"] = tl;
       tl.seek(0);
     </script>

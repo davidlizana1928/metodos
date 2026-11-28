@@ -1,4 +1,4 @@
-# Estilo de la casa · versión 0.3
+# Estilo de la casa · versión 0.4
 
 Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Manda sobre cualquier valor por defecto de HyperFrames o Remotion.
 
@@ -49,14 +49,17 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - **Tono explicativo y narrativo:** la voz cuenta la historia como si el espectador la viviera, y explica las reglas del mundo antes de usarlas.
 - **Sin nombres hasta el final:** ni personajes, ni actores, ni el título. El primer nombre que aparece en voz o pantalla es el título, en «Se trata de…».
 - Segunda persona, presente, frases cortas. Español latinoamericano neutro.
-- **Voz: Alex** (Kokoro `em_alex`, español), generada por Claude con `motor/voz.py`, velocidad 1,1. Solo voz generada; la voz del usuario entra únicamente si él lo indica.
+- **Voz: Alex (aprobada)** (Kokoro `em_alex`, español), generada por Claude con `motor/voz.py`, velocidad 1,1. Solo voz generada; la voz del usuario entra únicamente si él lo indica.
 - Todo texto pasa por **stop-slop**: sin muletillas, sin «no es X, es Y», sin rayas, sin frases de póster.
 
 ## 7. Lenguaje visual
 
 - **Tipo de video:** ilustrativo. Diseño gráfico 2D o 3D animado en código, no grabación.
 - **Modos disponibles:** 2D vectorial (SVG), 3D (Three.js), 2.5D (capas con parallax), personajes con rig.
-- **Preferencia:** **pintura digital** o **2D con volumen**. Propuesta v1 en `motor/propuesta-acabado/` (en evaluación).
+- **Acabado híbrido (elegido por el usuario):**
+  - **Personajes y sala en 2D con volumen** (el Espectador tal como en la propuesta v1).
+  - **Lo que muestra la pantalla, en pintura digital** con colores muy vivos (pincelada suave + saturación ×1,3).
+  - Propuesta v2 en `motor/propuesta-acabado/propuesta-acabado-v2-hibrido.jpg`.
 - **Dirección:** mucho más realista que ref01 y con **colores vívidos**.
 - **Luz en 3D:** clave cálida mostaza, contorno frío verde azulado, ambiente oscuro.
 
@@ -75,13 +78,17 @@ Toda escena cumple estos puntos. Lo que no los cumple se rehace antes de mostrar
 9. **Escala real:** el Espectador sentado tiene hombros de 0,8 veces el ancho de su butaca; el respaldo tapa su espalda.
 10. **De espaldas se ve pelo, no cara:** una nuca sin pelo se lee como un rostro vacío (error corregido en la propuesta v1).
 11. **El texto no tapa a ningún sujeto** (personas, el objeto protagonista, la acción).
+12. **Sentado dentro, no encima:** una persona sentada queda detrás del respaldo de su butaca; solo se ven cabeza y hombros sobre él. Nunca se dibuja el cuerpo por delante de su propio asiento.
+13. **La luz sigue su fuente:** el haz del proyector va del proyector a la pantalla y la ilumina entera; no deja bordes ni líneas marcadas sobre la imagen proyectada.
+14. **Nada ajeno al video dentro del fotograma:** ni etiquetas de prueba, ni rótulos de comparación, ni marcas de agua. Las comparaciones se rotulan fuera de la imagen, en el mensaje.
 
 ### 7.2 Validación por fotograma
 
 Ningún fotograma llega al usuario sin pasar dos filtros:
 
 1. **Medición** con `motor/validar.py`: look de cada segundo, tramos quietos de más de 3 s y duración.
-2. **Revisión visual** de Claude: hoja de contacto completa + acercamiento a cada sujeto, punto por punto de §7.1. Lo que falla se rehace antes de mostrarlo.
+2. **Registro de errores** (no se repiten): cada error que el usuario marca o que Claude encuentra se agrega a §7.1 como regla. Errores ya corregidos: texto sobre el Espectador; Espectador más grande que su butaca; nuca sin pelo que parecía una cara; Espectador encima de la butaca; etiqueta de prueba dentro del fotograma; haz del proyector con borde sobre la pantalla.
+3. **Revisión visual** de Claude: hoja de contacto completa + acercamiento a cada sujeto, punto por punto de §7.1. Lo que falla se rehace antes de mostrarlo.
 
 ## 8. Gustos extraídos de referencias
 
@@ -93,3 +100,4 @@ Ningún fotograma llega al usuario sin pasar dos filtros:
 - v0.1 (28-11-2026): **aprobados** texto, color, tipografía y posición de la plantilla v0. Se agrega el lenguaje visual ilustrativo 2D/3D (§7).
 - v0.2 (28-11-2026): ref01. Estructura narrativa aprobada (§6), nivel de diseño mínimo (§7.1), nada quieto más de 3 s y transiciones con movimiento de cámara (§5).
 - v0.3 (28-11-2026): duración 61 s mínimo y objetivo 70-90 s; voz Alex; dinamismo obligatorio; acabado preferido pintura digital o 2D con volumen; look vívido con rangos medibles; validación por fotograma (§7.2).
+- v0.4 (28-11-2026): acabado híbrido (2D con volumen + pantalla en pintura digital vívida); voz Alex aprobada; reglas 12-14 y registro de errores corregidos.

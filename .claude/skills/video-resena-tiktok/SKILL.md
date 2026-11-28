@@ -48,7 +48,7 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 - **3D:** escenas en Three.js (bajo poligonaje o estilizado), dibujadas desde el tiempo de la línea de tiempo en el evento `hf-seek`. Sirve para escenarios, objetos protagonistas y movimientos de cámara (entrar por una pantalla, una puerta, una ventana). Leer `hyperframes/references/types/3d.md` y `runtimes.md`.
 - **2.5D:** imágenes planas separadas en capas (fondo, medio, frente) con parallax y movimiento de cámara. Sirve cuando el usuario trae imágenes generadas con IA o ilustraciones propias.
 
-**Acabado preferido** (ver `ESTILO.md` §7): pintura digital o 2D con volumen, realista y de colores vívidos.
+**Acabado elegido** (ver `ESTILO.md` §7): **híbrido**. Personajes y sala en 2D con volumen; lo que muestra la pantalla (la historia) en pintura digital con colores muy vivos. Base de código: `motor/propuesta-acabado/index.html` (filtro `pintura`, rig del Espectador, butacas con oclusión).
 
 - El código (SVG con degradados, luz de borde, sombras, polvo y grano) llega con calidad a **2D con volumen**.
 - La **pintura digital realista** con pincelada verdadera no se logra solo con filtros: el filtro de pintura en SVG da un borde temblado, no pinceladas. Para ese acabado, las escenas se pintan como imágenes (generadas con IA por el usuario o con `media-use` de HeyGen si inicia sesión) y se animan en 2.5D, con luz, partículas y textos en código encima.
@@ -99,6 +99,8 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
    - `validar.py` sobre la carpeta de PNG: look de cada fotograma dentro de rango.
    - Mirar la hoja completa y hacer un acercamiento (`ffmpeg -vf crop=…`) a cada persona y objeto protagonista. Revisar los puntos de §7.1 uno por uno: forma humana, escala, de espaldas se ve pelo, el texto no tapa sujetos, luz con dirección, 3 planos, atmósfera.
    - Lo que falla se rehace y se vuelve a validar. Al usuario solo llegan fotogramas que pasaron.
+   - Revisar también el **registro de errores** de `ESTILO.md` §7.2: ninguno de esos errores puede reaparecer.
+   - Cuando el usuario marca un error nuevo (por ejemplo, con una captura anotada), corregirlo en todos los fotogramas donde aparezca, agregarlo a §7.1 como regla y al registro de §7.2.
 3. Copiar la hoja a `instrucciones/<video>/revision-vN.jpg` y enviarla al usuario.
 4. Preguntar solo por: **texto, color, estructura, ritmo, tipografía**. Una lista numerada, una línea por punto.
 5. Repetir hasta que el usuario apruebe. Cada corrección que sea un gusto general (no exclusivo de este video) se lleva a `ESTILO.md`.
