@@ -1,0 +1,23 @@
+{
+  "name": "motor-videos-tiktok",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "instalar": "bash instalar.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.547",
+    "@remotion/cli": "^4.0.547",
+    "@remotion/google-fonts": "^4.0.547",
+    "@remotion/media-utils": "^4.0.547",
+    "@remotion/renderer": "^4.0.547",
+    "hyperframes": "^0.9.104",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.547"
+  }
+}
