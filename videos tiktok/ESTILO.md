@@ -1,4 +1,4 @@
-# Estilo de la casa · versión 0.2
+# Estilo de la casa · versión 0.3
 
 Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Manda sobre cualquier valor por defecto de HyperFrames o Remotion.
 
@@ -8,6 +8,11 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - **Cierre:** «Se trata de [Título en Chile]…» + tarjeta del título + pregunta espejo «Si fueras tú, ¿…?».
 - **Personaje:** el Espectador (hombre adulto, chaqueta mostaza con capucha, siempre de espaldas o de perfil).
 - **Escenario ancla:** sala de cine vacía, butacas carmesí, proyector arriba a la izquierda.
+
+## 1.1 Duración
+
+- **Mínimo absoluto: 61 s.** Objetivo: **70 a 90 s**.
+- Con la voz Alex (≈3,1 palabras por segundo, pausas incluidas): guion de **215 a 280 palabras**.
 
 ## 2. Paleta
 
@@ -35,6 +40,7 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - Fondo con avance lento continuo (zoom 1,00 → 1,06 por escena).
 - Acentos en contratiempos: micro-zoom de 2 a 3 % o sacudida leve.
 - **Nada queda quieto más de 3 s**, tampoco el cierre: la sala final sigue con un avance lento, polvo en el haz del proyector o luz de la pantalla que cambia.
+- **Dinamismo obligatorio:** el video nunca se siente detenido. En cada escena se mueven al menos 2 cosas a la vez (cámara y algo del lugar).
 - Entre lugares se prefiere el **movimiento de cámara continuo** (paneo, entrada por una ventana o pantalla) al corte duro. Referencia: ref01 tuvo 8 cortes duros en 74 s.
 
 ## 6. Narración, voz y personalidad del texto
@@ -43,14 +49,15 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - **Tono explicativo y narrativo:** la voz cuenta la historia como si el espectador la viviera, y explica las reglas del mundo antes de usarlas.
 - **Sin nombres hasta el final:** ni personajes, ni actores, ni el título. El primer nombre que aparece en voz o pantalla es el título, en «Se trata de…».
 - Segunda persona, presente, frases cortas. Español latinoamericano neutro.
+- **Voz: Alex** (Kokoro `em_alex`, español), generada por Claude con `motor/voz.py`, velocidad 1,1. Solo voz generada; la voz del usuario entra únicamente si él lo indica.
 - Todo texto pasa por **stop-slop**: sin muletillas, sin «no es X, es Y», sin rayas, sin frases de póster.
 
 ## 7. Lenguaje visual
 
 - **Tipo de video:** ilustrativo. Diseño gráfico 2D o 3D animado en código, no grabación.
 - **Modos disponibles:** 2D vectorial (SVG), 3D (Three.js), 2.5D (capas con parallax), personajes con rig.
-- **Preferencia por modo:** _pendiente. Se define con las referencias._
-- **Acabado:** _pendiente (semiplano con volumen, bajo poligonaje, textura de pintura…)._
+- **Preferencia:** **pintura digital** o **2D con volumen**. Propuesta v1 en `motor/propuesta-acabado/` (en evaluación).
+- **Dirección:** mucho más realista que ref01 y con **colores vívidos**.
 - **Luz en 3D:** clave cálida mostaza, contorno frío verde azulado, ambiente oscuro.
 
 ### 7.1 Nivel de diseño mínimo (ref01: «muy básico»)
@@ -64,7 +71,17 @@ Toda escena cumple estos puntos. Lo que no los cumple se rehace antes de mostrar
 5. **Atmósfera:** bruma, polvo en el aire o partículas, y grano o textura suave encima de todo.
 6. **Detalles que informan:** cada lugar tiene 2 o más objetos que cuentan dónde estamos (cuadros, carteles sin texto, plantas, cables, ropa tendida).
 7. **Vida en la escena:** algo se mueve siempre, aunque sea poco (humo, cortina, luz que parpadea, respiración del personaje).
-8. **Look:** contraste por encima de 40 y saturación entre 0,30 y 0,45 (ref01: 36,5 y 0,28, se veía apagado).
+8. **Look vívido:** saturación 0,40 a 0,75; contraste 40 o más; luminosidad 45 a 170 (ref01: saturación 0,20 a 0,28, se veía apagado). Lo mide `motor/validar.py`.
+9. **Escala real:** el Espectador sentado tiene hombros de 0,8 veces el ancho de su butaca; el respaldo tapa su espalda.
+10. **De espaldas se ve pelo, no cara:** una nuca sin pelo se lee como un rostro vacío (error corregido en la propuesta v1).
+11. **El texto no tapa a ningún sujeto** (personas, el objeto protagonista, la acción).
+
+### 7.2 Validación por fotograma
+
+Ningún fotograma llega al usuario sin pasar dos filtros:
+
+1. **Medición** con `motor/validar.py`: look de cada segundo, tramos quietos de más de 3 s y duración.
+2. **Revisión visual** de Claude: hoja de contacto completa + acercamiento a cada sujeto, punto por punto de §7.1. Lo que falla se rehace antes de mostrarlo.
 
 ## 8. Gustos extraídos de referencias
 
@@ -75,3 +92,4 @@ Toda escena cumple estos puntos. Lo que no los cumple se rehace antes de mostrar
 - v0 (28-11-2026): estilo base tomado de la skill «resenas-cine-tiktok». Plantilla de prueba en `motor/plantilla/`.
 - v0.1 (28-11-2026): **aprobados** texto, color, tipografía y posición de la plantilla v0. Se agrega el lenguaje visual ilustrativo 2D/3D (§7).
 - v0.2 (28-11-2026): ref01. Estructura narrativa aprobada (§6), nivel de diseño mínimo (§7.1), nada quieto más de 3 s y transiciones con movimiento de cámara (§5).
+- v0.3 (28-11-2026): duración 61 s mínimo y objetivo 70-90 s; voz Alex; dinamismo obligatorio; acabado preferido pintura digital o 2D con volumen; look vívido con rangos medibles; validación por fotograma (§7.2).

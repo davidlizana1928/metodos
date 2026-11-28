@@ -25,6 +25,7 @@ El contenedor es efímero. Al empezar:
 1. Si falta `videos tiktok/motor/node_modules`, ejecutar `bash "videos tiktok/motor/instalar.sh"`.
 2. Comandos: `npx hyperframes …` desde la carpeta del proyecto. Para Remotion: `npx remotion render <entrada> <id> <salida> --browser-executable=/opt/pw-browsers/chromium`.
 3. No enviar telemetría ni notas de uso a HeyGen (`hyperframes telemetry disable`). Funciones de pago de HeyGen (avatar, voz, `--engine heygen`) solo si el usuario lo pide y entrega su clave.
+4. La primera vez que se genera voz, Kokoro descarga su modelo (≈340 MB) en `~/.cache/hyperframes/tts`; tarda unos segundos más.
 
 ## 2. Herramienta por tarea
 
@@ -32,7 +33,9 @@ El contenedor es efímero. Al empezar:
 - **Remotion**: piezas reutilizables en React (plantillas de tarjetas, contadores, gráficos) o cuando el usuario lo pida.
 - **ffmpeg**: medir voz y silencios, recortar, normalizar, unir.
 - **media-use**: música, efectos, tratamientos de color sobre imágenes.
-- **Transcripción**: `npx hyperframes transcribe voz.mp3 --model small --language es` para tiempos por palabra.
+- **Voz (Alex)**: `python3 -I "videos tiktok/motor/voz.py" guion.txt <carpeta>` genera `voz.wav` con Kokoro `em_alex` y `tiempos.json` con el inicio y fin exactos de cada frase. Es la voz por defecto del canal; la voz del usuario solo si él la entrega.
+- **Validador**: `python3 -I "videos tiktok/motor/validar.py" <video.mp4 | carpeta_png>` mide look, quietud y duración contra `ESTILO.md`.
+- **Transcripción** (solo para voces que no generamos): `npx hyperframes transcribe voz.mp3 --model small --language es`. En este entorno la descarga del modelo whisper está bloqueada por la red; con la voz Alex no hace falta porque `tiempos.json` ya trae los tiempos.
 - **stop-slop**: todo texto que escribas (pantalla, subtítulos, descripción, comentario fijado, diálogos) pasa por sus reglas antes de mostrarse.
 
 ## 3. Lenguaje visual: 2D, 3D y 2.5D
@@ -44,6 +47,12 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 - **2D vectorial:** ilustración plana o semiplana en SVG, animada con GSAP. Sirve para personajes, iconos, diagramas, mapas simples, textos cinéticos y transiciones con formas. Es el modo más rápido y el más fácil de corregir.
 - **3D:** escenas en Three.js (bajo poligonaje o estilizado), dibujadas desde el tiempo de la línea de tiempo en el evento `hf-seek`. Sirve para escenarios, objetos protagonistas y movimientos de cámara (entrar por una pantalla, una puerta, una ventana). Leer `hyperframes/references/types/3d.md` y `runtimes.md`.
 - **2.5D:** imágenes planas separadas en capas (fondo, medio, frente) con parallax y movimiento de cámara. Sirve cuando el usuario trae imágenes generadas con IA o ilustraciones propias.
+
+**Acabado preferido** (ver `ESTILO.md` §7): pintura digital o 2D con volumen, realista y de colores vívidos.
+
+- El código (SVG con degradados, luz de borde, sombras, polvo y grano) llega con calidad a **2D con volumen**.
+- La **pintura digital realista** con pincelada verdadera no se logra solo con filtros: el filtro de pintura en SVG da un borde temblado, no pinceladas. Para ese acabado, las escenas se pintan como imágenes (generadas con IA por el usuario o con `media-use` de HeyGen si inicia sesión) y se animan en 2.5D, con luz, partículas y textos en código encima.
+- Las piezas de la marca (el Espectador, la sala, los textos) se mantienen en código para que sean idénticas en cada video.
 - **Personajes animados:** rig en SVG o Lottie, con estados de ánimo por tiempo. Leer `hyperframes/references/types/character.md`.
 
 ### 3.2 Reglas técnicas
@@ -69,8 +78,10 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 
 1. Leer `ESTILO.md` completo. Sus valores mandan.
 2. Revisar `instrucciones/<video>/`: guion, voz, imágenes, música, notas del usuario.
-3. Si hay voz, medir con ffmpeg duración, silencios (`silencedetect=-35dB:d=0.35`) y transcribir. La imagen se ajusta a la voz, nunca al revés.
-4. Si falta algo indispensable, pedirlo en una lista corta. No inventar material.
+3. Generar la voz Alex con `voz.py` desde el guion. Debe durar **61 s o más, objetivo 70 a 90 s** (215 a 280 palabras). Si queda corta, alargar el guion con información de la historia, nunca con silencio.
+4. Si el usuario entrega su propia voz: medir con ffmpeg duración y silencios (`silencedetect=-35dB:d=0.35`) y transcribir.
+5. La imagen se ajusta a la voz, nunca al revés: cada escena dura lo que su frase en `tiempos.json`.
+6. Si falta algo indispensable, pedirlo en una lista corta. No inventar material.
 
 ### 4.2 Construir
 
@@ -78,12 +89,16 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 2. Escribir una lista de escenas: frase de la voz, modo (2D, 3D o 2.5D), qué se ve y qué explica. Mostrarla al usuario si el video es nuevo.
 3. Una escena por subcomposición; paleta y tipografías como variables CSS tomadas de `ESTILO.md`. Reutilizar la biblioteca antes de dibujar algo nuevo.
 4. Respetar la firma de `ESTILO.md` §1 y la zona segura de TikTok.
-5. `npx hyperframes check --json` sin errores.
+5. Dinamismo: en cada escena se mueven al menos 2 cosas a la vez (cámara y algo del lugar); nada queda quieto más de 3 s.
+6. `npx hyperframes check --json` sin errores.
 
 ### 4.3 Fotogramas para aprobar (obligatorio antes del render final)
 
 1. `npx hyperframes snapshot --at <segundos clave>`: gancho (0,5 s), cada texto de apoyo, un cambio de escena, «Se trata de» y el último fotograma.
-2. Mirar la hoja de contacto antes de enviarla y pasar cada escena por `ESTILO.md` §7.1 (nivel de diseño mínimo). Una escena que falla un punto se rehace sin preguntar. Medir el look con `npx hyperframes measure look` y comparar con el rango de §7.1.
+2. **Validación por fotograma** (`ESTILO.md` §7.2), en este orden:
+   - `validar.py` sobre la carpeta de PNG: look de cada fotograma dentro de rango.
+   - Mirar la hoja completa y hacer un acercamiento (`ffmpeg -vf crop=…`) a cada persona y objeto protagonista. Revisar los puntos de §7.1 uno por uno: forma humana, escala, de espaldas se ve pelo, el texto no tapa sujetos, luz con dirección, 3 planos, atmósfera.
+   - Lo que falla se rehace y se vuelve a validar. Al usuario solo llegan fotogramas que pasaron.
 3. Copiar la hoja a `instrucciones/<video>/revision-vN.jpg` y enviarla al usuario.
 4. Preguntar solo por: **texto, color, estructura, ritmo, tipografía**. Una lista numerada, una línea por punto.
 5. Repetir hasta que el usuario apruebe. Cada corrección que sea un gusto general (no exclusivo de este video) se lleva a `ESTILO.md`.
@@ -91,7 +106,7 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 ### 4.4 Exportar
 
 1. Render: `npx hyperframes render -o "videos tiktok/exportables/<AAAA-MM-DD-titulo>.mp4"` (1080×1920, 30 fps).
-2. Verificar con ffprobe: resolución, duración (61 s o más si es reseña monetizable), audio presente.
+2. `validar.py` sobre el MP4: duración (61 s mínimo, objetivo 70 a 90 s), sin tramos quietos de más de 3 s, look en rango. Con ffprobe: 1080×1920 y audio presente. Si falla, se corrige antes de entregar.
 3. Escribir al lado `<AAAA-MM-DD-titulo>.txt` con descripción, hashtags y comentario fijado (formato de `resenas-cine-tiktok` §9).
 4. Commit y push de `exportables/`, `ESTILO.md` y el proyecto.
 
