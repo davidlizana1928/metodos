@@ -50,21 +50,9 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 - **3D:** escenas en Three.js (bajo poligonaje o estilizado), dibujadas desde el tiempo de la línea de tiempo en el evento `hf-seek`. Sirve para escenarios, objetos protagonistas y movimientos de cámara (entrar por una pantalla, una puerta, una ventana). Leer `hyperframes/references/types/3d.md` y `runtimes.md`.
 - **2.5D:** imágenes planas separadas en capas (fondo, medio, frente) con parallax y movimiento de cámara. Sirve cuando el usuario trae imágenes generadas con IA o ilustraciones propias.
 
-**Acabado elegido** (ver `ESTILO.md` §7): **mixto**. **Fondos en pintura digital realista** generados en local con `motor/fondos.py` (SD-Turbo, ~30 s por imagen sin GPU) y **personajes en 2D con volumen** en código (`svgkit`), con muebles en código donde los personajes se sientan o apoyan. La sala de cine de la marca sigue en código.
-
-Flujo de fondos:
-1. Escribir `instrucciones/<video>/fondos.json` (un lugar por entrada, sin personas, con zona de piso libre en el tercio inferior; 2 variantes por lugar).
-2. `/root/sd/bin/python -I "videos tiktok/motor/fondos.py" fondos.json motor/proyectos/<slug>/assets/fondos`.
-3. Mirar cada variante, elegir una, y ubicar personajes y objetos en código sobre ella (perspectiva, línea de piso y luz de la imagen).
-4. `"recorte": true` usa `rembg` (`isnet-general-use`) para separar el sujeto del fondo y moverlo como capa delantera.
-5. Integrar la luz: sombra de contacto bajo cada personaje y un velo de color de la escena sobre ellos para que no parezcan pegados.
-
-El filtro `pintura` de SVG queda descartado para la historia: daba aspecto de cuadro y quitaba realismo (decisión del usuario).
-- Blender 4.0 está instalado (`blender -b`) y queda reservado para cuando una escena necesite 3D real.
-
-- El código (SVG con degradados, luz de borde, sombras, polvo y grano) llega con calidad a **2D con volumen**.
-- La **pintura digital realista** con pincelada verdadera no se logra solo con filtros: el filtro de pintura en SVG da un borde temblado, no pinceladas. Para ese acabado, las escenas se pintan como imágenes (generadas con IA por el usuario o con `media-use` de HeyGen si inicia sesión) y se animan en 2.5D, con luz, partículas y textos en código encima.
-- Las piezas de la marca (el Espectador, la sala, los textos) se mantienen en código para que sean idénticas en cada video.
+**Acabado elegido** (ver `ESTILO.md` §7): **2D con volumen, todo en código** (`svgkit` + `build.py`), con la sala de cine de la marca. Referencia aprobada: revisión v2 de Marjorie Prime (`instrucciones/2026-11-28-marjorie-prime/revision-v2-*.jpg`).
+- Descartado por el usuario: fondos generados con IA (`motor/fondos.py`, SD-Turbo) por alucinaciones e incoherencias; el filtro `pintura` por aspecto de cuadro. Las herramientas quedan instaladas pero no se usan salvo pedido expreso.
+- Blender 4.0 y rembg instalados, reservados para cuando haga falta.
 - **Personajes animados:** rig en SVG o Lottie, con estados de ánimo por tiempo. Leer `hyperframes/references/types/character.md`.
 
 ### 3.2 Reglas técnicas
@@ -90,6 +78,16 @@ Los elementos que se repiten viven en `videos tiktok/motor/biblioteca/` y se reu
 - `componentes/`: gancho, banner de palabra clave, tarjeta del título, sellos, números, transiciones.
 
 Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda aquí y se anota en `ESTILO.md`.
+
+## 3.5 Modo ahorro de consumo (siempre activo)
+
+Misma calidad, menos vueltas de Claude:
+1. **Construir todo y validar en lote:** una sola pasada de `snapshot` con todos los tiempos clave + `validar.py`; corregir todo lo que falle junto, no de a un error.
+2. **Mirar barato:** hojas de contacto a 270×480 y acercamientos recortados solo donde haya duda; no leer PNG a resolución completa.
+3. **Inspección automática antes que visual:** `check --json`, `validar.py` y el script de Playwright (elementos sin destino, opacidad, posición) antes de abrir imágenes.
+4. **Sin borradores intermedios en video:** un solo render cuando el usuario aprueba los fotogramas; validar ese MP4 con `validar.py` y corregir solo lo que falle.
+5. **Respuestas cortas:** lo hecho, lo que falta y la pregunta; sin repetir listas ya entregadas.
+6. **Reutilizar:** escenas, personajes y planos de videos anteriores (`build.py` de cada proyecto) antes de dibujar desde cero.
 
 ## 4. Flujo por video
 

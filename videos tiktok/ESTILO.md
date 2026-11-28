@@ -1,4 +1,4 @@
-# Estilo de la casa · versión 0.8
+# Estilo de la casa · versión 0.9
 
 Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Manda sobre cualquier valor por defecto de HyperFrames o Remotion.
 
@@ -72,12 +72,9 @@ La estructura de §1 y §6 no cambia. Dentro de ella, la historia se explica as�
 
 - **Tipo de video:** ilustrativo. Diseño gráfico 2D o 3D animado en código, no grabación.
 - **Modos disponibles:** 2D vectorial (SVG), 3D (Three.js), 2.5D (capas con parallax), personajes con rig.
-- **Acabado mixto (elegido por el usuario, 28-11-2026):**
-  - **Fondos en pintura digital realista**, generados en local (`motor/fondos.py`, SD-Turbo): cuadrados de 768 px recortados a 9:16, sin personas ni texto, con color reforzado (saturación ×1,5 a ×2,4) hasta entrar en el rango de §7.1.
-  - **Personajes, muebles donde se sientan y objetos de la trama en 2D con volumen** (`svgkit`).
-  - **Integración:** sombra de contacto, luz de ventana sobre la escena y un velo de color por ambiente (noche azul, cine violeta, comedor cálido).
-  - **La sala de cine de la marca sigue en código** (inicio y cierre).
-  - Descartado: el filtro de pintura sobre todo el cuadro (se veía como un cuadro y perdía realismo).
+- **Acabado: 2D con volumen, todo en código** (`svgkit`), como la revisión v2 de Marjorie Prime (decisión del usuario, 28-11-2026).
+  - Descartados: fondos generados con IA (alucinaciones e incoherencias de arquitectura) y el filtro de pintura (aspecto de cuadro).
+  - La sala de cine de la marca, en código.
 - **Dirección:** mucho más realista que ref01 y con **colores vívidos**.
 - **Luz en 3D:** clave cálida mostaza, contorno frío verde azulado, ambiente oscuro.
 
@@ -127,3 +124,4 @@ Ningún fotograma llega al usuario sin pasar dos filtros:
 - v0.6 (28-11-2026): de ref02 solo se toma la viveza del color (y la forma de explicar). Se retiran barrido, profundidad de campo, personajes expresivos, contador y ritmo de 1,5-2,5 s. Sin subtítulos continuos: solo palabras de énfasis.
 - v0.7 (28-11-2026): Marjorie Prime. Palabras de énfasis exactas y sincronizadas (sin sellos); texto, color y estructura desde el guion; cierre siempre en la sala; personajes con más masa; reglas 15-17; excepción de contraste para la sala.
 - v0.8 (28-11-2026): acabado mixto (fondos pintados realistas + personajes 2D con volumen); integración por luz, sombra y velo; aprendizajes de generación de fondos en el registro de errores.
+- v0.9 (28-11-2026): vuelta al 2D con volumen en código (v2). Fondos con IA descartados por alucinaciones e incoherencias.
