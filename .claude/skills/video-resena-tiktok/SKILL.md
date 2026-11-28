@@ -50,7 +50,17 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 - **3D:** escenas en Three.js (bajo poligonaje o estilizado), dibujadas desde el tiempo de la línea de tiempo en el evento `hf-seek`. Sirve para escenarios, objetos protagonistas y movimientos de cámara (entrar por una pantalla, una puerta, una ventana). Leer `hyperframes/references/types/3d.md` y `runtimes.md`.
 - **2.5D:** imágenes planas separadas en capas (fondo, medio, frente) con parallax y movimiento de cámara. Sirve cuando el usuario trae imágenes generadas con IA o ilustraciones propias.
 
-**Acabado elegido** (ver `ESTILO.md` §7): **híbrido**. Personajes y sala en 2D con volumen; lo que muestra la pantalla (la historia) en pintura digital con colores muy vivos. Base de código: `motor/propuesta-acabado/index.html` (filtro `pintura`, rig del Espectador, butacas con oclusión).
+**Acabado elegido** (ver `ESTILO.md` §7): **mixto**. **Fondos en pintura digital realista** generados en local con `motor/fondos.py` (SD-Turbo, ~30 s por imagen sin GPU) y **personajes en 2D con volumen** en código (`svgkit`), con muebles en código donde los personajes se sientan o apoyan. La sala de cine de la marca sigue en código.
+
+Flujo de fondos:
+1. Escribir `instrucciones/<video>/fondos.json` (un lugar por entrada, sin personas, con zona de piso libre en el tercio inferior; 2 variantes por lugar).
+2. `/root/sd/bin/python -I "videos tiktok/motor/fondos.py" fondos.json motor/proyectos/<slug>/assets/fondos`.
+3. Mirar cada variante, elegir una, y ubicar personajes y objetos en código sobre ella (perspectiva, línea de piso y luz de la imagen).
+4. `"recorte": true` usa `rembg` (`isnet-general-use`) para separar el sujeto del fondo y moverlo como capa delantera.
+5. Integrar la luz: sombra de contacto bajo cada personaje y un velo de color de la escena sobre ellos para que no parezcan pegados.
+
+El filtro `pintura` de SVG queda descartado para la historia: daba aspecto de cuadro y quitaba realismo (decisión del usuario).
+- Blender 4.0 está instalado (`blender -b`) y queda reservado para cuando una escena necesite 3D real.
 
 - El código (SVG con degradados, luz de borde, sombras, polvo y grano) llega con calidad a **2D con volumen**.
 - La **pintura digital realista** con pincelada verdadera no se logra solo con filtros: el filtro de pintura en SVG da un borde temblado, no pinceladas. Para ese acabado, las escenas se pintan como imágenes (generadas con IA por el usuario o con `media-use` de HeyGen si inicia sesión) y se animan en 2.5D, con luz, partículas y textos en código encima.

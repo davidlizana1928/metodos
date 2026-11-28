@@ -1,0 +1,13 @@
+[
+ {"id": "living_dia", "seed": 11, "variantes": 2, "prompt": "spacious modern living room of a wooden beach house, huge window overlooking the sea, warm floor lamp, wooden floor, red rug"},
+ {"id": "exterior", "seed": 21, "variantes": 2, "prompt": "single-story modern wooden beach house with big glass windows and a wooden terrace, on the sand, cloudy sky, turquoise sea"},
+ {"id": "vitrina", "seed": 31, "variantes": 2, "prompt": "cozy living room corner, tall glass display cabinet with a violin inside, window with sea view, warm lamp light, wooden floor"},
+ {"id": "pared", "seed": 41, "variantes": 2, "prompt": "frontal view of a plain warm cream wall in a beach house living room, soft window light from the left, wooden floor"},
+ {"id": "comedor", "seed": 51, "variantes": 2, "prompt": "empty dining room of a beach house without furniture, big window with sea view, green pendant lamp, warm walls, wooden floor"},
+ {"id": "cocina", "seed": 61, "variantes": 2, "prompt": "bright kitchen with teal ceramic tiles, white counter on the left, open doorway to a sunny living room on the right, wooden floor"},
+ {"id": "terraza_noche", "seed": 71, "variantes": 2, "prompt": "wooden terrace deck of a beach house at night by the sea, starry sky, moonlight, house wall with a warm lit window"},
+ {"id": "living_noche", "seed": 81, "variantes": 2, "prompt": "living room of a beach house at night, moonlight through a big window over the dark sea, high wooden shelf on the wall, glowing floor lamp"},
+ {"id": "terraza_dia", "seed": 91, "variantes": 2, "prompt": "wooden terrace of a beach house facing the turquoise sea, glass wall of the house on the left, blue sky"},
+ {"id": "calle_lluvia", "seed": 101, "variantes": 2, "prompt": "city street at night in the rain, wet pavement reflections, warm street lamps, lit windows of old brick buildings"},
+ {"id": "cine_antiguo", "seed": 111, "variantes": 3, "prompt": "entrance of an old cinema at night, marquee with glowing light bulbs, blank white marquee board, empty poster frames, wet sidewalk"}
+]
