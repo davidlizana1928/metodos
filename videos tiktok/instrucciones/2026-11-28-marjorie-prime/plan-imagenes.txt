@@ -1,0 +1,22 @@
+PLAN DE IMÁGENES · Marjorie Prime
+Acabado: híbrido. Sala y Espectador en código (2D con volumen). La historia en pintura digital (HeyGen) animada en 2.5D, con luz, halo, lluvia, partículas y textos en código encima.
+Regla de consumo: 1 imagen por lugar, reutilizada en varias escenas con otro encuadre, otra luz o capas de código. Si HeyGen agota el límite, la imagen que falte se dibuja en código (opción C).
+
+ESTILO DE TODAS LAS IMÁGENES (se repite en cada pedido)
+Pintura digital estilizada, semirrealista, pinceladas visibles, colores vivos y saturados, luz cálida de lámpara contra luz fría del mar, formato vertical 9:16, sin texto, sin logos, sin niños, sin parecido con actores reales.
+
+REFERENCIAS DE PERSONAJES (1 imagen, se usa como referencia en las demás para mantener las caras)
+R1  Hoja de personajes de cuerpo entero sobre fondo neutro: la mujer mayor (80+, moño blanco bajo, chal gris perla, vestido azul petróleo, bastón claro), el hombre de 40 (pelo castaño claro ondulado, suéter azul marino, camisa blanca), la hija (60, pelo gris corto con flequillo, anteojos de marco negro, chaqueta verde oliva), el yerno (60, cabeza rapada, barba canosa, franela burdeos, chaleco gris).
+
+LUGARES (8 imágenes)
+I1  Living con ventanal al mar, de día: la mujer mayor en su sillón; frente a ella el hombre joven sentado. → escenas 1 (en la pantalla), 2, 5, 6. El halo celeste del holograma se agrega en código.
+I2  Exterior: casa moderna de madera y vidrio sobre la arena, mar gris verdoso, día nublado; la mujer camina con bastón por la terraza. → escena 3a. Interior de la escena 3 (vitrina, fotos que se borran) con I1 reencuadrada + capas de código.
+I3  Comedor: la hija y el yerno sentados a la mesa con una tablet; mesa despejada (las siluetas holográficas se dibujan en código). → escena 4.
+I4  Cocina abierta y pasillo: la hija mira hacia el living desde la puerta. → escena 7. El Espectador de pie se agrega en código.
+I5  Terraza de noche: el yerno sentado con una taza; espacio libre a su lado para el holograma (se agrega en código con halo); ventana iluminada al fondo con la mujer dormida. → escena 8.
+I6  Living de noche en penumbra: repisa alta con marcos de pie, uno boca abajo; sillón con la mujer dormida; lámpara de pie. → escenas 9 y 13 (en la 13 se suman la hija y el yerno en el sofá con I3 como referencia).
+I7  Terraza de día frente al mar: la mujer y el hombre joven sentados lado a lado, de espaldas a cámara; ventanal grande detrás. → escenas 10 y 11 (el reflejo de la calle y la lluvia se hacen en código).
+I8  Calle de ciudad de noche frente a un cine antiguo con marquesina de bombillas y carteles de colores lisos sin texto; pareja adulta joven (ella abrigo crema, moño castaño; él como el hombre de 40). → escena 12 (bombillas, cambio de carteles y sello EDITADO en código).
+
+TOTAL HEYGEN: 9 imágenes (1 de referencia + 8 de lugares).
+EN CÓDIGO: sala de cine y Espectador (escenas 1 y 14, más el Espectador de pie en 7 y 13), halo y transparencia del holograma, emisor, siluetas del catálogo, reflejos, lluvia, fotos que se borran, lámpara que se apaga, carteles que cambian, banners y sellos, tarjeta del título.

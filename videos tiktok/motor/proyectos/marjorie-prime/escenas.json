@@ -1,0 +1,160 @@
+[
+ {
+  "n": 1,
+  "slug": "sala-entrada",
+  "inicio": 0.0,
+  "fin": 6.251,
+  "dur": 6.251,
+  "frases": [
+   "Imagina que tu esposo, muerto hace quince años, está sentado frente a ti…",
+   "joven, conversando contigo."
+  ]
+ },
+ {
+  "n": 2,
+  "slug": "holograma",
+  "inicio": 6.251,
+  "fin": 10.033,
+  "dur": 3.782,
+  "frases": [
+   "Pero ese hombre es un holograma.",
+   "Vives en un futuro cercano."
+  ]
+ },
+ {
+  "n": 3,
+  "slug": "casa-mar",
+  "inicio": 10.033,
+  "fin": 17.305,
+  "dur": 7.272,
+  "frases": [
+   "Tienes más de ochenta años y fuiste violinista.",
+   "Vives frente al mar con tu hija y su esposo.",
+   "Y tu memoria se está borrando."
+  ]
+ },
+ {
+  "n": 4,
+  "slug": "servicio",
+  "inicio": 17.305,
+  "fin": 24.918,
+  "dur": 7.613,
+  "frases": [
+   "Por eso, tu familia contrata un servicio nuevo.",
+   "Son hologramas de personas muertas.",
+   "Aprenden todo lo que la familia les cuenta."
+  ]
+ },
+ {
+  "n": 5,
+  "slug": "eleccion",
+  "inicio": 24.918,
+  "fin": 29.391,
+  "dur": 4.473,
+  "frases": [
+   "Tú eliges a tu esposo…",
+   "pero joven.",
+   "Y lo peor es que funciona."
+  ]
+ },
+ {
+  "n": 6,
+  "slug": "cuentas-vida",
+  "inicio": 29.391,
+  "fin": 32.924,
+  "dur": 3.533,
+  "frases": [
+   "Le cuentas tu vida, y él te la repite con la cara de tu esposo."
+  ]
+ },
+ {
+  "n": 7,
+  "slug": "hija",
+  "inicio": 32.924,
+  "fin": 39.279,
+  "dur": 6.355,
+  "frases": [
+   "Tu hija no lo soporta.",
+   "Ver a su padre joven contigo la perturba.",
+   "Por eso, se niega a hablarle al holograma."
+  ]
+ },
+ {
+  "n": 8,
+  "slug": "yerno",
+  "inicio": 39.279,
+  "fin": 44.25,
+  "dur": 4.971,
+  "frases": [
+   "Lo que no sabes es que tu yerno sí le habla.",
+   "Y le revela un secreto familiar…"
+  ]
+ },
+ {
+  "n": 9,
+  "slug": "secreto",
+  "inicio": 44.25,
+  "fin": 49.563,
+  "dur": 5.313,
+  "frases": [
+   "una tragedia que en esa casa nadie menciona…",
+   "y que tú nunca debes volver a escuchar."
+  ]
+ },
+ {
+  "n": 10,
+  "slug": "compania",
+  "inicio": 49.563,
+  "fin": 53.937,
+  "dur": 4.374,
+  "frases": [
+   "Él llegó para hacerte compañía…",
+   "y termina reescribiendo tu pasado."
+  ]
+ },
+ {
+  "n": 11,
+  "slug": "detalles",
+  "inicio": 53.937,
+  "fin": 58.593,
+  "dur": 4.656,
+  "frases": [
+   "Le pides que cambie detalles.",
+   "Quieres que te cuente tus recuerdos más bonitos."
+  ]
+ },
+ {
+  "n": 12,
+  "slug": "propuesta",
+  "inicio": 58.593,
+  "fin": 65.702,
+  "dur": 7.109,
+  "frases": [
+   "Incluso cambias la película que viste con él la noche en que te pidió matrimonio.",
+   "Y cada versión nueva se vuelve tu recuerdo."
+  ]
+ },
+ {
+  "n": 13,
+  "slug": "recuerdo-vuelve",
+  "inicio": 65.702,
+  "fin": 72.508,
+  "dur": 6.806,
+  "frases": [
+   "Y justo cuando todo parece en calma…",
+   "tu memoria, que se está borrando, te devuelve el recuerdo que tu familia esconde."
+  ]
+ },
+ {
+  "n": 14,
+  "slug": "sala-final",
+  "inicio": 72.508,
+  "fin": 80.309,
+  "dur": 7.801,
+  "frases": [
+   "Se trata de Marjorie Prime…",
+   "Si fueras tú, ¿recordarías tu vida como fue…",
+   "o como te habría gustado que fuera?"
+  ]
+ }
+]

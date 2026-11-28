@@ -1,0 +1,1463 @@
+[
+  {
+    "n": 1,
+    "texto": "Imagina que tu esposo, muerto hace quince años, está sentado frente a ti…",
+    "inicio": 0.0,
+    "fin": 4.053,
+    "palabras": [
+      {
+        "p": "Imagina",
+        "inicio": 0.05,
+        "fin": 0.495
+      },
+      {
+        "p": "que",
+        "inicio": 0.495,
+        "fin": 0.718
+      },
+      {
+        "p": "tu",
+        "inicio": 0.718,
+        "fin": 0.885
+      },
+      {
+        "p": "esposo,",
+        "inicio": 0.885,
+        "fin": 1.275
+      },
+      {
+        "p": "muerto",
+        "inicio": 1.275,
+        "fin": 1.665
+      },
+      {
+        "p": "hace",
+        "inicio": 1.665,
+        "fin": 1.943
+      },
+      {
+        "p": "quince",
+        "inicio": 1.943,
+        "fin": 2.333
+      },
+      {
+        "p": "años,",
+        "inicio": 2.333,
+        "fin": 2.611
+      },
+      {
+        "p": "está",
+        "inicio": 2.611,
+        "fin": 2.89
+      },
+      {
+        "p": "sentado",
+        "inicio": 2.89,
+        "fin": 3.335
+      },
+      {
+        "p": "frente",
+        "inicio": 3.335,
+        "fin": 3.725
+      },
+      {
+        "p": "a",
+        "inicio": 3.725,
+        "fin": 3.836
+      },
+      {
+        "p": "ti…",
+        "inicio": 3.836,
+        "fin": 4.003
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "texto": "joven, conversando contigo.",
+    "inicio": 4.403,
+    "fin": 6.131,
+    "palabras": [
+      {
+        "p": "joven,",
+        "inicio": 4.453,
+        "fin": 4.829
+      },
+      {
+        "p": "conversando",
+        "inicio": 4.829,
+        "fin": 5.58
+      },
+      {
+        "p": "contigo.",
+        "inicio": 5.58,
+        "fin": 6.081
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "texto": "Pero ese hombre es un holograma.",
+    "inicio": 6.251,
+    "fin": 8.086,
+    "palabras": [
+      {
+        "p": "Pero",
+        "inicio": 6.301,
+        "fin": 6.572
+      },
+      {
+        "p": "ese",
+        "inicio": 6.572,
+        "fin": 6.789
+      },
+      {
+        "p": "hombre",
+        "inicio": 6.789,
+        "fin": 7.169
+      },
+      {
+        "p": "es",
+        "inicio": 7.169,
+        "fin": 7.331
+      },
+      {
+        "p": "un",
+        "inicio": 7.331,
+        "fin": 7.494
+      },
+      {
+        "p": "holograma.",
+        "inicio": 7.494,
+        "fin": 8.036
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "texto": "Vives en un futuro cercano.",
+    "inicio": 8.206,
+    "fin": 9.913,
+    "palabras": [
+      {
+        "p": "Vives",
+        "inicio": 8.256,
+        "fin": 8.613
+      },
+      {
+        "p": "en",
+        "inicio": 8.613,
+        "fin": 8.792
+      },
+      {
+        "p": "un",
+        "inicio": 8.792,
+        "fin": 8.97
+      },
+      {
+        "p": "futuro",
+        "inicio": 8.97,
+        "fin": 9.387
+      },
+      {
+        "p": "cercano.",
+        "inicio": 9.387,
+        "fin": 9.863
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "texto": "Tienes más de ochenta años y fuiste violinista.",
+    "inicio": 10.033,
+    "fin": 12.785,
+    "palabras": [
+      {
+        "p": "Tienes",
+        "inicio": 10.083,
+        "fin": 10.478
+      },
+      {
+        "p": "más",
+        "inicio": 10.478,
+        "fin": 10.703
+      },
+      {
+        "p": "de",
+        "inicio": 10.703,
+        "fin": 10.873
+      },
+      {
+        "p": "ochenta",
+        "inicio": 10.873,
+        "fin": 11.324
+      },
+      {
+        "p": "años",
+        "inicio": 11.324,
+        "fin": 11.606
+      },
+      {
+        "p": "y",
+        "inicio": 11.606,
+        "fin": 11.719
+      },
+      {
+        "p": "fuiste",
+        "inicio": 11.719,
+        "fin": 12.114
+      },
+      {
+        "p": "violinista.",
+        "inicio": 12.114,
+        "fin": 12.735
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "texto": "Vives frente al mar con tu hija y su esposo.",
+    "inicio": 12.905,
+    "fin": 15.294,
+    "palabras": [
+      {
+        "p": "Vives",
+        "inicio": 12.955,
+        "fin": 13.267
+      },
+      {
+        "p": "frente",
+        "inicio": 13.267,
+        "fin": 13.631
+      },
+      {
+        "p": "al",
+        "inicio": 13.631,
+        "fin": 13.787
+      },
+      {
+        "p": "mar",
+        "inicio": 13.787,
+        "fin": 13.995
+      },
+      {
+        "p": "con",
+        "inicio": 13.995,
+        "fin": 14.203
+      },
+      {
+        "p": "tu",
+        "inicio": 14.203,
+        "fin": 14.359
+      },
+      {
+        "p": "hija",
+        "inicio": 14.359,
+        "fin": 14.62
+      },
+      {
+        "p": "y",
+        "inicio": 14.62,
+        "fin": 14.724
+      },
+      {
+        "p": "su",
+        "inicio": 14.724,
+        "fin": 14.88
+      },
+      {
+        "p": "esposo.",
+        "inicio": 14.88,
+        "fin": 15.244
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "texto": "Y tu memoria se está borrando.",
+    "inicio": 15.414,
+    "fin": 17.185,
+    "palabras": [
+      {
+        "p": "Y",
+        "inicio": 15.464,
+        "fin": 15.575
+      },
+      {
+        "p": "tu",
+        "inicio": 15.575,
+        "fin": 15.742
+      },
+      {
+        "p": "memoria",
+        "inicio": 15.742,
+        "fin": 16.188
+      },
+      {
+        "p": "se",
+        "inicio": 16.188,
+        "fin": 16.355
+      },
+      {
+        "p": "está",
+        "inicio": 16.355,
+        "fin": 16.633
+      },
+      {
+        "p": "borrando.",
+        "inicio": 16.633,
+        "fin": 17.135
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "texto": "Por eso, tu familia contrata un servicio nuevo.",
+    "inicio": 17.305,
+    "fin": 20.099,
+    "palabras": [
+      {
+        "p": "Por",
+        "inicio": 17.355,
+        "fin": 17.589
+      },
+      {
+        "p": "eso,",
+        "inicio": 17.589,
+        "fin": 17.823
+      },
+      {
+        "p": "tu",
+        "inicio": 17.823,
+        "fin": 17.999
+      },
+      {
+        "p": "familia",
+        "inicio": 17.999,
+        "fin": 18.468
+      },
+      {
+        "p": "contrata",
+        "inicio": 18.468,
+        "fin": 18.995
+      },
+      {
+        "p": "un",
+        "inicio": 18.995,
+        "fin": 19.171
+      },
+      {
+        "p": "servicio",
+        "inicio": 19.171,
+        "fin": 19.698
+      },
+      {
+        "p": "nuevo.",
+        "inicio": 19.698,
+        "fin": 20.049
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "texto": "Son hologramas de personas muertas.",
+    "inicio": 20.219,
+    "fin": 22.267,
+    "palabras": [
+      {
+        "p": "Son",
+        "inicio": 20.269,
+        "fin": 20.492
+      },
+      {
+        "p": "hologramas",
+        "inicio": 20.492,
+        "fin": 21.104
+      },
+      {
+        "p": "de",
+        "inicio": 21.104,
+        "fin": 21.271
+      },
+      {
+        "p": "personas",
+        "inicio": 21.271,
+        "fin": 21.772
+      },
+      {
+        "p": "muertas.",
+        "inicio": 21.772,
+        "fin": 22.217
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "texto": "Aprenden todo lo que la familia les cuenta.",
+    "inicio": 22.387,
+    "fin": 24.798,
+    "palabras": [
+      {
+        "p": "Aprenden",
+        "inicio": 22.437,
+        "fin": 22.921
+      },
+      {
+        "p": "todo",
+        "inicio": 22.921,
+        "fin": 23.19
+      },
+      {
+        "p": "lo",
+        "inicio": 23.19,
+        "fin": 23.351
+      },
+      {
+        "p": "que",
+        "inicio": 23.351,
+        "fin": 23.566
+      },
+      {
+        "p": "la",
+        "inicio": 23.566,
+        "fin": 23.727
+      },
+      {
+        "p": "familia",
+        "inicio": 23.727,
+        "fin": 24.157
+      },
+      {
+        "p": "les",
+        "inicio": 24.157,
+        "fin": 24.372
+      },
+      {
+        "p": "cuenta.",
+        "inicio": 24.372,
+        "fin": 24.748
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "texto": "Tú eliges a tu esposo…",
+    "inicio": 24.918,
+    "fin": 26.433,
+    "palabras": [
+      {
+        "p": "Tú",
+        "inicio": 24.968,
+        "fin": 25.161
+      },
+      {
+        "p": "eliges",
+        "inicio": 25.161,
+        "fin": 25.611
+      },
+      {
+        "p": "a",
+        "inicio": 25.611,
+        "fin": 25.74
+      },
+      {
+        "p": "tu",
+        "inicio": 25.74,
+        "fin": 25.933
+      },
+      {
+        "p": "esposo…",
+        "inicio": 25.933,
+        "fin": 26.383
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "texto": "pero joven.",
+    "inicio": 26.783,
+    "fin": 27.593,
+    "palabras": [
+      {
+        "p": "pero",
+        "inicio": 26.833,
+        "fin": 27.156
+      },
+      {
+        "p": "joven.",
+        "inicio": 27.156,
+        "fin": 27.543
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "texto": "Y lo peor es que funciona.",
+    "inicio": 27.713,
+    "fin": 29.271,
+    "palabras": [
+      {
+        "p": "Y",
+        "inicio": 27.763,
+        "fin": 27.875
+      },
+      {
+        "p": "lo",
+        "inicio": 27.875,
+        "fin": 28.044
+      },
+      {
+        "p": "peor",
+        "inicio": 28.044,
+        "fin": 28.324
+      },
+      {
+        "p": "es",
+        "inicio": 28.324,
+        "fin": 28.492
+      },
+      {
+        "p": "que",
+        "inicio": 28.492,
+        "fin": 28.716
+      },
+      {
+        "p": "funciona.",
+        "inicio": 28.716,
+        "fin": 29.221
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "texto": "Le cuentas tu vida, y él te la repite con la cara de tu esposo.",
+    "inicio": 29.391,
+    "fin": 32.804,
+    "palabras": [
+      {
+        "p": "Le",
+        "inicio": 29.441,
+        "fin": 29.601
+      },
+      {
+        "p": "cuentas",
+        "inicio": 29.601,
+        "fin": 30.029
+      },
+      {
+        "p": "tu",
+        "inicio": 30.029,
+        "fin": 30.189
+      },
+      {
+        "p": "vida,",
+        "inicio": 30.189,
+        "fin": 30.456
+      },
+      {
+        "p": "y",
+        "inicio": 30.456,
+        "fin": 30.563
+      },
+      {
+        "p": "él",
+        "inicio": 30.563,
+        "fin": 30.723
+      },
+      {
+        "p": "te",
+        "inicio": 30.723,
+        "fin": 30.884
+      },
+      {
+        "p": "la",
+        "inicio": 30.884,
+        "fin": 31.044
+      },
+      {
+        "p": "repite",
+        "inicio": 31.044,
+        "fin": 31.418
+      },
+      {
+        "p": "con",
+        "inicio": 31.418,
+        "fin": 31.632
+      },
+      {
+        "p": "la",
+        "inicio": 31.632,
+        "fin": 31.792
+      },
+      {
+        "p": "cara",
+        "inicio": 31.792,
+        "fin": 32.059
+      },
+      {
+        "p": "de",
+        "inicio": 32.059,
+        "fin": 32.22
+      },
+      {
+        "p": "tu",
+        "inicio": 32.22,
+        "fin": 32.38
+      },
+      {
+        "p": "esposo.",
+        "inicio": 32.38,
+        "fin": 32.754
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "texto": "Tu hija no lo soporta.",
+    "inicio": 32.924,
+    "fin": 34.311,
+    "palabras": [
+      {
+        "p": "Tu",
+        "inicio": 32.974,
+        "fin": 33.149
+      },
+      {
+        "p": "hija",
+        "inicio": 33.149,
+        "fin": 33.442
+      },
+      {
+        "p": "no",
+        "inicio": 33.442,
+        "fin": 33.617
+      },
+      {
+        "p": "lo",
+        "inicio": 33.617,
+        "fin": 33.793
+      },
+      {
+        "p": "soporta.",
+        "inicio": 33.793,
+        "fin": 34.261
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "texto": "Ver a su padre joven contigo la perturba.",
+    "inicio": 34.431,
+    "fin": 36.713,
+    "palabras": [
+      {
+        "p": "Ver",
+        "inicio": 34.481,
+        "fin": 34.694
+      },
+      {
+        "p": "a",
+        "inicio": 34.694,
+        "fin": 34.8
+      },
+      {
+        "p": "su",
+        "inicio": 34.8,
+        "fin": 34.96
+      },
+      {
+        "p": "padre",
+        "inicio": 34.96,
+        "fin": 35.279
+      },
+      {
+        "p": "joven",
+        "inicio": 35.279,
+        "fin": 35.599
+      },
+      {
+        "p": "contigo",
+        "inicio": 35.599,
+        "fin": 36.025
+      },
+      {
+        "p": "la",
+        "inicio": 36.025,
+        "fin": 36.184
+      },
+      {
+        "p": "perturba.",
+        "inicio": 36.184,
+        "fin": 36.663
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "texto": "Por eso, se niega a hablarle al holograma.",
+    "inicio": 36.833,
+    "fin": 39.159,
+    "palabras": [
+      {
+        "p": "Por",
+        "inicio": 36.883,
+        "fin": 37.1
+      },
+      {
+        "p": "eso,",
+        "inicio": 37.1,
+        "fin": 37.318
+      },
+      {
+        "p": "se",
+        "inicio": 37.318,
+        "fin": 37.48
+      },
+      {
+        "p": "niega",
+        "inicio": 37.48,
+        "fin": 37.806
+      },
+      {
+        "p": "a",
+        "inicio": 37.806,
+        "fin": 37.915
+      },
+      {
+        "p": "hablarle",
+        "inicio": 37.915,
+        "fin": 38.403
+      },
+      {
+        "p": "al",
+        "inicio": 38.403,
+        "fin": 38.566
+      },
+      {
+        "p": "holograma.",
+        "inicio": 38.566,
+        "fin": 39.109
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "texto": "Lo que no sabes es que tu yerno sí le habla.",
+    "inicio": 39.279,
+    "fin": 41.753,
+    "palabras": [
+      {
+        "p": "Lo",
+        "inicio": 39.329,
+        "fin": 39.491
+      },
+      {
+        "p": "que",
+        "inicio": 39.491,
+        "fin": 39.706
+      },
+      {
+        "p": "no",
+        "inicio": 39.706,
+        "fin": 39.868
+      },
+      {
+        "p": "sabes",
+        "inicio": 39.868,
+        "fin": 40.192
+      },
+      {
+        "p": "es",
+        "inicio": 40.192,
+        "fin": 40.354
+      },
+      {
+        "p": "que",
+        "inicio": 40.354,
+        "fin": 40.57
+      },
+      {
+        "p": "tu",
+        "inicio": 40.57,
+        "fin": 40.732
+      },
+      {
+        "p": "yerno",
+        "inicio": 40.732,
+        "fin": 41.056
+      },
+      {
+        "p": "sí",
+        "inicio": 41.056,
+        "fin": 41.218
+      },
+      {
+        "p": "le",
+        "inicio": 41.218,
+        "fin": 41.38
+      },
+      {
+        "p": "habla.",
+        "inicio": 41.38,
+        "fin": 41.703
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "texto": "Y le revela un secreto familiar…",
+    "inicio": 41.873,
+    "fin": 43.9,
+    "palabras": [
+      {
+        "p": "Y",
+        "inicio": 41.923,
+        "fin": 42.044
+      },
+      {
+        "p": "le",
+        "inicio": 42.044,
+        "fin": 42.224
+      },
+      {
+        "p": "revela",
+        "inicio": 42.224,
+        "fin": 42.646
+      },
+      {
+        "p": "un",
+        "inicio": 42.646,
+        "fin": 42.826
+      },
+      {
+        "p": "secreto",
+        "inicio": 42.826,
+        "fin": 43.308
+      },
+      {
+        "p": "familiar…",
+        "inicio": 43.308,
+        "fin": 43.85
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "texto": "una tragedia que en esa casa nadie menciona…",
+    "inicio": 44.25,
+    "fin": 46.81,
+    "palabras": [
+      {
+        "p": "una",
+        "inicio": 44.3,
+        "fin": 44.524
+      },
+      {
+        "p": "tragedia",
+        "inicio": 44.524,
+        "fin": 45.027
+      },
+      {
+        "p": "que",
+        "inicio": 45.027,
+        "fin": 45.25
+      },
+      {
+        "p": "en",
+        "inicio": 45.25,
+        "fin": 45.418
+      },
+      {
+        "p": "esa",
+        "inicio": 45.418,
+        "fin": 45.642
+      },
+      {
+        "p": "casa",
+        "inicio": 45.642,
+        "fin": 45.921
+      },
+      {
+        "p": "nadie",
+        "inicio": 45.921,
+        "fin": 46.257
+      },
+      {
+        "p": "menciona…",
+        "inicio": 46.257,
+        "fin": 46.76
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "texto": "y que tú nunca debes volver a escuchar.",
+    "inicio": 47.16,
+    "fin": 49.443,
+    "palabras": [
+      {
+        "p": "y",
+        "inicio": 47.21,
+        "fin": 47.322
+      },
+      {
+        "p": "que",
+        "inicio": 47.322,
+        "fin": 47.546
+      },
+      {
+        "p": "tú",
+        "inicio": 47.546,
+        "fin": 47.714
+      },
+      {
+        "p": "nunca",
+        "inicio": 47.714,
+        "fin": 48.049
+      },
+      {
+        "p": "debes",
+        "inicio": 48.049,
+        "fin": 48.385
+      },
+      {
+        "p": "volver",
+        "inicio": 48.385,
+        "fin": 48.777
+      },
+      {
+        "p": "a",
+        "inicio": 48.777,
+        "fin": 48.889
+      },
+      {
+        "p": "escuchar.",
+        "inicio": 48.889,
+        "fin": 49.393
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "texto": "Él llegó para hacerte compañía…",
+    "inicio": 49.563,
+    "fin": 51.483,
+    "palabras": [
+      {
+        "p": "Él",
+        "inicio": 49.613,
+        "fin": 49.789
+      },
+      {
+        "p": "llegó",
+        "inicio": 49.789,
+        "fin": 50.141
+      },
+      {
+        "p": "para",
+        "inicio": 50.141,
+        "fin": 50.435
+      },
+      {
+        "p": "hacerte",
+        "inicio": 50.435,
+        "fin": 50.904
+      },
+      {
+        "p": "compañía…",
+        "inicio": 50.904,
+        "fin": 51.433
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "texto": "y termina reescribiendo tu pasado.",
+    "inicio": 51.833,
+    "fin": 53.817,
+    "palabras": [
+      {
+        "p": "y",
+        "inicio": 51.883,
+        "fin": 51.993
+      },
+      {
+        "p": "termina",
+        "inicio": 51.993,
+        "fin": 52.437
+      },
+      {
+        "p": "reescribiendo",
+        "inicio": 52.437,
+        "fin": 53.213
+      },
+      {
+        "p": "tu",
+        "inicio": 53.213,
+        "fin": 53.379
+      },
+      {
+        "p": "pasado.",
+        "inicio": 53.379,
+        "fin": 53.767
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "texto": "Le pides que cambie detalles.",
+    "inicio": 53.937,
+    "fin": 55.643,
+    "palabras": [
+      {
+        "p": "Le",
+        "inicio": 53.987,
+        "fin": 54.153
+      },
+      {
+        "p": "pides",
+        "inicio": 54.153,
+        "fin": 54.485
+      },
+      {
+        "p": "que",
+        "inicio": 54.485,
+        "fin": 54.707
+      },
+      {
+        "p": "cambie",
+        "inicio": 54.707,
+        "fin": 55.095
+      },
+      {
+        "p": "detalles.",
+        "inicio": 55.095,
+        "fin": 55.593
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "texto": "Quieres que te cuente tus recuerdos más bonitos.",
+    "inicio": 55.763,
+    "fin": 58.473,
+    "palabras": [
+      {
+        "p": "Quieres",
+        "inicio": 55.813,
+        "fin": 56.248
+      },
+      {
+        "p": "que",
+        "inicio": 56.248,
+        "fin": 56.466
+      },
+      {
+        "p": "te",
+        "inicio": 56.466,
+        "fin": 56.629
+      },
+      {
+        "p": "cuente",
+        "inicio": 56.629,
+        "fin": 57.009
+      },
+      {
+        "p": "tus",
+        "inicio": 57.009,
+        "fin": 57.227
+      },
+      {
+        "p": "recuerdos",
+        "inicio": 57.227,
+        "fin": 57.77
+      },
+      {
+        "p": "más",
+        "inicio": 57.77,
+        "fin": 57.988
+      },
+      {
+        "p": "bonitos.",
+        "inicio": 57.988,
+        "fin": 58.423
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "texto": "Incluso cambias la película que viste con él la noche en que te pidió matrimonio.",
+    "inicio": 58.593,
+    "fin": 62.966,
+    "palabras": [
+      {
+        "p": "Incluso",
+        "inicio": 58.643,
+        "fin": 59.065
+      },
+      {
+        "p": "cambias",
+        "inicio": 59.065,
+        "fin": 59.487
+      },
+      {
+        "p": "la",
+        "inicio": 59.487,
+        "fin": 59.645
+      },
+      {
+        "p": "película",
+        "inicio": 59.645,
+        "fin": 60.12
+      },
+      {
+        "p": "que",
+        "inicio": 60.12,
+        "fin": 60.331
+      },
+      {
+        "p": "viste",
+        "inicio": 60.331,
+        "fin": 60.647
+      },
+      {
+        "p": "con",
+        "inicio": 60.647,
+        "fin": 60.858
+      },
+      {
+        "p": "él",
+        "inicio": 60.858,
+        "fin": 61.017
+      },
+      {
+        "p": "la",
+        "inicio": 61.017,
+        "fin": 61.175
+      },
+      {
+        "p": "noche",
+        "inicio": 61.175,
+        "fin": 61.492
+      },
+      {
+        "p": "en",
+        "inicio": 61.492,
+        "fin": 61.65
+      },
+      {
+        "p": "que",
+        "inicio": 61.65,
+        "fin": 61.861
+      },
+      {
+        "p": "te",
+        "inicio": 61.861,
+        "fin": 62.019
+      },
+      {
+        "p": "pidió",
+        "inicio": 62.019,
+        "fin": 62.336
+      },
+      {
+        "p": "matrimonio.",
+        "inicio": 62.336,
+        "fin": 62.916
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "texto": "Y cada versión nueva se vuelve tu recuerdo.",
+    "inicio": 63.086,
+    "fin": 65.582,
+    "palabras": [
+      {
+        "p": "Y",
+        "inicio": 63.136,
+        "fin": 63.247
+      },
+      {
+        "p": "cada",
+        "inicio": 63.247,
+        "fin": 63.526
+      },
+      {
+        "p": "versión",
+        "inicio": 63.526,
+        "fin": 63.972
+      },
+      {
+        "p": "nueva",
+        "inicio": 63.972,
+        "fin": 64.306
+      },
+      {
+        "p": "se",
+        "inicio": 64.306,
+        "fin": 64.473
+      },
+      {
+        "p": "vuelve",
+        "inicio": 64.473,
+        "fin": 64.863
+      },
+      {
+        "p": "tu",
+        "inicio": 64.863,
+        "fin": 65.031
+      },
+      {
+        "p": "recuerdo.",
+        "inicio": 65.031,
+        "fin": 65.532
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "texto": "Y justo cuando todo parece en calma…",
+    "inicio": 65.702,
+    "fin": 67.835,
+    "palabras": [
+      {
+        "p": "Y",
+        "inicio": 65.752,
+        "fin": 65.865
+      },
+      {
+        "p": "justo",
+        "inicio": 65.865,
+        "fin": 66.204
+      },
+      {
+        "p": "cuando",
+        "inicio": 66.204,
+        "fin": 66.599
+      },
+      {
+        "p": "todo",
+        "inicio": 66.599,
+        "fin": 66.882
+      },
+      {
+        "p": "parece",
+        "inicio": 66.882,
+        "fin": 67.277
+      },
+      {
+        "p": "en",
+        "inicio": 67.277,
+        "fin": 67.446
+      },
+      {
+        "p": "calma…",
+        "inicio": 67.446,
+        "fin": 67.785
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "texto": "tu memoria, que se está borrando, te devuelve el recuerdo que tu familia esconde.",
+    "inicio": 68.185,
+    "fin": 72.388,
+    "palabras": [
+      {
+        "p": "tu",
+        "inicio": 68.235,
+        "fin": 68.391
+      },
+      {
+        "p": "memoria,",
+        "inicio": 68.391,
+        "fin": 68.807
+      },
+      {
+        "p": "que",
+        "inicio": 68.807,
+        "fin": 69.014
+      },
+      {
+        "p": "se",
+        "inicio": 69.014,
+        "fin": 69.17
+      },
+      {
+        "p": "está",
+        "inicio": 69.17,
+        "fin": 69.43
+      },
+      {
+        "p": "borrando,",
+        "inicio": 69.43,
+        "fin": 69.897
+      },
+      {
+        "p": "te",
+        "inicio": 69.897,
+        "fin": 70.053
+      },
+      {
+        "p": "devuelve",
+        "inicio": 70.053,
+        "fin": 70.52
+      },
+      {
+        "p": "el",
+        "inicio": 70.52,
+        "fin": 70.676
+      },
+      {
+        "p": "recuerdo",
+        "inicio": 70.676,
+        "fin": 71.144
+      },
+      {
+        "p": "que",
+        "inicio": 71.144,
+        "fin": 71.351
+      },
+      {
+        "p": "tu",
+        "inicio": 71.351,
+        "fin": 71.507
+      },
+      {
+        "p": "familia",
+        "inicio": 71.507,
+        "fin": 71.923
+      },
+      {
+        "p": "esconde.",
+        "inicio": 71.923,
+        "fin": 72.338
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "texto": "Se trata de Marjorie Prime…",
+    "inicio": 72.508,
+    "fin": 74.151,
+    "palabras": [
+      {
+        "p": "Se",
+        "inicio": 72.558,
+        "fin": 72.729
+      },
+      {
+        "p": "trata",
+        "inicio": 72.729,
+        "fin": 73.072
+      },
+      {
+        "p": "de",
+        "inicio": 73.072,
+        "fin": 73.244
+      },
+      {
+        "p": "Marjorie",
+        "inicio": 73.244,
+        "fin": 73.758
+      },
+      {
+        "p": "Prime…",
+        "inicio": 73.758,
+        "fin": 74.101
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "texto": "Si fueras tú, ¿recordarías tu vida como fue…",
+    "inicio": 74.501,
+    "fin": 76.933,
+    "palabras": [
+      {
+        "p": "Si",
+        "inicio": 74.551,
+        "fin": 74.717
+      },
+      {
+        "p": "fueras",
+        "inicio": 74.717,
+        "fin": 75.106
+      },
+      {
+        "p": "tú,",
+        "inicio": 75.106,
+        "fin": 75.272
+      },
+      {
+        "p": "¿recordarías",
+        "inicio": 75.272,
+        "fin": 75.939
+      },
+      {
+        "p": "tu",
+        "inicio": 75.939,
+        "fin": 76.105
+      },
+      {
+        "p": "vida",
+        "inicio": 76.105,
+        "fin": 76.383
+      },
+      {
+        "p": "como",
+        "inicio": 76.383,
+        "fin": 76.661
+      },
+      {
+        "p": "fue…",
+        "inicio": 76.661,
+        "fin": 76.883
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "texto": "o como te habría gustado que fuera?",
+    "inicio": 77.283,
+    "fin": 79.309,
+    "palabras": [
+      {
+        "p": "o",
+        "inicio": 77.333,
+        "fin": 77.443
+      },
+      {
+        "p": "como",
+        "inicio": 77.443,
+        "fin": 77.718
+      },
+      {
+        "p": "te",
+        "inicio": 77.718,
+        "fin": 77.883
+      },
+      {
+        "p": "habría",
+        "inicio": 77.883,
+        "fin": 78.268
+      },
+      {
+        "p": "gustado",
+        "inicio": 78.268,
+        "fin": 78.709
+      },
+      {
+        "p": "que",
+        "inicio": 78.709,
+        "fin": 78.929
+      },
+      {
+        "p": "fuera?",
+        "inicio": 78.929,
+        "fin": 79.259
+      }
+    ]
+  }
+]
