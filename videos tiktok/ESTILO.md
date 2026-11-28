@@ -1,4 +1,4 @@
-# Estilo de la casa · versión 0.4
+# Estilo de la casa · versión 0.5
 
 Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Manda sobre cualquier valor por defecto de HyperFrames o Remotion.
 
@@ -32,15 +32,20 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - **Gancho:** crema, 96 px, palabra clave en mostaza, sombra suave.
 - **Banner de palabra clave:** fondo carmesí, texto crema, entrada y salida de 0,15 s.
 - **Tarjeta del título:** banda oscura al 72 %, filete mostaza arriba, zona superior. Entra con fundido de 0,4 s en «Se trata de».
+- **Subtítulos palabra a palabra (propuesta ref02, pendiente de aprobación):** crema, Archivo Black 44 px, encima del centro (y ≈ 700 px), 2 a 4 palabras visibles; la palabra que suena se ilumina en mostaza; la palabra clave de la frase sube a 72 px. Tiempos desde `tiempos.json`.
+- **Contador en el mundo:** un número que avanza mientras la voz lo dice, dibujado sobre un objeto del lugar (cartel, reloj, calendario, pantalla), no flotando.
 - **Zona segura TikTok:** texto entre 288 y 1248 px de alto, y entre 120 y 888 px de ancho.
 
 ## 5. Ritmo y movimiento
 
-- Cambio visual cada 2 a 3 s, en el tiempo fuerte de la música.
+- Cambio visual cada **1,5 a 2,5 s** (ref02: uno cada 1,8 s), en el tiempo fuerte de la música.
 - Fondo con avance lento continuo (zoom 1,00 → 1,06 por escena).
 - Acentos en contratiempos: micro-zoom de 2 a 3 % o sacudida leve.
 - **Nada queda quieto más de 3 s**, tampoco el cierre: la sala final sigue con un avance lento, polvo en el haz del proyector o luz de la pantalla que cambia.
 - **Dinamismo obligatorio:** el video nunca se siente detenido. En cada escena se mueven al menos 2 cosas a la vez (cámara y algo del lugar).
+- **Barrido con desenfoque de movimiento** entre lugares cuando la historia salta (componente `whip-pan-cut` del registro).
+- **Profundidad de campo:** con personajes en primer plano, el fondo va desenfocado.
+- **Personajes expresivos:** ojos, cejas y boca cambian con cada emoción, con anticipación y asentamiento (nunca de golpe).
 - Entre lugares se prefiere el **movimiento de cámara continuo** (paneo, entrada por una ventana o pantalla) al corte duro. Referencia: ref01 tuvo 8 cortes duros en 74 s.
 
 ## 6. Narración, voz y personalidad del texto
@@ -51,6 +56,18 @@ Archivo vivo. Cada referencia nueva y cada corrección aprobada lo actualiza. Ma
 - Segunda persona, presente, frases cortas. Español latinoamericano neutro.
 - **Voz: Alex (aprobada)** (Kokoro `em_alex`, español), generada por Claude con `motor/voz.py`, velocidad 1,1. Solo voz generada; la voz del usuario entra únicamente si él lo indica.
 - Todo texto pasa por **stop-slop**: sin muletillas, sin «no es X, es Y», sin rayas, sin frases de póster.
+
+### 6.1 Cómo explicar (ref02)
+
+La estructura de §1 y §6 no cambia. Dentro de ella, la historia se explica así:
+
+1. **El gancho trae la paradoja o el resultado**, dentro de «Imagina que…». Ejemplo: «Imagina que pasas diez años intentando entrar a una ciudad… y al final te abren la puerta desde adentro.»
+2. **Después se retrocede y se explica el porqué**, en cadena: hecho → causa → consecuencia.
+3. **Un hecho por frase**, de 12 palabras o menos.
+4. **Los giros llegan con «pero»**; las escaladas, con «y lo peor es que…» (§6).
+5. **Números concretos** cuando la historia los tiene (años, días, personas), siempre con 2 fuentes.
+6. **Cada frase tiene su imagen literal:** lo que la voz nombra, la pantalla lo muestra en ese momento. Si una frase no se puede dibujar, se reescribe.
+7. **Cambiar de escala para explicar:** personaje → mapa o vista desde arriba → plano general → detalle. El mapa explica dónde y cómo; el detalle, por qué importa.
 
 ## 7. Lenguaje visual
 
@@ -92,6 +109,7 @@ Ningún fotograma llega al usuario sin pasar dos filtros:
 
 ## 8. Gustos extraídos de referencias
 
+- **ref02:** forma de explicar un hecho, colores vivos y animaciones (contador, barrido, mapa cenital, personajes expresivos). Detalle en `referencias/GUSTOS.md`.
 - **ref01:** estructura «Imagina que…» / «Se trata de…» y narración sin nombres hasta el final. Diseño rechazado por básico (ver §7.1). Detalle en `referencias/GUSTOS.md`.
 
 ## 9. Historial de cambios
@@ -101,3 +119,4 @@ Ningún fotograma llega al usuario sin pasar dos filtros:
 - v0.2 (28-11-2026): ref01. Estructura narrativa aprobada (§6), nivel de diseño mínimo (§7.1), nada quieto más de 3 s y transiciones con movimiento de cámara (§5).
 - v0.3 (28-11-2026): duración 61 s mínimo y objetivo 70-90 s; voz Alex; dinamismo obligatorio; acabado preferido pintura digital o 2D con volumen; look vívido con rangos medibles; validación por fotograma (§7.2).
 - v0.4 (28-11-2026): acabado híbrido (2D con volumen + pantalla en pintura digital vívida); voz Alex aprobada; reglas 12-14 y registro de errores corregidos.
+- v0.5 (28-11-2026): ref02. Cómo explicar (§6.1); cambio visual cada 1,5-2,5 s; barrido con desenfoque, profundidad de campo y personajes expresivos (§5); contador en el mundo y subtítulos palabra a palabra propuestos (§4).

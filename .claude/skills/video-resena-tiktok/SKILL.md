@@ -62,7 +62,18 @@ Elegir el modo por escena, según lo que la escena necesita explicar. `ESTILO.md
 - Una escena pesada en 3D se perfila una vez con `snapshot` antes del render completo.
 - La paleta y las tipografías se leen de `ESTILO.md`; las luces 3D usan esos mismos colores (clave cálida mostaza, contorno frío verde azulado).
 
-### 3.3 Biblioteca de la marca
+### 3.3 Componentes del registro para el estilo
+
+Antes de dibujar estos efectos a mano, instalarlos con `npx hyperframes add <nombre>` en el proyecto y adaptarlos a la paleta de `ESTILO.md`:
+
+- `whip-pan-cut`: barrido con desenfoque de movimiento entre lugares.
+- `number-wheel` o `count-up`: contador que avanza (se monta sobre un objeto del mundo: cartel, reloj, calendario).
+- `caption-pill-karaoke`: base para los subtítulos palabra a palabra (solo si el usuario los aprueba; `ESTILO.md` §4).
+- `headline-slam`: entrada con impacto para el banner de palabra clave.
+- `soft-blur-in` / `focus-blur-resolve`: profundidad de campo y cambios de foco.
+- Para mapas y vistas desde arriba: dibujarlos en SVG con el acabado del estilo (los mapas del registro son de datos reales, no de ficción).
+
+### 3.4 Biblioteca de la marca
 
 Los elementos que se repiten viven en `videos tiktok/motor/biblioteca/` y se reutilizan en vez de redibujarse:
 
@@ -78,15 +89,25 @@ Cada pieza nueva que el usuario aprueba y que sirva para otros videos se guarda 
 
 1. Leer `ESTILO.md` completo. Sus valores mandan.
 2. Revisar `instrucciones/<video>/`: guion, voz, imágenes, música, notas del usuario.
-3. Generar la voz Alex con `voz.py` desde el guion. Debe durar **61 s o más, objetivo 70 a 90 s** (215 a 280 palabras). Si queda corta, alargar el guion con información de la historia, nunca con silencio.
-4. Si el usuario entrega su propia voz: medir con ffmpeg duración y silencios (`silencedetect=-35dB:d=0.35`) y transcribir.
-5. La imagen se ajusta a la voz, nunca al revés: cada escena dura lo que su frase en `tiempos.json`.
-6. Si falta algo indispensable, pedirlo en una lista corta. No inventar material.
+3. **Ajustar el guion a `ESTILO.md` §6.1 (cómo explicar)** sin tocar la estructura: gancho con la paradoja o el resultado dentro de «Imagina que…», un hecho por frase (12 palabras o menos), causa → consecuencia, giros con «pero», números con fuente. Mostrar al usuario los cambios marcados y esperar su visto bueno antes de generar la voz. Aplicar stop-slop.
+4. Generar la voz Alex con `voz.py` desde el guion. Debe durar **61 s o más, objetivo 70 a 90 s** (215 a 280 palabras). Si queda corta, alargar el guion con información de la historia, nunca con silencio.
+5. Si el usuario entrega su propia voz: medir con ffmpeg duración y silencios (`silencedetect=-35dB:d=0.35`) y transcribir.
+6. La imagen se ajusta a la voz, nunca al revés: cada escena dura lo que su frase en `tiempos.json`.
+7. Si falta algo indispensable, pedirlo en una lista corta. No inventar material.
 
 ### 4.2 Construir
 
 1. `npx hyperframes init "videos tiktok/motor/proyectos/<slug>" --non-interactive --skip-skills --resolution portrait`
-2. Escribir una lista de escenas: frase de la voz, modo (2D, 3D o 2.5D), qué se ve y qué explica. Mostrarla al usuario si el video es nuevo.
+2. Escribir la **lista de escenas**, una línea por frase de la voz, y mostrarla al usuario si el video es nuevo:
+   ```
+   [n] m:ss-m:ss | «frase exacta»
+       IMAGEN LITERAL: lo que la frase nombra, visible en ese momento
+       ESCALA: personaje / mapa desde arriba / plano general / detalle
+       ANIMACIÓN: movimiento de cámara + algo del lugar (2 cosas como mínimo); cambio cada 1,5-2,5 s
+       TEXTO: banner, contador o sello (si aporta)
+       TRANSICIÓN: continua / barrido con desenfoque / a través de un objeto
+   ```
+   Una frase sin imagen literal se reescribe (avisando) o se resuelve con un cambio de escala.
 3. Una escena por subcomposición; paleta y tipografías como variables CSS tomadas de `ESTILO.md`. Reutilizar la biblioteca antes de dibujar algo nuevo.
 4. Respetar la firma de `ESTILO.md` §1 y la zona segura de TikTok.
 5. Dinamismo: en cada escena se mueven al menos 2 cosas a la vez (cámara y algo del lugar); nada queda quieto más de 3 s.
