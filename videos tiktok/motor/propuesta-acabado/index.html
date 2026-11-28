@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --mostaza: #e0a526;
+        --carmesi: #7a1020;
+        --crema: #f4ead2;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0a0608; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      .lienzo { position: absolute; inset: 0; }
+      .lienzo svg { width: 1080px; height: 1920px; display: block; }
+      .gancho-wrap { position: absolute; left: 120px; right: 330px; top: 930px; }
+      .gancho {
+        font-family: "Archivo Black"; color: var(--crema);
+        font-size: 72px; line-height: 1.03;
+        text-shadow: 0 6px 30px rgba(0,0,0,.75);
+      }
+      .gancho em { font-style: normal; color: var(--mostaza); }
+      .etiqueta {
+        position: absolute; left: 120px; top: 300px;
+        font-family: "Oswald"; font-size: 34px; letter-spacing: .12em; color: var(--crema);
+        background: rgba(0,0,0,.55); padding: 8px 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+
+      <!-- Acabado híbrido: sala y Espectador en 2D con volumen; pantalla en pintura digital vívida -->
+      <div id="varA" class="clip lienzo" data-start="0" data-duration="3" data-track-index="0">
+        <div id="escA" class="lienzo"></div>
+        <div class="gancho-wrap"><div class="gancho">Imagina que tienes <em>48 horas</em> para salir de la ciudad…</div></div>
+      </div>
+    </div>
+
+    <template id="escena">
+      <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="muro" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1c0d14"/><stop offset=".55" stop-color="#2a0f1a"/><stop offset="1" stop-color="#0a0508"/>
+          </linearGradient>
+          <radialGradient id="derrame" cx=".5" cy=".3" r=".6">
+            <stop offset="0" stop-color="#ff7a3d" stop-opacity=".55"/><stop offset=".5" stop-color="#ff3d6e" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a1b6a"/><stop offset=".35" stop-color="#c2326e"/><stop offset=".62" stop-color="#ff7b3a"/><stop offset=".8" stop-color="#ffc35a"/>
+          </linearGradient>
+          <radialGradient id="sol" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#fff4c2"/><stop offset=".4" stop-color="#ffd06a"/><stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="haz" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff1d0" stop-opacity=".55"/><stop offset="1" stop-color="#ffd59a" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="butaca" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e0384f"/><stop offset=".18" stop-color="#b3172f"/><stop offset=".7" stop-color="#6e0a1c"/><stop offset="1" stop-color="#2a0309"/>
+          </linearGradient>
+          <linearGradient id="butacaLado" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset=".25" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".5"/>
+          </linearGradient>
+          <linearGradient id="sudadera" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffc844"/><stop offset=".35" stop-color="#e0a526"/><stop offset="1" stop-color="#8a5a0c"/>
+          </linearGradient>
+          <linearGradient id="sudLado" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3a2000" stop-opacity=".55"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#3a2000" stop-opacity=".6"/>
+          </linearGradient>
+          <radialGradient id="pelo" cx=".5" cy=".3" r=".7">
+            <stop offset="0" stop-color="#3a2a22"/><stop offset=".6" stop-color="#1a110d"/><stop offset="1" stop-color="#0b0706"/>
+          </radialGradient>
+          <linearGradient id="piel" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#5a3626"/><stop offset=".5" stop-color="#b07a5c"/><stop offset="1" stop-color="#6a4030"/>
+          </linearGradient>
+          <radialGradient id="vineta" cx=".5" cy=".45" r=".75">
+            <stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".75"/>
+          </radialGradient>
+          <filter id="grano" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="n"/>
+            <feColorMatrix type="saturate" values="0"/>
+            <feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer>
+          </filter>
+          <filter id="brillo" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+          <filter id="suave"><feGaussianBlur stdDeviation="2.2"/></filter>
+          <!-- Pintura: pincelada (desplazamiento) + posterizado suave + textura de lienzo -->
+          <filter id="pintura" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency=".012 .04" numOctaves="2" seed="3" result="t"/>
+            <feDisplacementMap in="SourceGraphic" in2="t" scale="7" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feMorphology in="d" operator="dilate" radius="1.2" result="m"/>
+            <feGaussianBlur in="m" stdDeviation=".8" result="b"/>
+            <feTurbulence type="fractalNoise" baseFrequency=".35 .06" numOctaves="2" seed="11" result="tx"/>
+            <feColorMatrix in="tx" type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .22" result="lz"/>
+            <feComposite in="lz" in2="b" operator="in" result="lzIn"/>
+            <feBlend in="b" in2="lzIn" mode="overlay" result="pin"/>
+            <feColorMatrix in="pin" type="saturate" values="1.3"/>
+          </filter>
+        </defs>
+
+        <g class="arte">
+          <!-- Sala -->
+          <rect width="1080" height="1920" fill="url(#muro)"/>
+          <!-- cortinas laterales con pliegues -->
+          <g opacity=".9">
+            <path d="M0 0 H70 Q40 600 70 1200 H0 Z" fill="#5a0a1a"/>
+            <path d="M1010 0 H1080 V1200 H1010 Q1040 600 1010 0Z" fill="#5a0a1a"/>
+            <path d="M18 0 Q4 600 22 1200" stroke="#2a0510" stroke-width="10" fill="none"/>
+            <path d="M48 0 Q30 600 52 1200" stroke="#8a1a2e" stroke-width="6" fill="none" opacity=".6"/>
+            <path d="M1062 0 Q1076 600 1058 1200" stroke="#2a0510" stroke-width="10" fill="none"/>
+            <path d="M1032 0 Q1050 600 1028 1200" stroke="#8a1a2e" stroke-width="6" fill="none" opacity=".6"/>
+          </g>
+          <ellipse cx="540" cy="620" rx="760" ry="620" fill="url(#derrame)"/>
+
+          <!-- Haz del proyector con polvo (detrás de la pantalla: solo se ve en el aire) -->
+          <path d="M128 82 L1000 252 L1000 880 L80 880 L80 252 Z" fill="url(#haz)" opacity=".4"/>
+          <circle cx="140" cy="90" r="26" fill="#fff6dc" filter="url(#brillo)"/>
+          <circle cx="140" cy="90" r="9" fill="#fff"/>
+          <g id="polvo" fill="#fff3d6"></g>
+
+          <!-- Pantalla: la ciudad al atardecer -->
+          <g>
+            <rect x="74" y="250" width="932" height="640" rx="6" fill="#050304"/>
+            <g filter="url(#pintura)"><svg x="86" y="262" width="908" height="616" viewBox="0 0 908 616" preserveAspectRatio="none">
+              <rect width="908" height="616" fill="url(#cielo)"/>
+              <circle cx="610" cy="370" r="170" fill="url(#sol)"/>
+              <g fill="#ffb26b" opacity=".35"><ellipse cx="260" cy="190" rx="200" ry="22"/><ellipse cx="700" cy="140" rx="160" ry="16"/></g>
+              <!-- skyline lejano -->
+              <path d="M0 430 V360 h40 v-30 h50 v50 h30 v-90 h60 v70 h40 v-40 h70 v60 h50 v-120 h40 v120 h60 v-50 h50 v40 h70 v-80 h40 v80 h60 v-30 h70 v50 h58 V430Z" fill="#8a3a7a" opacity=".85"/>
+              <!-- skyline medio con ventanas -->
+              <path d="M0 470 V380 h70 v-60 h80 v100 h60 v-150 h90 v150 h50 v-80 h100 v110 h60 v-170 h80 v170 h70 v-60 h90 v80 h58 V470Z" fill="#4a1f5e"/>
+              <g fill="#ffd36a" id="ventanas"></g>
+              <!-- calle y autos -->
+              <path d="M0 470 H908 V616 H0Z" fill="#1d1030"/>
+              <path d="M320 616 L440 470 H470 L590 616Z" fill="#2a1840"/>
+              <g stroke="#ff3d4e" stroke-width="5" stroke-linecap="round" opacity=".9"><path d="M120 540 h160"/><path d="M90 580 h220"/></g>
+              <g stroke="#fff2c2" stroke-width="5" stroke-linecap="round" opacity=".9"><path d="M620 530 h180"/><path d="M650 575 h230"/></g>
+              <!-- sirenas -->
+              <circle cx="200" cy="520" r="60" fill="#3d7bff" opacity=".35" filter="url(#brillo)"/>
+              <circle cx="260" cy="520" r="60" fill="#ff2d4a" opacity=".35" filter="url(#brillo)"/>
+            </svg></g>
+            <rect x="74" y="250" width="932" height="640" rx="6" fill="none" stroke="#000" stroke-opacity=".6" stroke-width="12"/>
+          </g>
+
+
+
+          <!-- Piso -->
+          <path d="M0 1150 H1080 V1920 H0Z" fill="#0d0609"/>
+          <ellipse cx="540" cy="1150" rx="620" ry="70" fill="#ff7a3d" opacity=".10" filter="url(#brillo)"/>
+
+          <!-- Butacas: 3 filas con perspectiva -->
+          <g id="filas"></g>
+
+          <!-- El Espectador, de espaldas (fila media) -->
+          <g id="espectador" transform="translate(815 1287) scale(.56)">
+            <!-- sombra en la butaca -->
+            <ellipse cx="0" cy="150" rx="150" ry="40" fill="#000" opacity=".45" filter="url(#suave)"/>
+            <!-- hombros y espalda -->
+            <path d="M-150 220 C-150 120 -120 70 -60 55 L60 55 C120 70 150 120 150 220 Z" fill="url(#sudadera)"/>
+            <path d="M-150 220 C-150 120 -120 70 -60 55 L60 55 C120 70 150 120 150 220 Z" fill="url(#sudLado)"/>
+            <!-- capucha caída -->
+            <path d="M-78 58 C-86 20 -50 -2 0 -2 C50 -2 86 20 78 58 C60 96 -60 96 -78 58Z" fill="#c98e1c"/>
+            <path d="M-62 60 C-50 82 50 82 62 60" stroke="#7a4f08" stroke-width="7" fill="none"/>
+            <path d="M-78 58 C-86 20 -50 -2 0 -2" stroke="#ffd877" stroke-width="5" fill="none" opacity=".8"/>
+            <!-- costura central -->
+            <path d="M0 82 V220" stroke="#8a5a0c" stroke-width="4" opacity=".6"/>
+            <!-- cuello -->
+            <path d="M-30 10 L30 10 L34 -40 L-34 -40Z" fill="url(#piel)"/>
+            <!-- orejas -->
+            <ellipse cx="-58" cy="-78" rx="12" ry="22" fill="#9a664a"/>
+            <ellipse cx="58" cy="-78" rx="12" ry="22" fill="#7a4c36"/>
+            <!-- cabeza: costados rebajados (piel + sombra de pelo corto) y pelo oscuro arriba -->
+            <ellipse cx="0" cy="-78" rx="58" ry="72" fill="#8a5a44"/>
+            <ellipse cx="0" cy="-78" rx="58" ry="72" fill="#2a1a14" opacity=".7"/>
+            <path d="M-57 -70 C-62 -165 62 -165 57 -70 C50 -30 30 -12 0 -10 C-30 -12 -50 -30 -57 -70Z" fill="url(#pelo)"/>
+            <path d="M-40 -40 C-20 -22 20 -22 40 -40" stroke="#4a3024" stroke-width="6" fill="none" opacity=".8"/>
+            <path d="M-50 -60 C-52 -100 -46 -130 -30 -146" stroke="#4a3428" stroke-width="3" fill="none" opacity=".6"/>
+            <path d="M50 -60 C52 -100 46 -130 30 -146" stroke="#4a3428" stroke-width="3" fill="none" opacity=".6"/>
+            <path d="M-40 -138 C-10 -152 20 -150 44 -132" stroke="#6a4a36" stroke-width="5" fill="none" opacity=".7"/>
+            <!-- luz de borde de la pantalla -->
+            <path d="M-54 -112 C-40 -150 40 -150 54 -112" stroke="#ffb070" stroke-width="4" fill="none" opacity=".7"/>
+            <path d="M-120 90 C-80 62 80 62 120 90" stroke="#ffcf7a" stroke-width="5" fill="none" opacity=".55"/>
+          </g>
+
+          <rect width="1080" height="1920" fill="url(#vineta)"/>
+        </g>
+        <rect class="grano" width="1080" height="1920" filter="url(#grano)"/>
+      </svg>
+    </template>
+
+    <script>
+      // Construcción determinista de la escena (sin azar sin semilla)
+      function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+      const NS = "http://www.w3.org/2000/svg";
+      function montar(destino, pintura) {
+        const svg = document.getElementById("escena").content.firstElementChild.cloneNode(true);
+        // ids únicos por variante
+        const suf = pintura ? "B" : "A";
+        svg.querySelectorAll("[id]").forEach(el => { el.id = el.id + suf; });
+        svg.innerHTML = svg.innerHTML.replace(/url\(#([a-zA-Z]+)\)/g, (m, id) => `url(#${id}${suf})`);
+        const r = mulberry32(42);
+        // ventanas
+        const v = svg.querySelector("#ventanas" + suf);
+        for (let i = 0; i < 70; i++) {
+          const x = 10 + Math.floor(r() * 880), y = 300 + Math.floor(r() * 150);
+          const e = document.createElementNS(NS, "rect");
+          e.setAttribute("x", x); e.setAttribute("y", y); e.setAttribute("width", 8); e.setAttribute("height", 11);
+          e.setAttribute("opacity", (0.4 + r() * 0.6).toFixed(2)); v.appendChild(e);
+        }
+        // polvo en el haz
+        const p = svg.querySelector("#polvo" + suf);
+        for (let i = 0; i < 90; i++) {
+          const t = r(), a = [128 + t * 872, 82 + t * 170], b = [128 - t * 48, 82 + t * 170];
+          const u = r(), x = a[0] + (b[0] - a[0]) * u, y = a[1] + (b[1] - a[1]) * u;
+          const e = document.createElementNS(NS, "circle");
+          e.setAttribute("cx", x.toFixed(1)); e.setAttribute("cy", y.toFixed(1));
+          e.setAttribute("r", (0.8 + r() * 2.2).toFixed(1)); e.setAttribute("opacity", (0.25 + r() * 0.6).toFixed(2));
+          p.appendChild(e);
+        }
+        // butacas
+        const filas = svg.querySelector("#filas" + suf);
+        const def = [ { y: 1170, w: 150, h: 170, n: 7 }, { y: 1350, w: 210, h: 240, n: 5 }, { y: 1600, w: 300, h: 340, n: 4 } ];
+        def.forEach((f, k) => {
+          const total = f.n * f.w + (f.n - 1) * f.w * 0.12;
+          let x0 = 540 - total / 2 + (k === 1 ? 40 : 0);
+          for (let i = 0; i < f.n; i++) {
+            const x = x0 + i * f.w * 1.12;
+            const g = document.createElementNS(NS, "g");
+            g.innerHTML = `
+              <ellipse cx="${x + f.w/2}" cy="${f.y + f.h}" rx="${f.w*0.6}" ry="${f.h*0.08}" fill="#000" opacity=".5"/>
+              <rect x="${x}" y="${f.y}" width="${f.w}" height="${f.h}" rx="${f.w*0.22}" fill="url(#butaca${suf})"/>
+              <rect x="${x}" y="${f.y}" width="${f.w}" height="${f.h}" rx="${f.w*0.22}" fill="url(#butacaLado${suf})"/>
+              <path d="M${x + f.w*0.18} ${f.y + f.h*0.06} Q${x + f.w/2} ${f.y - f.h*0.02} ${x + f.w*0.82} ${f.y + f.h*0.06}" stroke="#ff8a7a" stroke-width="${Math.max(2, f.w*0.025)}" fill="none" opacity=".55"/>
+              <path d="M${x + f.w*0.33} ${f.y + f.h*0.2} V${f.y + f.h*0.85} M${x + f.w*0.67} ${f.y + f.h*0.2} V${f.y + f.h*0.85}" stroke="#3a0410" stroke-width="${Math.max(2, f.w*0.02)}" opacity=".5"/>`;
+            filas.appendChild(g);
+          }
+          // el Espectador se sienta en la fila del medio: se inserta después de esa fila
+          if (k === 1) {
+            filas.appendChild(svg.querySelector("#espectador" + suf));
+            filas.appendChild(filas.children[filas.children.length - 3].cloneNode(true)); // respaldo de su butaca (4.ª de la fila)
+          }
+        });
+        destino.appendChild(svg);
+      }
+      montar(document.getElementById("escA"), false);
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#escA", { scale: 1.0 }, { scale: 1.04, duration: 3, ease: "none" }, 0);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
